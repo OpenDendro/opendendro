@@ -1,2 +1,2 @@
 # OpenDendro
-github.io website
+opendendro.github.io website
