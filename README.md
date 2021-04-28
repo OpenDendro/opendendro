@@ -1,5 +1,5 @@
 # OpenDendro
 
-opendendro.github.io basic website
+[opendendro.github.io](https://opendendro.github.io/opendendro) basic website
 
-currently on a jekyll minimal template, rendering from the `gh-pages` branch
+currently uses [GitHubActions MkDocs](https://github.com/marketplace/actions/deploy-mkdocs)
