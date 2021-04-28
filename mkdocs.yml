@@ -1,7 +1,7 @@
-site_name: OpenDendro
+site_name: opendendro
 site_description: OpenDendro Docs
 site_author: Andy Bunn, Kevin Anchukaitis, Tyson Swetnam
-site_url: https://github.com/opendendro/opendendro
+site_url: https://opendendro.github.io/opendendro
 
 # Repository
 repo_name: opendendro
