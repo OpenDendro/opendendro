@@ -85,7 +85,9 @@ markdown_extensions:
 # Page tree
 nav:
   - Introduction: index.md
+    - CyVerse: cyverse.md
   - Data: data.md
+    - ITRDB: itrdb.md
   - Codebase:
     - Python: python.md
     - R: r.md
