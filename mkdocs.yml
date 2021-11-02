@@ -6,7 +6,7 @@ site_url: https://opendendro.github.io/opendendro
 # Repository
 repo_name: opendendro
 repo_url: https://github.com/opendendro/opendendro
-edit_uri: edit/main/docs
+edit_uri: edit/main/docs/
 # Copyright
 copyright: 'Copyright &copy; 2021 - 2022 Andy Bunn'
 
