@@ -7,7 +7,8 @@ Welcome to the dplPy manual.
 * Python v3.6+
 * Pip
 
-Recommended: 
+Recommended:
+
 * `Miniconda3` 
 * `JupyterLab`
 
@@ -36,10 +37,79 @@ python dplpy -h
 
 Opens this webpage
 
+CLI:
+
 ```
-python dplpy readme
+$ python dplpy readme
 ```
 
+Python Console:
+
+```
+>> import dplpy 
+>> readme
+```
+
+#### `read`
+
+Imports a `.rwl` or `.csv` format ring width series file and converts it to a dataframe (array). 
+
+| full flag | short flag | Description |
+|-----------|------------|-------------|
+|`--format` | `-f` | File types accepted: `.rwl`,`.csv`, other file types will result in an error |
+|`--input` | `-i` | Input files come from the localhost using the `--input` parameter or from any public URL using the `--url` parameter |
+|`--name` | `-n` | name of the array created from the file |
+|`--option1` | | tbd |
+|`--option1` | | tbd |
+|`--flag1` | | tbd |
+|`--flag2:` | | tbd |
+
+CLI:
+
+```
+$ python dplpy read --format=rwl --input=/home/user/directory/filename.rwl --name=dataset1 --option1 --option2 --flag1 --flag2
+$ python dplpy read rwl /home/user/directory/filename.rwl dataset1
+$
+$ python dplpy read --format=csv --input=/home/user/directory/filename.csv --name=dataset2 --option1 --option2 --flag1 --flag2
+$ python dplpy read csv /home/user/directory/filename.csv dataset2
+$
+$ python dplpy read --format=rwl --url=https://data.cyverse.org/dav-anon/iplant/home/user/opendendro/data/filename.rwl --name=dataset3 --option1 --option2 --flag1 --flag2
+$ python dplpy read rwl https://data.cyverse.org/dav-anon/iplant/home/user/opendendro/data/filename.rwl dataset3
+```
+
+Python Console:
+
+```
+>> import dplpy as dpl
+>> dpl.read("/home/user/directory/filename.rwl", name, option1, option2, flag1, flag2)
+>> dpl.read("/home/user/directory/filename.csv", name, option1, option2, flag1, flag2)
+>> dpl.read("https://data.cyverse.org/dav-anon/home/user/opendendro/data/filename.rwl", name, option1, option2, flag1, flag2)
+```
+
+#### `summary`
+
+Creates and prints the summary statistics for a ring width series dataframe
+
+| full flag | short flag | Description |
+|-----------|------------|-------------|
+|`--format` | `-f` | File types accepted: `.rwl`,`.csv`, other file types will result in an error |
+|`--input` | `-i` | Input files come from the localhost using the `--input` parameter or from any public URL using the `--url` parameter |
+|`--stats` | `-s` | summary statistics to output `all` reports all stats |
+
+CLI:
+```
+$ python dplpy summary --format=rwl --input=/home/user/directory/filename.rwl --stats=all
+$ python dplpy summary rwl /home/user/directory/filename.rwl all
+```
+
+Python Console:
+```
+>> import dplpy as dpl
+>> dpl.summary("/home/user/directory/filename.rwl", all)
+>>
+>> dpl.read("/home/user/directory/filename.csv", dataset1)
+>> dpl.summary(dataset1)
+```
 
 ## Development
 
