@@ -88,6 +88,7 @@ nav:
   - Introduction: index.md
   - Cyberinfrastructure:
     - CyVerse: cyverse.md
+    - Docker: docker.md
   - Data: 
     - Data: data.md
     - ITRDB: itrdb.md
