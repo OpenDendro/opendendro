@@ -29,6 +29,11 @@ From the command line interface (CLI), e.g., BASH, ZSH, or a Cygwin terminal
 #### help menu
 
 Echos the help menu on the CLI 
+
+```
+python dplpy --help
+```
+
 ```
 python dplpy -h
 ```
