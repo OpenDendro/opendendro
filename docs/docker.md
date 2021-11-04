@@ -17,7 +17,8 @@ Install the [Docker Desktop]() for Windows or Mac OS X, or command line for Linu
 Pull the images from RStudio, Rocker, Jupyter, or CyVerse Harbor.
 
 ```
-docker pull rocker/geospatial
+docker pull rocker/geospatial:latest
+docker pull jupyter/datascience-notebook:latest
 ```
 
 From Rocker:
