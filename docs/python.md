@@ -31,11 +31,11 @@ From the command line interface (CLI), e.g., BASH, ZSH, or a Cygwin terminal
 Echos the help menu on the CLI 
 
 ```
-python dplpy --help
+python dplpy.py --help
 ```
 
 ```
-python dplpy -h
+python dplpy.py -h
 ```
 
 #### `readme`
@@ -45,14 +45,14 @@ Opens this webpage
 CLI:
 
 ```
-$ python dplpy readme
+$ python dplpy.py readme
 ```
 
 Python Console:
 
 ```
 >> import dplpy 
->> readme
+>> readme()
 ```
 
 #### `read`
@@ -103,8 +103,8 @@ Creates and prints the summary statistics for a ring width series dataframe
 
 CLI:
 ```
-$ python dplpy summary --format=rwl --input=/home/user/directory/filename.rwl --stats=all
-$ python dplpy summary rwl /home/user/directory/filename.rwl all
+$ python dplpy.py summary --format=rwl --input=/home/user/directory/filename.rwl --stats=all
+$ python dplpy.py summary rwl /home/user/directory/filename.rwl all
 ```
 
 Python Console:
@@ -118,8 +118,12 @@ Python Console:
 
 ## Development
 
+We encourage community contributions through our [GitHub](https://github.com/opendendro/dplPy), feel free to create Issues and Pull Requests.
+
+use the `dev` branch for our most up-to-date and bleeding edge version.
+
 ```
 $ git clone https://github.com/opendendro/dplpy
-
 $ cd dplpy
+$ git switch dev
 ```
