@@ -8,25 +8,38 @@ CyVerse container builds are maintained on a [GitHub Organization](https://githu
 
 [JupyterLab](https://jupyter-docker-stacks.readthedocs.io/en/latest/index.html) containers are based on the [Project Jupyter](https://jupyter.org/) image stacks. 
 
-## Usage
+## Testing
 
-Run our Docker images on your local host 
+Run Docker for testing the code with Jupyter Lab or RStudio-Server.
 
-Install the [Docker Desktop]() for Windows or Mac OS X, or command line for Linux. 
+Install the [Docker Desktop](https://www.docker.com/products/docker-desktop) for Windows or Mac OS X, or command line for Linux. 
 
-Pull the images from RStudio, Rocker, Jupyter, or CyVerse Harbor.
+Pull pre-existing Docker images for [RStudio-Server](https://www.rstudio.com/) or [Jupyter Lab](https://jupyter.org/):
 
 ```
 docker pull rocker/geospatial:latest
 docker pull jupyter/datascience-notebook:latest
 ```
 
-From Rocker:
+To run RStudio-Server (authentication user: `rstudio`, password: set it yourself below):
 ```
-docker run -it --rm -p 8787:8787 -e PASSWORD=<reset the password> rocker/geospatial:latest
+$ git clone https://github.com/opendendro/dplPy
+$ cd dplPy
+$ docker run -it --rm -p 8787:8787 -e PASSWORD=new_password -v $PWD:/home/rstudio/dplPy -e REDIRECT_URL=http://localhost:8787 rocker/geospatial:latest
 ```
 
-From Jupyter:
+From the R Console:
+
 ```
-docker run -it --rm -p 8888:8888 jupyter/datascience-notebook:latest
+> install.packages("dplR", dependencies=TRUE)
 ```
+
+Project Jupyter DataScience Notebook runs both Python and R:
+
+```
+$ git clone https://github.com/opendendro/dplPy
+$ cd dplPy
+$ docker run -it --rm -p 8888:8888 -v $PWD:/home/jovyan/dplPy -e REDIRECT_URL=http://localhost:8888 jupyter/datascience-notebook:latest jupyter lab --no-browser --NotebookApp.token=''
+```
+
+  * Note: that we're disabling the Notebook Token so you don't have to authenticate; remove `--NotebookApp.token=''` to re-enable.
