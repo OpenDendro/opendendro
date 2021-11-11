@@ -51,8 +51,8 @@ $ python dplpy.py readme
 Python Console:
 
 ```
->> import dplpy 
->> readme()
+>> import dplpy as dpl
+>> dpl.readme()
 ```
 
 #### `read`
