@@ -14,7 +14,7 @@ Run Docker for testing the code with Jupyter Lab or RStudio-Server.
 
 Install the [Docker Desktop](https://www.docker.com/products/docker-desktop) for Windows or Mac OS X, or command line for Linux. 
 
-Pull pre-existing Docker images for [RStudio-Server](https://www.rstudio.com/) or [Jupyter Lab](https://jupyter.org/):
+Pull pre-existing Docker images for [RStudio-Server](https://hub.docker.com/u/rocker) or [JupyterLab](https://hub.docker.com/u/jupyter):
 
 ```
 docker pull rocker/geospatial:latest
@@ -28,18 +28,24 @@ $ cd dplPy
 $ docker run -it --rm -p 8787:8787 -e PASSWORD=new_password -v $PWD:/home/rstudio/dplPy -e REDIRECT_URL=http://localhost:8787 rocker/geospatial:latest
 ```
 
+Open your browser and navigate to [http://localhost:8787](http://localhost:8787)
+
+If you're running remotely, use the DNS of the virtual machine service with the `:8787` or allow it to open the tab for you, e.g., with CodeSpaces or GitPod. 
+
 From the R Console:
 
 ```
 > install.packages("dplR", dependencies=TRUE)
 ```
 
-Project Jupyter DataScience Notebook runs both Python and R:
+The Project Jupyter DataScience Notebook runs both Python and R:
 
 ```
 $ git clone https://github.com/opendendro/dplPy
 $ cd dplPy
 $ docker run -it --rm -p 8888:8888 -v $PWD:/home/jovyan/dplPy -e REDIRECT_URL=http://localhost:8888 jupyter/datascience-notebook:latest jupyter lab --no-browser --NotebookApp.token=''
 ```
+
+Open your browser and navigate to [http://localhost:8888](http://localhost:8888)
 
   * Note: that we're disabling the Notebook Token so you don't have to authenticate; remove `--NotebookApp.token=''` to re-enable.
