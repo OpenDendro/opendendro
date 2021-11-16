@@ -31,11 +31,12 @@ From the command line interface (CLI), e.g., BASH, ZSH, or a Cygwin terminal
 Echos the help menu on the CLI 
 
 ```
-python dplpy.py --help
+$ python dplpy.py help
 ```
 
 ```
-python dplpy.py -h
+>>> import dplpy as dpl
+>>> dpl.help()
 ```
 
 #### `readme`
@@ -64,10 +65,7 @@ Imports a `.rwl` or `.csv` format ring width series file and converts it to a da
 |`--format` | `-f` | File types accepted: `.rwl`,`.csv`, other file types will result in an error |
 |`--input` | `-i` | Input files come from the localhost using the `--input` parameter or from any public URL using the `--url` parameter |
 |`--name` | `-n` | name of the array created from the file |
-|`--option1` | | tbd |
-|`--option1` | | tbd |
-|`--flag1` | | tbd |
-|`--flag2:` | | tbd |
+
 
 CLI:
 
