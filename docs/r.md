@@ -1,6 +1,22 @@
-# R
+![dplR](https://github.com/AndyBunn/dplR/raw/master/dplR_Sticker.png){align="left" width="100"}
 
 The [dplR](https://github.com/AndyBunn/dplR) library is hosted on CRAN and can be run in RStudio and RStudio-Server (in browser).
+
+
+## Installation
+
+Basic installation:
+
+```
+install.packages("dplR", dependencies=TRUE)
+library(dplR)
+```
+
+### Development install
+
+```
+devtools::install_github("andybunn/dplR")
+```
 
 ## dplR Workshop
 
