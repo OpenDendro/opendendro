@@ -1,5 +1,5 @@
 [![Project Status: WIP – Initial development is in progress, but there has not yet been a stable, usable release suitable for the public.](https://www.repostatus.org/badges/latest/wip.svg)](https://www.repostatus.org/#wip) [![license](https://img.shields.io/badge/license-GPLv3-blue.svg)](https://opensource.org/licenses/GPL-3.0) 
-[![DOI](https://zenodo.org/badge/xxxxxxxx.svg)]()
+<a href="https://doi.org/10.5281/zenodo.6110787"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.6110787.svg" alt="DOI"></a>
 
 
 [![NSF-2054514](https://img.shields.io/badge/NSF-2054514-blue.svg)](https://nsf.gov/awardsearch/showAward?AWD_ID=2054514)
