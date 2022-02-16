@@ -4,14 +4,19 @@ Containers for running `dplR` or `dplPy` are hosted on the CyVerse.org [Discover
 
 ## Steps
 
-1. Create a CyVerse account [here](https://user.cyverse.org) 
+1. Create a CyVerse account [here](https://user.cyverse.org)
+ 
 2. request access to the [VICE](https://learning.cyverse.org/projects/vice/en/latest/)
 
 3. Start one of the featured containers:
 
-  * <a href="https://de.cyverse.org/apps/de/3548f43a-bed1-11e9-af16-008cfa5ae621/launch?quick-launch-id=81b187d6-cc94-4c53-81b5-f09f31c9c8ba" target="_blank"><img src="https://img.shields.io/badge/Verse-latest-blue?style=plastic&logo=rstudio"></a> - launches an RStudio Server with Geospatial packages
+  CyVerse maintains featured apps from the [Rocker-Project](https://rocker-project/images){target=_blank}, [Project Jupyter](https://jupyter-docker-stacks.readthedocs.io/en/latest/index.html){target=_blank}, and [Visual Studio Code](https://code.visualstudio.com/docs/remote/create-dev-container){target=_blank}
 
-  * <a href="https://de.cyverse.org/apps/de/5eb08814-6b1a-11eb-9180-008cfa5ae621/launch" target="_blank"><img src="https://img.shields.io/badge/Datascience-2.2.9-orange?style=plastic&logo=jupyter"></a> - launches JupyterLab with Python, R, and Julia
+| quick launch | Base Images |
+| ------------ |-------------|
+| <a href="https://de.cyverse.org/apps/de/3548f43a-bed1-11e9-af16-008cfa5ae621/launch" target="_blank"><img src="https://img.shields.io/badge/Verse-latest-blue?style=plastic&logo=rstudio"></a> | [Rocker-Project](https://rocker-project/images){target=_blank} |
+| <a href="https://de.cyverse.org/apps/de/cc77b788-bc45-11eb-9934-008cfa5ae621/launch" target="_blank"><img src="https://img.shields.io/badge/Datascience-latest-orange?style=plastic&logo=jupyter"></a> |[Project Jupyter](https://jupyter-docker-stacks.readthedocs.io/en/latest/index.html){target=_blank} |
+| <a href="https://de.cyverse.org/apps/de/091c830a-4be1-11ec-aad9-008cfa5ae621/launch" target="_blank"><img src="https://img.shields.io/badge/VS%20Code-latest-6C33AF?style=plastic&logo=visualstudiocode"></a> | [Visual Studio Code](https://code.visualstudio.com/docs/remote/create-dev-container){target=_blank} |
 
 4. clone the repository into the running container:
 
