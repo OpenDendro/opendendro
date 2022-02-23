@@ -56,7 +56,7 @@ Python Console:
 >> dpl.readme()
 ```
 
-#### `read`
+#### `readers`
 
 Imports a `.rwl` or `.csv` format ring width series file and converts it to a dataframe (array). 
 
