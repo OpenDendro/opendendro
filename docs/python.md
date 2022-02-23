@@ -62,31 +62,30 @@ Imports a `.rwl` or `.csv` format ring width series file and converts it to a da
 
 | full flag | short flag | Description |
 |-----------|------------|-------------|
-|`--format` | `-f` | File types accepted: `.rwl`,`.csv`, other file types will result in an error |
-|`--input` | `-i` | Input files come from the localhost using the `--input` parameter or from any public URL using the `--url` parameter |
-|`--name` | `-n` | name of the array created from the file |
+|`--input` | `-i` | Input files come from the localhost using the `--input` parameter |
+| `--url` | `-u` | Input file from any public URL using the `--url` parameter |
+| `--name` | `-n` | name of the array created from the file |
 
 
 CLI:
 
 ```
-$ python dplpy read --format=rwl --input=/home/user/directory/filename.rwl --name=dataset1 --option1 --option2 --flag1 --flag2
-$ python dplpy read rwl /home/user/directory/filename.rwl dataset1
+$ python dplpy reader --input=/home/user/directory/filename.rwl --name=dataset1  
+$ python dplpy reader -i /home/user/directory/filename.rwl -n dataset1 
+$ python dplpy reader /home/user/directory/filename.rwl dataset1
 $
-$ python dplpy read --format=csv --input=/home/user/directory/filename.csv --name=dataset2 --option1 --option2 --flag1 --flag2
-$ python dplpy read csv /home/user/directory/filename.csv dataset2
+$ python dplpy reader --input=/home/user/directory/filename.csv --name=dataset2 
+$ python dplpy reader csv /home/user/directory/filename.csv dataset2
 $
-$ python dplpy read --format=rwl --url=https://data.cyverse.org/dav-anon/iplant/home/user/opendendro/data/filename.rwl --name=dataset3 --option1 --option2 --flag1 --flag2
-$ python dplpy read rwl https://data.cyverse.org/dav-anon/iplant/home/user/opendendro/data/filename.rwl dataset3
+$ python dplpy reader --url=https://data.cyverse.org/dav-anon/iplant/home/user/opendendro/data/filename.rwl --name=dataset3 
+$ python dplpy reader https://data.cyverse.org/dav-anon/iplant/home/user/opendendro/data/filename.rwl dataset3
 ```
 
 Python Console:
 
 ```
 >> import dplpy as dpl
->> dpl.read("/home/user/directory/filename.rwl", name, option1, option2, flag1, flag2)
->> dpl.read("/home/user/directory/filename.csv", name, option1, option2, flag1, flag2)
->> dpl.read("https://data.cyverse.org/dav-anon/home/user/opendendro/data/filename.rwl", name, option1, option2, flag1, flag2)
+>> dataset1 = dpl.reader("/home/user/directory/filename.rwl")
 ```
 
 #### `summary`
@@ -95,23 +94,24 @@ Creates and prints the summary statistics for a ring width series dataframe
 
 | full flag | short flag | Description |
 |-----------|------------|-------------|
-|`--format` | `-f` | File types accepted: `.rwl`,`.csv`, other file types will result in an error |
 |`--input` | `-i` | Input files come from the localhost using the `--input` parameter or from any public URL using the `--url` parameter |
 |`--stats` | `-s` | summary statistics to output `all` reports all stats |
 
 CLI:
 ```
-$ python dplpy.py summary --format=rwl --input=/home/user/directory/filename.rwl --stats=all
-$ python dplpy.py summary rwl /home/user/directory/filename.rwl all
+$ python dplpy.py summary --input=/home/user/directory/filename.rwl --stats=all
+$ python dplpy.py summary /home/user/directory/filename.rwl all
+$ python dplpy.py summary /home/user/directory/filename.rwl --stats=mean
+$ python dplpy.py summary /home/user/directory/filename.rwl mean 
 ```
 
 Python Console:
 ```
 >> import dplpy as dpl
->> dpl.summary("/home/user/directory/filename.rwl", all)
+>> dataset1 = dpl.readers("/home/user/directory/filename.rwl")
+>> dpl.summary(dataset1, all)
 >>
->> dpl.read("/home/user/directory/filename.csv", dataset1)
->> dpl.summary(dataset1)
+>> summary_dataset1 = dpl.summary("/home/user/directory/filename.rwl")
 ```
 
 ## Development
