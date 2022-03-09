@@ -52,8 +52,8 @@ $ python dplpy.py readme
 Python Console:
 
 ```
->> import dplpy as dpl
->> dpl.readme()
+>>> import dplpy as dpl
+>>> dpl.readme()
 ```
 
 #### `readers`
@@ -63,29 +63,26 @@ Imports a `.rwl` or `.csv` format ring width series file and converts it to a da
 | full flag | short flag | Description |
 |-----------|------------|-------------|
 |`--input` | `-i` | Input files come from the localhost using the `--input` parameter |
-| `--url` | `-u` | Input file from any public URL using the `--url` parameter |
-| `--name` | `-n` | name of the array created from the file |
-
 
 CLI:
 
 ```
-$ python dplpy reader --input=/home/user/directory/filename.rwl --name=dataset1  
-$ python dplpy reader -i /home/user/directory/filename.rwl -n dataset1 
-$ python dplpy reader /home/user/directory/filename.rwl dataset1
+$ python dplpy.py readers --input=/home/user/directory/filename.rwl  
+$ python dplpy.py readers -i /home/user/directory/filename.rwl 
+$ python dplpy.py readers /home/user/directory/filename.rwl
 $
-$ python dplpy reader --input=/home/user/directory/filename.csv --name=dataset2 
-$ python dplpy reader csv /home/user/directory/filename.csv dataset2
+$ python dplpy.py readers --input=/home/user/directory/filename.csv  
+$ python dplpy.py readers csv /home/user/directory/filename.csv 
 $
-$ python dplpy reader --url=https://data.cyverse.org/dav-anon/iplant/home/user/opendendro/data/filename.rwl --name=dataset3 
-$ python dplpy reader https://data.cyverse.org/dav-anon/iplant/home/user/opendendro/data/filename.rwl dataset3
+$ python dplpy.py readers --url=https://data.cyverse.org/dav-anon/iplant/home/user/opendendro/data/filename.rwl  
+$ python dplpy.py readers https://data.cyverse.org/dav-anon/iplant/home/user/opendendro/data/filename.rwl
 ```
 
 Python Console:
 
 ```
->> import dplpy as dpl
->> dataset1 = dpl.reader("/home/user/directory/filename.rwl")
+>>> import dplpy as dpl
+>>> dataset1 = dpl.readers("/home/user/directory/filename.rwl")
 ```
 
 #### `summary`
@@ -95,7 +92,6 @@ Creates and prints the summary statistics for a ring width series dataframe
 | full flag | short flag | Description |
 |-----------|------------|-------------|
 |`--input` | `-i` | Input files come from the localhost using the `--input` parameter or from any public URL using the `--url` parameter |
-|`--stats` | `-s` | summary statistics to output `all` reports all stats |
 
 CLI:
 ```
@@ -107,11 +103,10 @@ $ python dplpy.py summary /home/user/directory/filename.rwl mean
 
 Python Console:
 ```
->> import dplpy as dpl
->> dataset1 = dpl.readers("/home/user/directory/filename.rwl")
->> dpl.summary(dataset1, all)
->>
->> summary_dataset1 = dpl.summary("/home/user/directory/filename.rwl")
+>>> import dplpy as dpl
+>>> dataset1 = dpl.readers("/home/user/directory/filename.rwl")
+>>> dpl.summary(dataset1)
+>>> summary_dataset1 = dpl.summary("/home/user/directory/filename.rwl")
 ```
 
 ## Development
