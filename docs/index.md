@@ -6,9 +6,9 @@
 [![NSF-2054515](https://img.shields.io/badge/NSF-2054515-blue.svg)](https://nsf.gov/awardsearch/showAward?AWD_ID=2054515)
 [![NSF-2054516](https://img.shields.io/badge/NSF-2054516-blue.svg)](https://nsf.gov/awardsearch/showAward?AWD_ID=2054516)
 
-# opendendro
+![](assets/openDendroSticker.png){width=250}
 
-Code, example data, and manuscript supplemental materials which accompany **OpenDendro**
+Code, example data, and manuscript supplemental materials which accompany **openDendro**
 
 Lead Author: [Andy Bunn](https://github.com/AndyBunn/) [![](https://orcid.org/sites/default/files/images/orcid_16x16.png)](http://orcid.org/0000-0001-9027-2162)
 
