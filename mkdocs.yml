@@ -45,9 +45,9 @@ theme:
   font:
     text: Google Sans
     code: Regular
-  favicon: material/pine-tree.png
+  favicon: assets/favicon.png
   icon:
-    logo: logo
+    logo: material/pine-tree
 
 # Options
 extra:
