@@ -2,31 +2,53 @@
 
 Welcome to the dplPy manual.
 
+---
+
 ## Requirements
 
-* Python v3.6+
+* Python v3.8
 * Pip
+* [Miniconda3](https://docs.conda.io/en/latest/miniconda.html)
+* [Jupyter Notebook](https://jupyter.org/install)
 
-Recommended:
+Suggested:
 
-* `Miniconda3` 
-* `JupyterLab`
+* [VSCode](https://code.visualstudio.com/)
 
 ### Installation
 
-```
-pip install dplpy
-```
+!!! Note
+        DplPy is planned to be released as a `pip` and `conda` packages for easy installation (`pip install dplpy` or `conda install -c conda-forge dplpy`).
 
-```
-conda install -c conda-forge dplpy
-```
+!!! Warning
+        Prior to creating an enviroment, ensure that you are outside of `base` by doing `conda deactivate`. This should be repeated at any give instance where the conda environment is shown as `base`.
+
+1. Clone the GitHub repository to your personal machine: `git clone https://github.com/OpenDendro/dplPy.git`; move into the repository `cd dplPy/`
+2. Build conda environment: `conda create -n dplpy3 python=3.8`; Activate: `conda activate dplpy3`
+3. Install [CSAPS](https://pypi.org/project/csaps/#description): `pip install -U csaps`
+4. Update conda environment: `conda env update -f environment.yml --prune`
+
+---
 
 ## Usage
 
-From the command line interface (CLI), e.g., BASH, ZSH, or a Cygwin terminal 
+Although DplPy is executable from the command line interface (CLI), e.g., BASH, ZSH, or a Cygwin terminal, The usage of Jupyter Notebook is suggested (operated through VSCode).
 
-#### help menu
+### Accessing Jupyter Notebook on Linux, MacOS
+
+1. In your VSCode terminal, activate the conda environment with `conda activate dplpy3`. 
+2. Open a Jupyer Notebook (`<file>.ipynb`) and select the `dplpy3` Kernel when prompted (or from the top right of your screen). This will automatically load the environment we created.
+
+### Accessing Jupyter Notebook on Windows
+
+In VSCode:
+
+1. In your VSCode terminal window, activate the conda environment with `conda activate dplpy3`. 
+2. In the same terminal window, start a Jupyter Notebook with `jupyter notebook`. Jupyter will then return URLs that you can copy; *Copy* one of these URLs.
+3. Open a Jupyter Notebook (`<file>.ipynb`) and from the **bottom right** of the VSCode screen, click **Jupyter Server**; A dropdown menu will open from the top of the screen: select Existing and paste the URL you copied.
+4. Jupyter Notebook will now be able to access the environment created.
+
+### Help menu
 
 Echos the help menu on the CLI 
 
