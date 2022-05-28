@@ -20,7 +20,7 @@ Suggested:
 !!! Info "Planned release information"
         DplPy is planned to be released as a `pip` and `conda` packages for easy installation (`pip install dplpy` or `conda install -c conda-forge dplpy`). **As DplPy is still under development, the current installation process requires manual installation of specific packages.**
 
-!!! Warning "Known nstallation issues"
+!!! Warning "Known Installation issues"
         - Packages installing through `pip`, such as CSAPS or Jupyter Notebook, might return a `DuplicateOptionError` error upon installing. When running into said error, deactivate your conda enviroment and close and reopen your terminal/VScode.
         - **Best practice**: prior to creating an enviroment, ensure that you are outside of `base` by doing `conda deactivate`. This should be repeated at any give instance where the conda environment is shown as `base`.
 
@@ -65,6 +65,7 @@ $ cd dplPy
 
 !!! Note
         The dplPy Git repository contains:
+
         - source code (`src/`)
         - A jupyter notebook example (`runnable_example.ipynb`)
         - Test files in `csv` and `rwl` formats (`tests/data/<format>/`)
@@ -92,12 +93,13 @@ To load (read) data into a dataframe, do:
 >>> data = dpl.readers("path/to/data.format")
 ```
 
-??? Example
+!!! Example
     ```
     >>> data  = dpl.readers("../tests/data/rwl/ca533.rwl")
     ```
 
 Expected outputs:
+
 - A success/failure message;
 - A list of series within the data file.
 
@@ -110,6 +112,7 @@ The summary function generates a summary of each series recorded in `rwl`  and `
 ```
 
 Expected outputs:
+
 - Table with `count`, `mean`, `std`, `min`, `25%`, `50%`, `75%`, `max` for each series in data file.
 
 ### General Statistics
@@ -121,6 +124,7 @@ Generates summary statistics for `rwl`  and `csv` format files.
 ```
 
 Expected outputs:
+
 - Table with `first`, `last`, `year`, `mean`, `median`, `stdev`, `skew`, `gini`, `ar1` for each series in data file.
 
 ### Detrending
@@ -136,12 +140,13 @@ Detrends a series by fitting to spline and calculating residuals.
 ```
 Change `<series>` to the desired series to detrend.
 
-??? Example
+!!! Example
     ```
     >>> dpl.detrend(data["CAM191"])
     ```
 
 Expected outputs:
+
 - A graph depicting the fitted curve;
 - A graph depicting residuals variability.
 
@@ -160,13 +165,14 @@ As default, the max lag is set to 5; Adding a second parameter (integer) to chan
 
 The first `(1)` function calculates the autoregressive parameters, whilst th second `(2)` calculates the residual+mean (by choosing best AR model fit with the selected max lag.)
 
-??? Example
+!!! Example
     ```
     >>> dpl.autoreg(data["CAM191"], 10) #This changes the max lag to 10 instead of the default 5.
     >>> dpl.ar_func(data["CAM191"])
     ```
 
 Expected outputs:
+
 - (1) a table listing autoregressive paramenters for the specified series;
 - (2) an array of residual+mean for selected series.
 
