@@ -28,7 +28,7 @@ Our motivation with this project is to develop and foster a community of develop
 
 Those working or interested in `R` can begin [here](r.md)
 
-Users of Python can being [here](py.md)
+Users of Python can being [here](python.md)
 
 ## FAIR
 
