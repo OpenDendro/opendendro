@@ -26,7 +26,7 @@ Our motivation with this project is to develop and foster a community of develop
 
 ## Getting Started
 
-Those working or interested in `R` can begin [here](r.md)
+Those working or interested in `R` can begin [here](r.md) or jump straight into [Learning to Love dplR](https://opendendro.github.io/dplR-workshop/)
 
 Users of Python can being [here](python.md)
 
