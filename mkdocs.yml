@@ -13,16 +13,17 @@ copyright: 'Copyright &copy; 2021 - 2022 Andy Bunn'
 # Page tree
 nav:
   - Introduction: index.md
+  - Codebase:
+    - Python: python.md
+    - R: r.md
+    - Apps: apps.md    
+    - Fortran77: fortran.md
   - Cyberinfrastructure:
     - CyVerse: cyverse.md
     - Docker: docker.md
   - Data: 
     - Data: data.md
     - ITRDB: itrdb.md
-  - Codebase:
-    - Python: python.md
-    - R: r.md
-    - Fortran77: fortran.md
 
 # Configuration
 theme:
