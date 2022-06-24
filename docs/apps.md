@@ -7,7 +7,7 @@ In general, the tools at openDendro are meant to be used in a scripting environm
 ```
 install.packages("shiny")
 library(shiny)
-runGitHub( "xDater", "opendendro",ref = "main")
+runGitHub("xDater", "opendendro",ref = "main")
 ```
 
 ## iDetrend 
@@ -16,5 +16,5 @@ runGitHub( "xDater", "opendendro",ref = "main")
 ```
 install.packages("shiny")
 library(shiny)
-runGitHub( "iDetrend", "opendendro",ref = "main")
+runGitHub("iDetrend", "opendendro",ref = "main")
 ```
