@@ -26,29 +26,43 @@ nav:
     - ITRDB: itrdb.md
 
 # Configuration
+imgwidth: 70px;
 theme:
-  name: 'material'
-
-  # 404 page
-  static_templates:
-    - 404.html
-
-  # Don't include MkDocs' JavaScript
-  include_search_page: false
-  search_index_only: true
-
+  highlightjs: true
+  name: material
+  font:
+    text: 'Open Sans'
+    code: 'Roboto Mono'
+  logo: 'assets/favicon-32x32.png'
+  favicon: 'assets/favicon.ico'
+# setting features for the navigation tab
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.indexes
+    - navigation.top
+    - toc.integrate
+    - toc.follow
+    - content.code.copy
   # Default values, taken from mkdocs_theme.yml
   language: en
+  # custom_dir: 'overrides'
   palette:
-    scheme: default
-    primary: blue
-    accent: pink
-  font:
-    text: Google Sans
-    code: Regular
-  favicon: assets/favicon.png
-  icon:
-    logo: material/pine-tree
+    # Palette toggle for light mode
+    - media: "(prefers-color-scheme: white)"
+      primary: 'white'
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+
+    # Palette toggle for dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to system preference
 
 # Options
 extra:
@@ -95,3 +109,14 @@ markdown_extensions:
   - pymdownx.tasklist:
       custom_checkbox: true
   - pymdownx.tilde
+
+extra_css:
+  - stylesheets/extra.css
+ 
+plugins:
+    - search
+    - mkdocstrings
+    - git-revision-date
+    - mkdocs-jupyter:
+          include_source: True
+          ignore_h1_titles: True
