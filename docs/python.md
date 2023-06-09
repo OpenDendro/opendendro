@@ -1,58 +1,82 @@
-# The dplPy User Manual (Alpha)
+# The dplPy User Manual (Beta)
 
 Welcome to the dplPy manual.
 
 ---
 
-## Requirements
+## Requirements, Installation and Accessibility
 
-* Python v3.8
+### Requirements
+
+* Git 
+* Python v3.10=< (although functional on Python v3.8=<, we suggest using Python v3.10=<)
 * Pip
-* [Miniconda3](https://docs.conda.io/en/latest/miniconda.html)
-* [Jupyter Notebook](https://jupyter.org/install)
+* [Miniconda3](https://docs.conda.io/en/latest/miniconda.html) (suggestion: select the python 3.10 version that best fits your OS)
 
 Suggested:
 
 * [VSCode](https://code.visualstudio.com/)
+* Mamba:[repository](https://github.com/mamba-org/mamba), [anaconda.org link](https://anaconda.org/conda-forge/mamba)
 
-### Installation (Alpha)
+### Installation
 
-!!! Info "Planned release information"
-        DplPy is planned to be released as a `pip` and `conda` packages for easy installation (`pip install dplpy` or `conda install -c conda-forge dplpy`). **As DplPy is still under development, the current installation process requires manual installation of specific packages.**
-
-!!! Warning "Known Installation issues"
-        - Packages installing through `pip`, such as CSAPS or Jupyter Notebook, might return a `DuplicateOptionError` error upon installing. When running into said error, deactivate your conda enviroment and close and reopen your terminal/VScode.
-        - **Best practice**: prior to creating an enviroment, ensure that you are outside of `base` by doing `conda deactivate`. This should be repeated at any give instance where the conda environment is shown as `base`.
+DplPy is planned to be released as a `pip` and `conda` packages for easy installation (e.g., `pip install dplpy` or `conda install -c conda-forge dplpy`). However, the current installation process for dplPy requires manual steps to be performed after cloning the GitHub repository.
 
 1. Clone the GitHub repository to your personal machine: `git clone https://github.com/OpenDendro/dplPy.git`; move into the repository `cd dplPy/`
-2. Build conda environment: `conda create -n dplpy3 python=3.8`; Activate: `conda activate dplpy3`
-3. Install [CSAPS](https://pypi.org/project/csaps/#description): `pip install -U csaps`
-4. Update conda environment: `conda env update -f environment.yml --prune`
+2. Build conda environment: `conda env create -f environment.yml` or `mamba env create -f environment.yml` if Mamba is installed; Activate environment: `conda activate dplpy`
 
----
+!!! Warning "Known Issues"
+    The [CSAPS](https://csaps.readthedocs.io/en/latest/) package, required for smoothing splines, may fail to install in rare occasions. If that is the case, please install CSAPS manually by doing `pip install -U csaps`.
 
-## Access through Jupyter Notebook
+### Accessing dplPy via Jupyter Notebook
 
-Although dplPy is executable from the command line interface (CLI), e.g., BASH, ZSH, or a Cygwin terminal, The usage of Jupyter Notebook is suggested.
+Although dplPy is executable from the command line interface (CLI), e.g., BASH, ZSH, or a Cygwin terminal, the usage of Jupyter Notebooks is suggested for visualizing graphs.
 
-### Accessing Jupyter Notebook on Linux, MacOS
+!!! tip "Making the dplPy kernel findable"
+    It is possible that your computer will not automatically find the dplPy [kernel](https://en.wikipedia.org/wiki/Kernel_(operating_system). If that is the case, execute the following command:
+    
+    ```
+    python -m ipykernel install --user --name dplpy --display-name "Python (dplpy)"
+    ```
 
-1. In your VScode terminal, activate the conda environment with `conda activate dplpy3`.
+    This will ensure that the dplPy environment created through conda is findable by Jupyter under the name `Python (dplpy)`.
+
+#### Accessing Jupyter Notebook on Linux, MacOS
+
+1. In your VScode terminal, activate the conda environment with `conda activate dplpy`.
 2. From the terminal, execute `jupyter notebook`.
-2. If prompted to select a kernel, select `dplpy3`. This will automatically load the correct environment.
+3. If prompted to select a kernel, select `dplpy`. This will automatically load the correct environment.
 
-### Accessing Jupyter Notebook on Windows
+#### Accessing Jupyter Notebook on Windows
 
 In VScode:
 
-1. In your VSCode terminal window, activate the conda environment with `conda activate dplpy3`. 
+1. In your VSCode terminal window, activate the conda environment with `conda activate dplpy`. 
 2. In the same terminal window, start a Jupyter Notebook with `jupyter notebook`. Jupyter will then return URLs that you can copy; *Copy* one of these URLs.
-3. Open a Jupyter Notebook (`<file>.ipynb`) and from the **bottom right** of the VSCode screen, click **Jupyter Server**; A dropdown menu will open from the top of the screen: select Existing and paste the URL you copied.
+3. When propted to select a kernel (top right), select **Select Another Kernel** > **Existing Jupyter Server** and paste the URL you have copied.
 4. Jupyter Notebook will now be able to access the environment created.
 
 ---
 
 ## Usage
+
+DplPy is currently available as a Python [module](https://docs.python.org/3/tutorial/modules.html) with a number of [functions](https://www.w3schools.com/python/python_functions.asp), which in turn have parameters one can set. Here is a list of functions for dplPy (in alphabetical order):
+
+| Function | Description |
+| --- | --- |
+| [`ar_func`]() | Fits series to autoregressive (AR) models and related functions |
+| [`chron`]() | Creates a mean value chronology for a dataset, typically the ring width indices of a detrended series |
+| [`detrend`]() | Detrends a given series or data frame, first by fitting data to curve(s), with spline(s) as the default, and then by calculating residuals or differences compared to the original data. |
+| [`help`]() | Displays help (alpha). |
+| [`plot`]() | Generates line, spaghetti or segment plots.|
+| [`rbar`]() | Finds best interval of overlapping series over a  period of years, and calculating rbar constant for a dataset over period of overlap. |
+| [`readers`]() | Reads data from supported file types (*.CSV and *.RWL) and stores them in dataframe. |
+| [`readme`]() | Goes to this website. |
+| [`report`]() | Generates a report about absent rings in the data set. |
+| [`series_corr`]() |  Crossdating function that focuses on the comparison of one series to the master chronology. |
+| [`stats`]() | Generates summary statistics for RWL and CSV format files. |
+| [`summary`]() | Generates a summary for RWL and CSV format files. |
+| [`xdate`]() | Crossdating function for dplPy loaded datasets. |
 
 ### Obtain Git
 
