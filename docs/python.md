@@ -58,26 +58,6 @@ In VScode:
 
 ---
 
-## Usage
-
-DplPy is currently available as a Python [module](https://docs.python.org/3/tutorial/modules.html) with a number of [functions](https://www.w3schools.com/python/python_functions.asp), which in turn have parameters one can set. Here is a list of functions for dplPy (in alphabetical order):
-
-| Function | Description |
-| --- | --- |
-| [`ar_func`]() | Fits series to autoregressive (AR) models and related functions |
-| [`chron`]() | Creates a mean value chronology for a dataset, typically the ring width indices of a detrended series |
-| [`detrend`]() | Detrends a given series or data frame, first by fitting data to curve(s), with spline(s) as the default, and then by calculating residuals or differences compared to the original data. |
-| [`help`]() | Displays help (alpha). |
-| [`plot`]() | Generates line, spaghetti or segment plots.|
-| [`rbar`]() | Finds best interval of overlapping series over a  period of years, and calculating rbar constant for a dataset over period of overlap. |
-| [`readers`]() | Reads data from supported file types (*.CSV and *.RWL) and stores them in dataframe. |
-| [`readme`]() | Goes to this website. |
-| [`report`]() | Generates a report about absent rings in the data set. |
-| [`series_corr`]() |  Crossdating function that focuses on the comparison of one series to the master chronology. |
-| [`stats`]() | Generates summary statistics for RWL and CSV format files. |
-| [`summary`]() | Generates a summary for RWL and CSV format files. |
-| [`xdate`]() | Crossdating function for dplPy loaded datasets. |
-
 ### Obtain Git
 
 Clone (and move into) the dplPy Git repository with:
@@ -106,52 +86,59 @@ if directory[-1] != 'src':
 import dplpy as dpl
 ```
 
-### Readers
+---
 
-!!! Info "Supported data types"
-        dplPy currently supports `csv` and `rwl` data formats.
+## Usage
 
-To load (read) data into a dataframe, do:
+DplPy is currently available as a Python [module](https://docs.python.org/3/tutorial/modules.html) with a number of [functions](https://www.w3schools.com/python/python_functions.asp), which in turn have parameters one can set. Here is a list of functions for dplPy (in alphabetical order):
 
+| Function | Description |
+| --- | --- |
+| [`ar_func`](#ar_func) | Fits series to autoregressive (AR) models and related functions |
+| [`autoreg`](#autoreg) | Fits series to autoregressive (AR) models and related functions |
+| [`chron`](#chron) | Creates a mean value chronology for a dataset, typically the ring width indices of a detrended series |
+| [`detrend`](#detrend) | Detrends a given series or data frame, first by fitting data to curve(s), with spline(s) as the default, and then by calculating residuals or differences compared to the original data. |
+| [`help`](#help) | Displays help (alpha). |
+| [`plot`](#plot) | Generates line, spaghetti or segment plots.|
+| [`rbar`](#rbar) | Finds best interval of overlapping series over a  period of years, and calculating rbar constant for a dataset over period of overlap. |
+| [`readers`](#readers) | Reads data from supported file types (*.CSV and *.RWL) and stores them in dataframe. |
+| [`readme`](#readme) | Goes to this website. |
+| [`report`](#report) | Generates a report about absent rings in the data set. |
+| [`series_corr`](#series_corr) |  Crossdating function that focuses on the comparison of one series to the master chronology. |
+| [`stats`](#stats) | Generates summary statistics for RWL and CSV format files. |
+| [`summary`](#summary) | Generates a summary for RWL and CSV format files. |
+| [`xdate`](#xdate) | Crossdating function for dplPy loaded datasets. |
+
+### `ar_func`
+
+Main function for autoregressive (AR) modeling. Returns residuals and mean of best AR fit with specified lag (default = 5).
+
+Usage: 
 ```
->>> data = dpl.readers("path/to/data.format")
-```
-
-!!! Example
-    ```
-    >>> data  = dpl.readers("../tests/data/rwl/ca533.rwl")
-    ```
-
-Expected outputs:
-
-- A success/failure message;
-- A list of series within the data file.
-
-### Summary
-
-The summary function generates a summary of each series recorded in `rwl`  and `csv` format files.
-
-```
->>> dpl.summary(<data>)
-```
-
-Expected outputs:
-
-- Table with `count`, `mean`, `std`, `min`, `25%`, `50%`, `75%`, `max` for each series in data file.
-
-### General Statistics
-
-Generates summary statistics for `rwl`  and `csv` format files.
-
-```
->>> dpl.stats(<data>)
+>>> dpl.ar_func(<data>["<series>"], <lag number>)
 ```
 
-Expected outputs:
+Expected output(s):
 
-- Table with `first`, `last`, `year`, `mean`, `median`, `stdev`, `skew`, `gini`, `ar1` for each series in data file.
+- An array of residual+mean for selected series.
 
-### Detrending
+
+### `autoreg`
+
+Secondary function for AR modeling. Returns parameters of best fit AR model with specified lag (default = 5); Best AR model is selected based on AIC value.
+
+Usage: 
+```
+>>> dpl.autoreg(<data>["<series>"], <lag number>)
+```
+
+Expected output(s):
+
+- A table listing autoregressive paramenters for the specified series;
+ 
+
+### `chron`
+### `detrend`
 
 Detrends a series by fitting to spline and calculating residuals.
 
@@ -174,31 +161,59 @@ Expected outputs:
 - A graph depicting the fitted curve;
 - A graph depicting residuals variability.
 
-### Autoregressive modeling
+### `help`
+### `plot`
+### `rbar`
+### `readers`
 
-The current autoregressive modeling functions are called with
+!!! Info "Supported data types"
+        dplPy currently supports `csv` and `rwl` data formats.
+
+To load (read) data into a dataframe, do:
 
 ```
-(1) >>> dpl.autoreg(<data>["<series>"], lag_number)
+>>> data = dpl.readers("path/to/data.format")
 ```
-and
-```
-(2) >>> dpl.ar_func(<data>["<series>"])
-```
-As default, the max lag is set to 5; Adding a second parameter (integer) to change max lag (valid for function `(1)`).
-
-The first `(1)` function calculates the autoregressive parameters, whilst th second `(2)` calculates the residual+mean (by choosing best AR model fit with the selected max lag.)
 
 !!! Example
     ```
-    >>> dpl.autoreg(data["CAM191"], 10) #This changes the max lag to 10 instead of the default 5.
-    >>> dpl.ar_func(data["CAM191"])
+    >>> data  = dpl.readers("../tests/data/rwl/ca533.rwl")
     ```
 
 Expected outputs:
 
-- (1) a table listing autoregressive paramenters for the specified series;
-- (2) an array of residual+mean for selected series.
+- A success/failure message;
+- A list of series within the data file.
+
+### `readme`
+### `report`
+### `series_corr`
+### `stats`
+
+Generates summary statistics for `rwl`  and `csv` format files.
+
+```
+>>> dpl.stats(<data>)
+```
+
+Expected outputs:
+
+- Table with `first`, `last`, `year`, `mean`, `median`, `stdev`, `skew`, `gini`, `ar1` for each series in data file.
+
+
+### `summary`
+
+The summary function generates a summary of each series recorded in `rwl`  and `csv` format files.
+
+```
+>>> dpl.summary(<data>)
+```
+
+Expected outputs:
+
+- Table with `count`, `mean`, `std`, `min`, `25%`, `50%`, `75%`, `max` for each series in data file.
+
+### `xdate`
 
 ---
 
