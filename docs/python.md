@@ -202,6 +202,48 @@ Secondary function for AR modeling. Returns parameters of best fit AR model with
     ```
  
 ### `chron`
+
+Creates a mean value chronology for a dataset, typically the ring width indices of a detrended series. Takes three optional arguments `biweight`, `prewhiten`, and `plot`. They determine whether to find means using tukey's biweight robust mean (default True), whether to prewhiten data by fitting to an AR model (default False), and whether to plot the results of the chronology (default True).
+
+!!! info "Usage" 
+    ```
+    >>> dpl.chron(<data>, prewhiten=False, biweight=True, plot=True)
+    ```
+
+    Example:
+    ```
+    # Detrending data first
+    >>> rwi_data = dpl.detrend(ca533)
+
+    # Creating chronology using detrended data 
+    >>> dpl.chron(rwi_ca533, prewhiten=False, biweight=True, plot=True)
+    ```
+
+!!! Abstract "Expected output(s)"
+
+    The expected output is the mean value chronology of a specific dataframe.
+
+    The expected output from the example above will look similar to this:
+    ```
+            Mean RWI	Sample depth
+    Year		
+    626	    0.371605	1
+    627	    0.284398	1
+    628	    0.306523	1
+    629	    0.416333	1
+    630	    0.482462	1
+    ...	    ...	        ...
+    1979	1.053427	21
+    1980	1.455353	21
+    1981	1.252526	21
+    1982	1.362244	21
+    1983	1.314827	21
+    1358 rows × 2 columns
+    ```
+
+    If `plot=True` then a plot will also be generated:
+    ![py_ca533_chron](assets/py_ca533_chron.png)
+
 ### `detrend`
 
 Detrends a series by fitting to spline and calculating residuals.
