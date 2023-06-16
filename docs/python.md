@@ -242,6 +242,7 @@ Creates a mean value chronology for a dataset, typically the ring width indices 
     ```
 
     If `plot=True` then a plot will also be generated:
+    
     ![py_ca533_chron](assets/py_ca533_chron.png)
 
 ### `detrend`
@@ -264,10 +265,11 @@ Detrends a given series or dataframe, first by fitting data to curve(s), with `s
     ```
     # Detrending series CAM191 from dataframe ca533, using the spline fitting method and calculating residuals compared to the original data 
     >>> rwi_data = dpl.detrend(ca533["CAM191"], fit="spline", method="residual", plot=True)
-    ```
+
     # Creating chronology using detrended data 
     >>> dpl.chron(rwi_ca533, prewhiten=False, biweight=True, plot=True)
-
+    ```
+    
 !!! Abstract "Expected output(s)"
 
     The expected output is the a list of detrended values (for the entire dataset or for a specific series)
@@ -289,6 +291,7 @@ Detrends a given series or dataframe, first by fitting data to curve(s), with `s
     ```
 
     If `plot=True` then a plot will also be generated:
+    
     ![py_ca533_CA191_detrend](assets/py_ca533_CA191_detrend.png)
 
 ### `help`
