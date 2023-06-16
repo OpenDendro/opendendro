@@ -207,7 +207,7 @@ Creates a mean value chronology for a dataset, typically the ring width indices 
 
 !!! info "Usage" 
     ```
-    >>> dpl.chron(<data>, prewhiten=False, biweight=True, plot=True)
+    >>> dpl.chron(<data>, prewhiten=<True/False>, biweight=<True/False>, plot=<True/False>)
     ```
 
     Example:
@@ -246,26 +246,50 @@ Creates a mean value chronology for a dataset, typically the ring width indices 
 
 ### `detrend`
 
-Detrends a series by fitting to spline and calculating residuals.
+Detrends a given series or dataframe, first by fitting data to curve(s), with `spline` as the default, and then by calculating residuals (default = `residual`) or differences (`difference`) compared to the original data. Other supported curve fitting methods are `ModNegex` (modified negative exponential), `Hugershoff`, `linear`, `horizontal`.
 
-!!! Warning "Important"
-        Spline is the current detrent default, line graph shows residuals. The `detrend` funtion can modified to fit Hugershoff, modified negative exponential, linear and horizonal methods.
-        These will become an option available in the short term future.
-
-```
->>> dpl.detrend(data["<series>"])
-```
-Change `<series>` to the desired series to detrend.
-
-!!! Example
+!!! info "Usage" 
     ```
-    >>> dpl.detrend(data["CAM191"])
+    # Detrend the entire dataframe
+    >>> dpl.detrend(<data>)
+
+    # Detrending a series part of the dataframe
+    >>> dpl.detrend(<data>["<series>"])
+
+    # Detrending function and its options
+    >>> dpl.detrend(<data>["<series>"], fit="<fitting method>", method="<comparison method>", plot=<True/False>) 
     ```
 
-Expected outputs:
+    Example:
+    ```
+    # Detrending series CAM191 from dataframe ca533, using the spline fitting method and calculating residuals compared to the original data 
+    >>> rwi_data = dpl.detrend(ca533["CAM191"], fit="spline", method="residual", plot=True)
+    ```
+    # Creating chronology using detrended data 
+    >>> dpl.chron(rwi_ca533, prewhiten=False, biweight=True, plot=True)
 
-- A graph depicting the fitted curve;
-- A graph depicting residuals variability.
+!!! Abstract "Expected output(s)"
+
+    The expected output is the a list of detrended values (for the entire dataset or for a specific series)
+
+    The expected output from the example above will look similar to this:
+    ```
+    1180    1.180835
+    1181    1.511543
+    1182    1.870558
+    1183    2.197630
+    1184    1.815025
+            ...   
+    1966    1.060515
+    1967    1.209514
+    1968    1.282459
+    1969    1.392746
+    1970    1.239629
+    Name: CAM191, Length: 791, dtype: float64
+    ```
+
+    If `plot=True` then a plot will also be generated:
+    ![py_ca533_CA191_detrend](assets/py_ca533_CA191_detrend.png)
 
 ### `help`
 ### `plot`
