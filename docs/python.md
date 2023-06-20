@@ -295,7 +295,40 @@ Detrends a given series or dataframe, first by fitting data to curve(s), with `s
     ![py_ca533_CA191_detrend](assets/py_ca533_CA191_detrend.png)
 
 ### `help`
+
+!!! Warning "**Under Development**"
+
+!!! Info "Usage"
+    ```
+    dpl.help()
+    ```
+
 ### `plot`
+
+Plots a given dataframe or series of a specific dataframe in either line (default), spaghetti (`spag`) or segment (`seg`) plots.
+
+!!! info "Usage"
+    ```
+    # Plot entire data
+    dpl.plot(<data>)
+
+    # Plot series subset of dataframe with a specified plot type
+    dpl.plot(<data>["<series>"], type=<plot type>)
+    ```
+
+    Example:
+    ```
+    # Plotting entire dataset with a spaghetti plot
+    dpl.plot(ca533, type=spag)
+    ```
+
+!!! Abstract "Expected output"
+    A graph of the specified dataframe.
+
+    From the example above, the expected output would look something similar to the below plot:
+
+    ![py_ca533_spag](assets/py_ca533_spag.png)
+
 ### `rbar`
 ### `readers`
 
