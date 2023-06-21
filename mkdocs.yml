@@ -8,7 +8,7 @@ repo_name: opendendro/opendendro
 repo_url: https://github.com/opendendro/opendendro
 edit_uri: edit/main/docs/
 # Copyright
-copyright: 'Copyright &copy; 2021 - 2022 Andy Bunn'
+copyright: 'Copyright &copy; 2021 - 2023 Andy Bunn'
 
 # Page tree
 nav:
@@ -16,12 +16,12 @@ nav:
   - Codebase:
     - Python: python.md
     - R: r.md
-    - Apps: apps.md    
+    - Apps: apps.md
     - Fortran77: fortran.md
   - Cyberinfrastructure:
     - CyVerse: cyverse.md
     - Docker: docker.md
-  - Data: 
+  - Data:
     - Data: data.md
     - ITRDB: itrdb.md
 
@@ -112,7 +112,7 @@ markdown_extensions:
 
 extra_css:
   - stylesheets/extra.css
- 
+
 plugins:
     - search
     - mkdocstrings

@@ -24,6 +24,27 @@ For decades, much of the software used in dendrochronology has been in legacy pr
 
 Our motivation with this project is to develop and foster a community of developers to maintain and build open-source software that will be usable by paleoclimatologists using tree-ring data. Modernizing and enhancing this software will also extend both their reach and utility beyond the dendrochronology community and allow integration into related initiatives in the atmospheric and earth sciences. We hope that making these tools open source will also facilitate further collaborative development, broaden the responsibility for collective maintenance and enhancement of this software, and ensure the persistence of these unique tools. 
 
+
+### Why Write Code?
+
+Writing code in languages like Python or R makes reproducible science easier compared to GUI-based analysis. Scripting offers transparency, automation, replication, portability, extensibility, and version control, which enhance reproducibility in scientific research.
+
++ Transparency and Documentation: Scripts are plain-text files that document the analysis workflow, making it easier for other researchers to understand and reproduce the analysis. GUI-based analysis lacks clear documentation of the steps and parameters used.
+
++ Automation and Efficiency: Scripts automate repetitive tasks, saving time and reducing human errors. Code snippets, functions, and libraries can be reused across multiple datasets or scenarios, ensuring efficient and consistent analysis.
+
++ Replication: Scripts facilitate straightforward replication of analyses. Other researchers can run the script on their own machines with the same input data and obtain identical results. GUI-based analysis often requires recreating specific interactions and settings, which is error-prone and time-consuming.
+
++ Portability and Compatibility: Scripts in Python or R are portable and can run on different platforms without significant modifications. GUI-based tools may have platform-specific dependencies or version requirements, limiting their portability and compatibility.
+
++ Extensibility and Flexibility: Scripting languages provide a wide range of libraries, packages, and modules, enabling advanced analyses, integration with external tools, and customization. GUI-based tools often have limited built-in functionality, making extension and adaptation challenging.
+
++ Version Control: Scripts can easily integrate with version control systems like Git, allowing researchers to track changes, collaborate, and maintain an analysis history. Version control enhances transparency and ensures reproducibility.
+
+By leveraging scripting and sharing code, researchers can promote collaboration, verification, and efficient building upon each other's work in scientific research.
+
+
+
 ## Getting Started
 
 Those working or interested in `R` can begin [here](r.md) or jump straight into [Learning to Love dplR](https://opendendro.github.io/dplR-workshop/)
