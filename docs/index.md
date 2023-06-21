@@ -22,8 +22,7 @@ For decades, much of the software used in dendrochronology has been in legacy pr
 
 ![](https://imgs.xkcd.com/comics/dependency.png)
 
-Our motivation with this project is to develop and foster a community of developers to maintain and build open-source software that will be usable by paleoclimatologists using tree-ring data. Modernizing and enhancing this software will also extend both their reach and utility beyond the dendrochronology community and allow integration into related initiatives in the atmospheric and earth sciences. We hope that making these tools open source will also facilitate further collaborative development, broaden the responsibility for collective maintenance and enhancement of this software, and ensure the persistence of these unique tools. 
-
+Our motivation with this project is to develop and foster a community of developers to maintain and build open-source software that will be usable by researchers who use tree-ring data. Modernizing and enhancing this software will also extend both their reach and utility beyond the dendrochronology community and allow integration into related initiatives in the atmospheric and earth sciences. We hope that making these tools open source will also facilitate further collaborative development, broaden the responsibility for collective maintenance and enhancement of this software, and ensure the persistence of these  tools. 
 
 ### Why Write Code?
 
@@ -42,8 +41,6 @@ Writing code in languages like Python or R makes reproducible science easier com
 + Version Control: Scripts can easily integrate with version control systems like Git, allowing researchers to track changes, collaborate, and maintain an analysis history. Version control enhances transparency and ensures reproducibility.
 
 By leveraging scripting and sharing code, researchers can promote collaboration, verification, and efficient building upon each other's work in scientific research.
-
-
 
 ## Getting Started
 
