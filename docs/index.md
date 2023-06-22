@@ -53,16 +53,4 @@ Users of Python can being [here](python.md)
 
 ## FAIR
 
-The repository is organized (in the attempt) to enable reproducible research as part of the [FAIR data principles](https://www.go-fair.org/fair-principles/).
-
-You can (re)run these analyses using your own computer, on commercial cloud, or a data science workbench [CyVerse](https://cyverse.org) Discovery Environment.
-
-Clone the repo to your local or VM:
-
-```
-git clone https://github.com/opendendro/opendendro
-```
-
-```
-gh repo clone opendendro/opendendro
-```
+The openDendro project is aligned with the [FAIR data principles](https://www.go-fair.org/fair-principles/), emphasizing the Findability, Accessibility, Interoperability, and Reusability of research data. Our repository is designed to facilitate reproducible research, ensuring that data and software resources are organized, documented, and accessible. We prioritize interoperability, enabling seamless integration with existing tools and frameworks. By following open licensing and attribution practices, we promote the reusability of our resources, fostering replication, validation, and extension of research findings. Join us in our commitment to FAIR principles and advancing dendrochronology with open and transparent practices.
