@@ -41,5 +41,3 @@ Because `dplR` includes both C and Fortran code, you will need the appropriate c
 ## Getting Started
 
 New users of dplR can begin by working with the introductory chapters in [Learning to Love dplR](https://opendendro.github.io/dplR-workshop/) which contains instructional material for using `dplR`.
-
-Users interested in crossdating should visit the [`xDater` app](https://andybunn.shinyapps.io/xDateR/). 

@@ -8,8 +8,6 @@
 
 ![](assets/openDendroSticker.png){width=250}
 
-Code, example data, and manuscript supplemental materials which accompany **openDendro**
-
 Lead Author: [Andy Bunn](https://github.com/AndyBunn/) [![](https://orcid.org/sites/default/files/images/orcid_16x16.png)](http://orcid.org/0000-0001-9027-2162)
 
 Co-Authors: [Ed Cook](https://scholar.google.com/citations?user=F7jhxf4AAAAJ&hl=en&oi=sra), [Kevin Anchukaitis](http://www.u.arizona.edu/~kanchukaitis/) [![](https://orcid.org/sites/default/files/images/orcid_16x16.png)](http://orcid.org/0000-0002-8509-8080),  [Tyson Lee Swetnam](https://tyson-swetnam.github.io/) [![](https://orcid.org/sites/default/files/images/orcid_16x16.png)](http://orcid.org/0000-0002-6639-7181)
@@ -20,14 +18,14 @@ Welcome to openDendro, the home of an open-source framework for the essential an
 At openDendro, we recognize the importance of these foundational tools in advancing scientific knowledge, enabling collaboration, reproducibility, and the collective progress of the dendrochronology community. Our framework seamlessly integrates with popular programming languages R and Python, accommodating diverse researchers' preferences and workflows, while embracing open-source principles to foster innovation and facilitate the sharing of knowledge within the field.
 
 
-### History and Motivation
+## History and Motivation
 For decades, much of the software used in dendrochronology has been in legacy programming languages which have been maintained by a small number of volunteers. These codebases are at risk of becoming inoperable or incompatible as advances in computing architecture accelerate. This is colloquially known as the "Some random guy in Nebraska" problem in homage to a cartoon from xckd.
 
 ![](https://imgs.xkcd.com/comics/dependency.png)
 
 Our motivation with this project is to develop and foster a community of developers to maintain and build open-source software that will be usable by researchers who use tree-ring data. Modernizing and enhancing this software will also extend both their reach and utility beyond the dendrochronology community and allow integration into related initiatives in the atmospheric and earth sciences. We hope that making these tools open source will also facilitate further collaborative development, broaden the responsibility for collective maintenance and enhancement of this software, and ensure the persistence of these  tools. 
 
-### Why Write Code?
+## Why Write Code?
 
 Writing code in languages like Python or R makes reproducible science easier compared to GUI-based analysis. Scripting offers transparency, automation, replication, portability, extensibility, and version control, which enhance reproducibility in scientific research.
 
@@ -47,9 +45,11 @@ By leveraging scripting and sharing code, researchers can promote collaboration,
 
 ## Getting Started
 
-Those working or interested in `R` can begin [here](r.md) or jump straight into [Learning to Love dplR](https://opendendro.github.io/dplR-workshop/)
+Jump into the codebases and our apps.
 
-Users of Python can being [here](python.md)
++ [dplPy](python.md)
++ [dplR](r.md)
++ [Apps](apps.md)
 
 ## FAIR
 
