@@ -19,12 +19,11 @@ nav:
     - R: r.md
     - Apps: apps.md
     - Fortran77: fortran.md
+  - Bootcamp: bootcamp.md
+  - Contribute: contribute.md
   - Cyberinfrastructure:
     - CyVerse: cyverse.md
     - Docker: docker.md
-  - Data:
-    - Data: data.md
-    - ITRDB: itrdb.md
 
 # Configuration
 imgwidth: 70px;
