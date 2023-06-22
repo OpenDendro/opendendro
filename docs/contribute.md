@@ -6,17 +6,12 @@ We want to highlight the importance of community support for open-source project
 
 Help us test and shape the future of openDendro's dplPy codebase. As a tester, you'll evaluate our Python functions for tree-ring analysis, ensuring their functionality and usability. Your feedback is vital in refining these cutting-edge tools, enhancing the user experience for researchers worldwide.
 
-<<<<<<< HEAD
 *Requirements:*
-=======
-####Requirements:
->>>>>>> b0666eb1fafdc543057f12ba4f8313733d346548
 
 + Familiarity with tree-ring analysis techniques (e.g., chronology building, detrending)
 + Basic knowledge of Python programming
 + Eagerness to break things
 
-<<<<<<< HEAD
 *Responsibilities:*
 
 + Test openDendro's Python functions, providing feedback on performance, accuracy, and usability
@@ -29,29 +24,8 @@ Help us test and shape the future of openDendro's dplPy codebase. As a tester, y
 + Firsthand experience in testing and providing feedback for scientific tools
 + Recognition for your contributions to openDendro
 + Collaboration and networking opportunities with fellow testers and researchers
-=======
-####Responsibilities:
-
-+Test openDendro's Python functions, providing feedback on performance, accuracy, and usability
-+Report bugs, issues, and suggestions for improvement
-+Collaborate with the openDendro team, sharing insights and experiences
-
-####Benefits:
-
-+Active contribution to advancing tree-ring analysis software
-+Firsthand experience in testing and providing feedback for scientific tools
-+Recognition for your contributions to openDendro
-+Collaboration and networking opportunities with fellow testers and researchers
->>>>>>> b0666eb1fafdc543057f12ba4f8313733d346548
 
 Join us on this exciting journey as we enhance openDendro's capabilities. Shape the future of tree-ring analysis software by becoming a tester for our Python functions.
 
 To learn more, contact us at openDendro@gmail.com.
 
-### Attention Developers
-
-<<<<<<< HEAD
-Word
-=======
-
->>>>>>> b0666eb1fafdc543057f12ba4f8313733d346548
