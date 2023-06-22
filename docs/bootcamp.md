@@ -20,10 +20,10 @@ openDendro is an open-source framework for software tools used in dendrochronolo
 
 Over the course of two days, participants will have the opportunity to engage in hands-on training with openDendro, gaining practical experience in both R and Python. The bootcamp will cover a range of topics, including:
 
-+🌳 Using openDendro's core analytic software tools
-+🔧 Hands-on exercises and case studies
-+📚 Best practices for implementing open-science methodologies
-+🔄 Navigating between R and Python environments
++ 🌳 Using openDendro's core analytic software tools
++ 🔧 Hands-on exercises and case studies
++ 📚 Best practices for implementing open-science methodologies
++ 🔄 Navigating between R and Python environments
 
 ###💼 Who Should Attend? 
 
@@ -36,3 +36,6 @@ Please visit the [registration website](https://docs.google.com/forms/d/e/1FAIpQ
 ###💰 Support 
 
 We are pleased to offer limited support for student and early-career researchers by providing funds to help defray expenses associated with the bootcamp. Details on eligibility and the application process can be found on the [registration page](https://docs.google.com/forms/d/e/1FAIpQLSf2ijN-X3eo9qA0ZCQYeRFDL2GVR3sHZvPp7uknwNd-05zGBg/viewform?usp=sf_link).
+
+Please note that spaces are limited, so early registration is encouraged.
+

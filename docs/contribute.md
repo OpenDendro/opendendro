@@ -6,24 +6,24 @@ We want to highlight the importance of community support for open-source project
 
 Help us test and shape the future of openDendro's dplPy codebase. As a tester, you'll evaluate our Python functions for tree-ring analysis, ensuring their functionality and usability. Your feedback is vital in refining these cutting-edge tools, enhancing the user experience for researchers worldwide.
 
-####Requirements:
+*Requirements:*
 
 + Familiarity with tree-ring analysis techniques (e.g., chronology building, detrending)
 + Basic knowledge of Python programming
 + Eagerness to break things
 
-####Responsibilities:
+*Responsibilities:*
 
-+Test openDendro's Python functions, providing feedback on performance, accuracy, and usability
-+Report bugs, issues, and suggestions for improvement
-+Collaborate with the openDendro team, sharing insights and experiences
++ Test openDendro's Python functions, providing feedback on performance, accuracy, and usability
++ Report bugs, issues, and suggestions for improvement
++ Collaborate with the openDendro team, sharing insights and experiences
 
-####Benefits:
+*Benefits:*
 
-+Active contribution to advancing tree-ring analysis software
-+Firsthand experience in testing and providing feedback for scientific tools
-+Recognition for your contributions to openDendro
-+Collaboration and networking opportunities with fellow testers and researchers
++ Active contribution to advancing tree-ring analysis software
++ Firsthand experience in testing and providing feedback for scientific tools
++ Recognition for your contributions to openDendro
++ Collaboration and networking opportunities with fellow testers and researchers
 
 Join us on this exciting journey as we enhance openDendro's capabilities. Shape the future of tree-ring analysis software by becoming a tester for our Python functions.
 
@@ -31,4 +31,4 @@ To learn more, contact us at openDendro@gmail.com.
 
 ### Attention Developers
 
-
+Word
