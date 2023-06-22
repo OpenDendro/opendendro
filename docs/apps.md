@@ -9,7 +9,7 @@ In keeping with the rationale of openDendro, the entire workflow of these apps c
 It can be launched in a [browser](https://andybunn.shinyapps.io/xDateR/) or run from the command line in `R` via:
 
 ```
-install.packages("shiny")
+install.packages("shiny") # if not already installed
 library(shiny)
 runGitHub("xDater", "opendendro",ref = "main")
 ```
@@ -20,7 +20,7 @@ runGitHub("xDater", "opendendro",ref = "main")
 It can be launched in a [browser](https://andybunn.shinyapps.io/iDetrend/) or run from the command line in `R` via:
 
 ```
-install.packages("shiny")
+install.packages("shiny") # if not already installed
 library(shiny)
 runGitHub("iDetrend", "opendendro",ref = "main")
 ```
@@ -36,7 +36,7 @@ Non-traditional approaches to scientific data, such as visualization, sonificati
 It can be launched in a [browser](https://andybunn.shinyapps.io/treeSong/). It is fairly computationally expensive to run and users might find it easier to run from the command line in `R` via:
 
 ```
-install.packages("shiny")
+install.packages("shiny") # if not already installed
 library(shiny)
 runGitHub("treeSong", "opendendro",ref = "main")
 ```
