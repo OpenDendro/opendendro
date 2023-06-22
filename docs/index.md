@@ -15,7 +15,10 @@ Lead Author: [Andy Bunn](https://github.com/AndyBunn/) [![](https://orcid.org/si
 Co-Authors: [Ed Cook](https://scholar.google.com/citations?user=F7jhxf4AAAAJ&hl=en&oi=sra), [Kevin Anchukaitis](http://www.u.arizona.edu/~kanchukaitis/) [![](https://orcid.org/sites/default/files/images/orcid_16x16.png)](http://orcid.org/0000-0002-8509-8080),  [Tyson Lee Swetnam](https://tyson-swetnam.github.io/) [![](https://orcid.org/sites/default/files/images/orcid_16x16.png)](http://orcid.org/0000-0002-6639-7181)
 
 ## Welcome
-Welcome to the home of openDendro -- an open-source framework of the base analytic software tools used in dendrochronology in both the R and Python programming languages. Our goal is to create and curate a unified set of critical tools in open-source environments that will provide the necessary baseline for researchers using tree-ring data to adopt open-science practices and increase both rigor and transparency in dendrochronology.
+Welcome to openDendro, the home of an open-source framework for the essential analytic software used in dendrochronology. Our aim is to provide researchers working with tree-ring data the necessary tools in open-source environments, promoting open science practices, and enhancing rigor and transparency in dendrochronology.
+
+At openDendro, we recognize the importance of these foundational tools in advancing scientific knowledge, enabling collaboration, reproducibility, and the collective progress of the dendrochronology community. Our framework seamlessly integrates with popular programming languages R and Python, accommodating diverse researchers' preferences and workflows, while embracing open-source principles to foster innovation and facilitate the sharing of knowledge within the field.
+
 
 ### History and Motivation
 For decades, much of the software used in dendrochronology has been in legacy programming languages which have been maintained by a small number of volunteers. These codebases are at risk of becoming inoperable or incompatible as advances in computing architecture accelerate. This is colloquially known as the "Some random guy in Nebraska" problem in homage to a cartoon from xckd.
