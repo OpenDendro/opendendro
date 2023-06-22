@@ -19,7 +19,7 @@ At openDendro, we recognize the importance of these foundational tools in advanc
 
 
 ## History and Motivation
-For decades, much of the software used in dendrochronology has been in legacy programming languages which have been maintained by a small number of volunteers. These codebases are at risk of becoming inoperable or incompatible as advances in computing architecture accelerate. This is colloquially known as the "Some random guy in Nebraska" problem in homage to a cartoon from xckd.
+For decades, much of the software used in dendrochronology has been in legacy programming languages which have been maintained by a small number of volunteers. These codebases are at risk of becoming inoperable or incompatible as advances in computing architecture accelerate. This is colloquially known as the ["Some random person in Nebraska"](https://xkcd.com/2347/) problem in homage to a cartoon from xckd. And that random person is Ed Cook of course.
 
 ![](https://imgs.xkcd.com/comics/dependency.png)
 
