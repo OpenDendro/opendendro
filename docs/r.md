@@ -1,17 +1,19 @@
 ![dplR](https://github.com/AndyBunn/dplR/raw/master/dplR_Sticker.png){align="left" width="100"}
 
-The [dplR](https://github.com/AndyBunn/dplR) library is hosted on CRAN and can be run in RStudio and RStudio-Server (in browser).
-
-## Overview
-
-Perform tree-ring analyses such as detrending, chronology building, and crossdating. Read and write standard file formats used in dendrochronology.
+The [dplR](https://github.com/opendendro/dplR) library is hosted on CRAN and can be run in RStudio and RStudio-Server (in browser).
 
 ## Introduction
-The `R` language and programming environment is now commonly used in dendrochronology. `R` is the world's  preeminent open-source statistical computing software and its power can be harnessed for tree-ring science through the contribution of add-on packages which are freely available on the internet. The R version of `openDendro`'s codebase is contained in the package `dplR`.
+The R language and programming environment is now commonly used in dendrochronology. R is the world's  preeminent open-source statistical computing software and its power can be harnessed for tree-ring science through the contribution of add-on packages which are freely available on the internet. The R version of openDendro's codebase is contained in the package dplR.
 
-## Installation
+## Installation on Your Own Machine
 
-### CRAN
+You can run dplR in the cloud after making a free account at [posit.cloud](https://posit.cloud/content/yours?sort=name_asc) or using the [associated tools](cloud.md) specifically for openDendro.
+
+## Installation on Your Own Machine
+
+You can run dplR on your own computer. First [install R](https://cloud.r-project.org/) and then dplR which is an ad-on package to R. See [Learning to Love dplR](https://opendendro.github.io/dplR-workshop/) for more details.
+
+### Stable Version
 
 The latest, stable, release version of `dplR` can be installed from [The Comprehensive R Archive Network (CRAN)](https://cran.r-project.org/) as follows:
 
@@ -33,7 +35,7 @@ install.packages("dplR", repos = "https://andybunn.r-universe.dev/")
 Alternatively, the development version can be installed from the source code with the `devtools` package.
 
 ```R
-devtools::install_github("andybunn/dplR")
+devtools::install_github("opendendro/dplR")
 ```
 
 Because `dplR` includes both C and Fortran code, you will need the appropriate compilers installed on your system to build from source.
