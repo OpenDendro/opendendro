@@ -1,8 +1,6 @@
-## Get Invovled!
+Community support and participation are vital for open-source projects like openDendro. These projects rely on individuals who generously contribute their time and knowledge to make them successful. By getting involved as a tester or developer, you play a vital role in ensuring the growth and sustainability of openDendro. Your contributions help create a collaborative environment where researchers can benefit from innovative tools and shared expertise. Together, we can foster a vibrant community that pushes the boundaries of tree-ring analysis and promotes knowledge sharing. Join us today in supporting openDendro and making a difference in the field!
 
-We want to highlight the importance of community support for open-source projects like openDendro. These projects rely on individuals who generously contribute their time and knowledge to make them successful. By getting involved as a tester or developer, you play a vital role in ensuring the growth and sustainability of openDendro. Your contributions help create a collaborative environment where researchers can benefit from innovative tools and shared expertise. Together, we can foster a vibrant community that pushes the boundaries of tree-ring analysis and promotes knowledge sharing. Join us today in supporting openDendro and making a difference in the field!
-
-### 🌳🔬 Join Our Testing Team for openDendro Python Functions! 🔬🌳
+### Join Our Testing Team for openDendro Python Functions!
 
 Help us test and shape the future of openDendro's dplPy codebase. As a tester, you'll evaluate our Python functions for tree-ring analysis, ensuring their functionality and usability. Your feedback is vital in refining these cutting-edge tools, enhancing the user experience for researchers worldwide.
 
