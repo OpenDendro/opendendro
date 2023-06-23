@@ -1,12 +1,12 @@
-# The dplPy User Manual (Beta)
+## The dplPy User Manual (Beta)
 
 Welcome to the dplPy manual.
 
 ---
 
-## Requirements, Installation and Accessibility
+### Requirements, Installation and Accessibility
 
-### Requirements
+#### Requirements
 
 * Git 
 * Python v3.10=< (although functional on Python v3.8=<, we suggest using Python v3.10=<)
