@@ -8,13 +8,13 @@
 
 Authors: [Andy Bunn](https://github.com/AndyBunn/) [![](https://orcid.org/sites/default/files/images/orcid_16x16.png)](http://orcid.org/0000-0001-9027-2162), [Ed Cook](https://scholar.google.com/citations?user=F7jhxf4AAAAJ&hl=en&oi=sra), [Kevin Anchukaitis](http://www.u.arizona.edu/~kanchukaitis/) [![](https://orcid.org/sites/default/files/images/orcid_16x16.png)](http://orcid.org/0000-0002-8509-8080),  [Tyson Lee Swetnam](https://tyson-swetnam.github.io/) [![](https://orcid.org/sites/default/files/images/orcid_16x16.png)](http://orcid.org/0000-0002-6639-7181)
 
-![](assets/openDendroSticker.png){width=250}
 
-<img src="assets/openDendroSticker.png" align="left" width="280"/>
+<img src="assets/openDendroSticker.png" align="left" width="250"/>
 ## Welcome
 Welcome to openDendro, the home of an open-source framework for the essential analytic software used in dendrochronology. Our aim is to provide researchers working with tree-ring data the necessary tools in open-source environments, promoting open science practices, and enhancing rigor and transparency in dendrochronology.
 
 At openDendro, we recognize the importance of these foundational tools in advancing scientific knowledge, enabling collaboration, reproducibility, and the collective progress of the dendrochronology community. Our framework seamlessly integrates with popular programming languages R and Python, accommodating diverse researchers' preferences and workflows, while embracing open-source principles to foster innovation and facilitate the sharing of knowledge within the field.
+
 <br clear="left"/>
 
 ## History and Motivation
