@@ -21,7 +21,7 @@ nav:
     - Fortran77: fortran.md
   - Bootcamp: bootcamp.md
   - Contribute: contribute.md
-  - Cyberinfrastructure:
+  - Cyberinfrastructure: cloud.md
     - CyVerse: cyverse.md
     - Docker: docker.md
 

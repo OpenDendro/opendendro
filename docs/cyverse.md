@@ -1,8 +1,8 @@
-# CyVerse
+## CyVerse
 
 Containers for running `dplR` or `dplPy` are hosted on the CyVerse.org [Discovery Environment](https://de.cyverse.org)
 
-## Steps
+### Steps
 
 1. Create a CyVerse account [here](https://user.cyverse.org)
  

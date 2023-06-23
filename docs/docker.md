@@ -17,7 +17,6 @@ Install the [Docker Desktop](https://www.docker.com/products/docker-desktop) for
 Pull pre-existing Docker images for [RStudio-Server](https://hub.docker.com/u/rocker) or [JupyterLab](https://hub.docker.com/u/jupyter):
 
 ```
-docker pull rocker/geospatial:latest
 docker pull jupyter/datascience-notebook:latest
 ```
 
