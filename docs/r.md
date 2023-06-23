@@ -5,9 +5,15 @@ The [dplR](https://github.com/opendendro/dplR) library is hosted on CRAN and can
 ## Introduction
 The R language and programming environment is now commonly used in dendrochronology. R is the world's  preeminent open-source statistical computing software and its power can be harnessed for tree-ring science through the contribution of add-on packages which are freely available on the internet. The R version of openDendro's codebase is contained in the package dplR.
 
+<<<<<<< HEAD
 ## Working Online
 
 You can run dplR in the cloud on a web browser after making a free account at [posit.cloud](https://posit.cloud/content/yours?sort=name_asc) or using the [associated tools](cloud.md) specifically for openDendro.
+=======
+## Installation on Your Own Machine
+
+You can run dplR in the cloud after making a free account at [posit.cloud](https://posit.cloud/content/yours?sort=name_asc) or using the [associated tools](cloud.md) specifically for openDendro.
+>>>>>>> 64e77ac738d9742fdb6ec74378e4a8fb6665bb7c
 
 ## Installation on Your Own Machine
 
