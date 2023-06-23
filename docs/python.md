@@ -296,11 +296,11 @@ Detrends a given series or dataframe, first by fitting data to curve(s), with `s
 
 ### `help`
 
-!!! Warning "**Under Development**"
+!!! Warning "Under Development"
 
 !!! Info "Usage"
     ```
-    dpl.help()
+    >>> dpl.help()
     ```
 
 ### `plot`
@@ -310,16 +310,16 @@ Plots a given dataframe or series of a specific dataframe in either line (defaul
 !!! info "Usage"
     ```
     # Plot entire data
-    dpl.plot(<data>)
+    >>> dpl.plot(<data>)
 
     # Plot series subset of dataframe with a specified plot type
-    dpl.plot(<data>["<series>"], type=<plot type>)
+    >>> dpl.plot(<data>["<series>"], type=<plot type>)
     ```
 
     Example:
     ```
     # Plotting entire dataset with a spaghetti plot
-    dpl.plot(ca533, type=spag)
+    >>> dpl.plot(ca533, type=spag)
     ```
 
 !!! Abstract "Expected output"
@@ -330,6 +330,55 @@ Plots a given dataframe or series of a specific dataframe in either line (defaul
     ![py_ca533_spag](assets/py_ca533_spag.png)
 
 ### `rbar`
+
+Finds best interval of overlapping series over a long period of years and calculates rbar constant for a dataset. Supports a number of rbar methods: `osborn`, `67spline`, `frank`.
+
+!!! Warning "Further development underway. Future versions to prioritize number of series, number of years or both. Current version attempts to do both."
+
+!!! info "Usage"
+    ```
+    # Detrend data
+    >>> rwi_data = dpl.detrend(<data>, plot=False)
+
+    # Find common interval of detrended data
+    >>> start, end = dpl.common_interval(<data>)
+
+    # Calculate rbar coonstant
+    >>> dpl.rbar(rwi_data, start, end, method="<rbar method>")
+    ```
+
+    Example:
+    ```
+    # Detrend data
+    >>> rwi_data = dpl.detrend(ca533, plot=False)
+
+    # Find common interval of detrended data
+    >>> start, end = dpl.common_interval(ca533)
+
+    # Calculate rbar coonstant using the interval calculated above and using the Osborn method
+    >>> dpl.rbar(rwi_data, start, end, method="osborn")
+    ```
+
+!!! Abstract "Expected Output"
+
+    rbar returns a list of constants to multiply with each mean value generated for a range of years from a mean value chronology.
+
+    From the example above, the output is the following:
+    ```
+    [0.44170725878965766,
+    0.44170725878965766,
+    0.44170725878965766,
+    0.44170725878965766,
+    0.44170725878965766,
+    0.44170725878965766,
+    ...
+    0.44170725878965766,
+    0.44170725878965766,
+    0.44170725878965766,
+    0.44170725878965766,
+    0.44170725878965766]
+    ```
+
 ### `readers`
 
 !!! Info "Supported data types"
