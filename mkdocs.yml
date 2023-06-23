@@ -22,6 +22,7 @@ nav:
   - Bootcamp: bootcamp.md
   - Contribute: contribute.md
   - Cyberinfrastructure:
+    - Overview: cloud.md
     - CyVerse: cyverse.md
     - Docker: docker.md
 
