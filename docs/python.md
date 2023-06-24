@@ -602,7 +602,7 @@ Crossdating function for dplPy datasets.
     dpl.xdate(ca533_rwi, prewhiten=True, corr="Spearman", slide_period=50, bin_floor=100, p_val=0.05, show_flags=True)
     ```
 
-!!!! Abstract "Expected outputs"
+!!! Abstract "Expected outputs"
 
     Outputs a dataframe of each series' segment correlations compared to the same segments in the master chronology.
 
