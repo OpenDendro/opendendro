@@ -359,7 +359,7 @@ Finds best interval of overlapping series over a long period of years and calcul
     >>> dpl.rbar(rwi_data, start, end, method="osborn")
     ```
 
-!!! Abstract "Expected Output"
+!!! Abstract "Expected output"
 
     rbar returns a list of constants to multiply with each mean value generated for a range of years from a mean value chronology.
 
@@ -381,27 +381,104 @@ Finds best interval of overlapping series over a long period of years and calcul
 
 ### `readers`
 
+Reads data and stores them in a dataframe.
+
 !!! Info "Supported data types"
         dplPy currently supports `csv` and `rwl` data formats.
 
-To load (read) data into a dataframe, do:
+!!! info "Usage"
 
-```
->>> data = dpl.readers("path/to/data.format")
-```
-
-!!! Example
     ```
-    >>> data  = dpl.readers("../tests/data/rwl/ca533.rwl")
+    >>> data = dpl.readers("<path/to/data.format>")
     ```
 
-Expected outputs:
+    Example:
+    
+    ```
+    >>> data  = dpl.readers("ca533.rwl")
+    ```
 
-- A success/failure message;
-- A list of series within the data file.
+!!! Abstract "Expected output"
+
+    - A success/failure message;
+    - A list of series within the data file such as the following:
+
+    ```
+    Attempting to read input file: ca533.rwl as .rwl format
+
+    SUCCESS!
+    File read as: .rwl file
+
+    Series names:
+    ['CAM011', 'CAM021', 'CAM031', 'CAM032', 'CAM041', 'CAM042', 'CAM051', 'CAM061', 'CAM062', 'CAM071', 'CAM072', 'CAM081', 'CAM082', 'CAM091', 'CAM092', 'CAM101', 'CAM102', 'CAM111', 'CAM112', 'CAM121', 'CAM122', 'CAM131', 'CAM132', 'CAM141', 'CAM151', 'CAM152', 'CAM161', 'CAM162', 'CAM171', 'CAM172', 'CAM181', 'CAM191', 'CAM201', 'CAM211'] 
+    ```
 
 ### `readme`
+
+The readme function opens the [opendendro](https://opendendro.org/) webpage.
+
+!!! info "Usage"
+    ```
+    >>> dpl.readme()
+    ```
 ### `report`
+
+Generates a report about the input dataset that includes:
+
+- Number of dated series
+- Number of measurements
+- Avg series length
+- Range
+- Span
+- Mean (Std dev) series intercorrelation
+- Mean (Std dev) AR1
+- Years with absent rings listed by series
+
+!!! info "Usage"
+    ```
+    dpl.report(<data>)
+    ```
+
+    Example:
+    ```
+    dpl.report(ca533)
+    ```
+
+!!! Abstract "Expected output"
+    From the example above, the expected output is the following:
+
+    ```
+    Number of dated series: 34
+    Number of measurements: 23276
+    Avg series length: 684.5882
+    Range: 1358
+    Span: 626 - 1983
+    Mean (Std dev) series intercorrelation:
+    Mean (Std dev) AR1: 0.7122
+    -------------
+    Years with absent rings listed by series
+
+        CAM011 -- 1753 1782
+        CAM031 -- 1497 1500 1523 1533 1540 1542 1545 1578 1579 1580 1655 1668 1670 1681
+        CAM032 -- 1497 1523 1579 1654 1670 1681 1782
+        CAM051 -- 1475
+        CAM061 -- 1497 1523 1542 1545 1547 1579 1654 1655 1668 1670 1672 1782 1858 1960
+        CAM062 -- 1542 1545 1547 1548 1579 1654 1655 1670 1672 1782 1836 1857 1858 1929
+        CAM071 -- 1269 1497 1498 1523 1542 1547 1578 1579 1612 1655 1656 1668 1670 1672 1674 1690 1707 1708 1756 1782 1795 1820 1836 1845 1857 1858 1924 1948 1960
+        CAM072 -- 1218 1497 1498 1523 1533 1538 1542 1545 1546 1547 1571 1579 1580 1590 1654 1655 1668 1670 1672 1675 1690
+        CAM081 -- 1218 1336
+        CAM082 -- 1362 1858 1865
+        CAM091 -- 1655 1669 1670 1782 1858
+        CAM092 -- 1624 1654 1655 1670 1672 1675 1677 1690 1703 1705 1707 1708 1710 1733 1753 1756 1757 1774 1777 1781 1782 1783 1784 1795 1807 1824 1829 1836 1845 1857 1858 1899 1904 1929 1936 1961
+        CAM101 -- 1782 1783 1899 1929
+        CAM102 -- 1669 1690 1782 1858 1899 1929
+        CAM111 -- 1542
+    ...
+        CAM201 -- 1523
+        CAM211 -- 645 762 809 847 924 957 1014 1118 1123 1133 1147 1189 1350 1384 1468 1571 1641
+    -------------
+    ```
+    
 ### `series_corr`
 ### `stats`
 
