@@ -292,7 +292,7 @@ Detrends a given series or dataframe, first by fitting data to curve(s), with `s
 
     If `plot=True` then a plot will also be generated:
     
-    ![py_ca533_CA191_detrend](assets/py_ca533_CA191_detrend.png)
+    ![py_ca533_CAM191_detrend](assets/py_ca533_CAM191_detrend.png)
 
 ### `help`
 
@@ -436,12 +436,12 @@ Generates a report about the input dataset that includes:
 
 !!! info "Usage"
     ```
-    dpl.report(<data>)
+    >>> dpl.report(<data>)
     ```
 
     Example:
     ```
-    dpl.report(ca533)
+    >>> dpl.report(ca533)
     ```
 
 !!! Abstract "Expected output"
@@ -478,125 +478,206 @@ Generates a report about the input dataset that includes:
         CAM211 -- 645 762 809 847 924 957 1014 1118 1123 1133 1147 1189 1350 1384 1468 1571 1641
     -------------
     ```
-    
+
 ### `series_corr`
+
+Crossdating function that focuses on the comparison of one series to the master chronology.
+
+!!! info "Usage"
+    ```
+    >>> dpl.series_corr(<data>, "<series name>", prewhiten=<True/False>, corr="<Pearson/Spearman>", seg_length=<length of segments (default=50)>, bin_floor=<bin size (default=100)>, p_val=<p value (default=0.05)>, plot=<True/False (default=True)> )
+    ```
+
+    Example:
+    ```
+    >>> dpl.series_corr(ca533, "CAM191", prewhiten=False, corr="Pearson", bin_floor=10)
+    ```
+
+!!! Abstract "Expected output"
+    Two graphs: the first graph showing the correlation of one series to against the master chronology in a line graph; the second graph supports the first, showing the correlation in segments. For the example above, the graphs are as following:
+
+    ![py_ca533_CAM191_series_corr1](assets/py_ca533_CAM191_series_corr1.png)
+    ![py_ca533_CAM191_series_corr2](assets/py_ca533_CAM191_series_corr2.png)
+
 ### `stats`
 
-Generates summary statistics for `rwl`  and `csv` format files.
+Generates summary statistics for `rwl`  and `csv` format files. It outputs a table with `first`, `last`, `year`, `mean`, `median`, `stdev`, `skew`, `gini`, `ar1` for each series in data file.
 
-```
->>> dpl.stats(<data>)
-```
+!!! info "Usage"
+    ```
+    >>> dpl.stats(<data>)
+    ```
 
-Expected outputs:
+    Example:
+    ```
+    >>> dpl.stats(ca533)
+    ```
 
-- Table with `first`, `last`, `year`, `mean`, `median`, `stdev`, `skew`, `gini`, `ar1` for each series in data file.
+!!! Abstract "Expected output"
 
+    Table with `first`, `last`, `year`, `mean`, `median`, `stdev`, `skew`, `gini`, `ar1` for each series in data file. For the example above, the output table is the following:
+
+    ```
+    	series	first	last	year	mean	median	stdev	skew	gini	ar1
+    1	CAM011	1530	1983	454	    0.440	0.40	0.222	1.029	0.273	0.698
+    2	CAM021	1433	1983	551	    0.424	0.40	0.185	0.946	0.237	0.702
+    3	CAM031	1356	1983	628	    0.349	0.29	0.214	0.690	0.341	0.809
+    4	CAM032	1435	1983	549	    0.293	0.26	0.163	0.717	0.309	0.665
+    5	CAM041	1683	1983	301	    0.526	0.53	0.223	0.488	0.238	0.710
+    6	CAM042	1538	1983	446	    0.439	0.36	0.348	3.678	0.324	0.881
+    7	CAM051	1247	1983	737	    0.273	0.25	0.140	1.836	0.262	0.705
+    8	CAM061	1357	1983	627	    0.462	0.47	0.202	-0.111	0.247	0.510
+    9	CAM062	1525	1983	459	    0.442	0.45	0.188	-0.266	0.240	0.529
+    10	CAM071	1037	1983	947	    0.249	0.25	0.109	0.027	0.247	0.578
+    11	CAM072	1114	1983	870	    0.309	0.29	0.163	0.698	0.292	0.735
+    12	CAM081	1081	1983	903	    0.327	0.31	0.124	0.555	0.211	0.723
+    13	CAM082	977	    1983	1007	0.285	0.29	0.114	0.312	0.223	0.771
+    14	CAM091	1460	1983	524	    0.532	0.52	0.255	0.425	0.267	0.632
+    15	CAM092	1591	1983	393	    0.349	0.34	0.226	0.337	0.369	0.561
+    16	CAM101	1727	1983	257	    0.568	0.56	0.260	0.254	0.259	0.716
+    17	CAM102	1665	1983	319	    0.604	0.62	0.261	0.082	0.243	0.677
+    18	CAM111	1446	1983	538	    0.625	0.62	0.249	0.196	0.225	0.625
+    19	CAM112	1471	1983	513	    0.570	0.56	0.211	0.223	0.207	0.583
+    20	CAM121	1000	1983	984	    0.259	0.26	0.106	0.042	0.231	0.594
+    21	CAM122	1000	1983	984	    0.271	0.27	0.109	0.346	0.223	0.653
+    22	CAM131	695	    1970	1276	0.552	0.53	0.198	0.330	0.202	0.788
+    23	CAM132	710	    1232	523	    0.397	0.38	0.148	0.871	0.203	0.810
+    24	CAM141	1030	1970	941	    0.627	0.60	0.204	0.695	0.177	0.746
+    25	CAM151	1222	1970	749	    0.446	0.39	0.273	1.068	0.332	0.765
+    26	CAM152	1221	1449	229	    0.534	0.52	0.195	0.297	0.203	0.695
+    27	CAM161	1106	1609	504	    0.339	0.33	0.149	0.633	0.243	0.794
+    28	CAM162	971	    1970	1000	0.397	0.37	0.184	0.647	0.259	0.840
+    29	CAM171	1213	1970	758	    0.450	0.40	0.210	1.250	0.250	0.799
+    30	CAM172	1174	1970	797	    0.482	0.42	0.249	1.622	0.268	0.847
+    31	CAM181	1190	1970	781	    0.283	0.25	0.149	0.706	0.293	0.805
+    32	CAM191	1180	1970	791	    0.366	0.25	0.336	2.359	0.429	0.876
+    33	CAM201	990	    1582	593	    0.474	0.47	0.181	0.772	0.208	0.709
+    34	CAM211	626	    1968	1343	0.357	0.34	0.182	0.513	0.286	0.683
+    ```
 
 ### `summary`
 
-The summary function generates a summary of each series recorded in `rwl`  and `csv` format files.
+The summary function generates a summary of each series recorded in `rwl`  and `csv` format files. It outputs a table with `count`, `mean`, `std`, `min`, `25%`, `50%`, `75%`, `max` for each series in data file.
 
-```
->>> dpl.summary(<data>)
-```
+!!! Info "Usage"
+    ```
+    >>> dpl.summary(<data>)
+    ```
 
-Expected outputs:
+    Example:
+    ```
+    dpl.summary(ca533)
+    ```
 
-- Table with `count`, `mean`, `std`, `min`, `25%`, `50%`, `75%`, `max` for each series in data file.
+!!! Abstract "Expected output"
+
+    Summary outputs a table with `count`, `mean`, `std`, `min`, `25%`, `50%`, `75%`, `max` for each series in data file. For the example above, the output table is the following:
+    ```
+    	    CAM011	    CAM021	    CAM031	    CAM032	    CAM041	    CAM042	    CAM051	    CAM061	    CAM062	    CAM071	    ...	CAM151	    CAM152	    CAM161	    CAM162	    CAM171	    CAM172	    CAM181	    CAM191	    CAM201	    CAM211
+    count	454.000000	551.000000	628.000000	549.000000	301.000000	446.000000	737.000000	627.000000	459.000000	947.000000	...	749.000000	229.000000	504.000000	1000.000000	758.000000	797.000000	781.000000	791.000000	593.000000	1343.000000
+    mean	0.439581	0.424465	0.349156	0.293224	0.525648	0.439148	0.273012	0.462281	0.441939	0.249071	...	0.445648	0.533799	0.339464	0.396710	0.450264	0.482296	0.282638	0.366271	0.473929	0.356813
+    std	    0.221801	0.185397	0.213666	0.162930	0.222568	0.347705	0.139691	0.201785	0.188389	0.109357	...	0.272561	0.194947	0.148916	0.184057	0.209848	0.249002	0.148853	0.335788	0.180967	0.182086
+    min	    0.000000	0.050000	0.000000	0.000000	0.100000	0.070000	0.000000	0.000000	0.000000	0.000000	...	0.000000	0.060000	0.000000	0.000000	0.080000	0.080000	0.000000	0.000000	0.000000	0.000000
+    25%	    0.290000	0.290000	0.180000	0.180000	0.350000	0.270000	0.180000	0.335000	0.330000	0.180000	...	0.240000	0.410000	0.230000	0.260000	0.300000	0.310000	0.170000	0.170000	0.350000	0.220000
+    50%	    0.400000	0.400000	0.290000	0.260000	0.530000	0.360000	0.250000	0.470000	0.450000	0.250000	...	0.390000	0.520000	0.330000	0.370000	0.400000	0.420000	0.250000	0.250000	0.470000	0.340000
+    75%	    0.540000	0.520000	0.510000	0.390000	0.680000	0.460000	0.330000	0.600000	0.580000	0.320000	...	0.610000	0.660000	0.430000	0.510000	0.580000	0.590000	0.380000	0.455000	0.580000	0.470000
+    max	    1.360000	1.110000	1.030000	0.850000	1.380000	3.030000	1.320000	1.090000	0.920000	0.620000	...	1.640000	1.250000	0.900000	1.040000	1.540000	1.980000	0.800000	2.540000	1.490000	1.100000
+    ```
 
 ### `xdate`
+
+Crossdating function for dplPy datasets. 
+
+!!! info "Usage"
+    ```
+    dpl.xdate(<detrended data>, prewhiten=<True/False>, corr="<Pearson/Spearman>", slide_period=<slide period window (default=50)>, bin_floor=<bin size (default=100)>, p_val=<p value (default=0.05)>, show_flags=<True/False (default=True)>)
+    ```
+
+    Example:
+    ```
+    # Detrend data first
+    ca533_rwi = dpl.detrend(ca533, fit="spline", method="residual", plot=False)
+
+    # Crossdating of detrended data
+    dpl.xdate(ca533_rwi, prewhiten=True, corr="Spearman", slide_period=50, bin_floor=100, p_val=0.05, show_flags=True)
+    ```
+
+!!!! Abstract "Expected outputs"
+
+    Outputs a dataframe of each series' segment correlations compared to the same segments in the master chronology.
+
+    For the above example, the expect output dataframe is the following:
+    ```
+    Flags for CAM011
+    [B] Segment  High   -10    -9    -8    -7    -6    -5    -4    -3    -2    -1     0    +1    +2    +3    +4    +5    +6    +7    +8    +9   +10
+    1900-1949    6 -0.03 -0.31  0.17 -0.17  0.03 -0.18 -0.15  0.09 -0.16  0.20  0.15 -0.08 -0.03  0.08  0.13 -0.06  0.30  0.20 -0.17  0.09 -0.04
+
+    Flags for CAM051
+    [B] Segment  High   -10    -9    -8    -7    -6    -5    -4    -3    -2    -1     0    +1    +2    +3    +4    +5    +6    +7    +8    +9   +10
+    1375-1424    9 -0.02 -0.21  0.29  0.10 -0.09  0.06  0.30  0.09 -0.01 -0.03  0.18 -0.03 -0.16  0.24 -0.05 -0.06 -0.03  0.03 -0.11  0.38 -0.11
+
+    Flags for CAM131
+    [A] Segment  High   -10    -9    -8    -7    -6    -5    -4    -3    -2    -1     0    +1    +2    +3    +4    +5    +6    +7    +8    +9   +10
+    1800-1849    0 -0.13 -0.13 -0.05  0.05  0.09 -0.03 -0.14 -0.16 -0.00 -0.25  0.13 -0.11  0.10 -0.15  0.01 -0.34  0.09 -0.01  0.09 -0.09  0.05
+
+    Flags for CAM171
+    [B] Segment  High   -10    -9    -8    -7    -6    -5    -4    -3    -2    -1     0    +1    +2    +3    +4    +5    +6    +7    +8    +9   +10
+    1275-1324   -4 -0.04  0.00 -0.11  0.01 -0.05 -0.05  0.46  0.27 -0.13  0.02  0.28  0.23  0.01  0.20  0.12 -0.04  0.03 -0.14  0.01  0.01 -0.13
+
+    Flags for CAM181
+    [B] Segment  High   -10    -9    -8    -7    -6    -5    -4    -3    -2    -1     0    +1    +2    +3    +4    +5    +6    +7    +8    +9   +10
+    1775-1824    8 -0.13  0.05  0.07 -0.06 -0.12  0.19  0.14 -0.36 -0.30  0.06  0.21 -0.02 -0.15  0.16  0.14 -0.05 -0.02 -0.01  0.31  0.05 -0.14
+
+    Flags for CAM201
+    [A] Segment  High   -10    -9    -8    -7    -6    -5    -4    -3    -2    -1     0    +1    +2    +3    +4    +5    +6    +7    +8    +9   +10
+    1350-1399   -7 -0.04  0.03 -0.05  0.25 -0.08 -0.09 -0.13  0.01 -0.08  0.22  0.19  0.17 -0.13  0.13  0.09 -0.14 -0.26  0.03 -0.15 -0.14  0.12
+    [B] Segment  High   -10    -9    -8    -7    -6    -5    -4    -3    -2    -1     0    +1    +2    +3    +4    +5    +6    +7    +8    +9   +10
+    1125-1174    1 -0.02 -0.03 -0.12 -0.17 -0.08  0.08  0.18  0.00  0.19 -0.27  0.28  0.39  0.12 -0.24  0.01 -0.06 -0.15 -0.00 -0.10 -0.14 -0.18
+    ...
+    1000-1049   -1  0.04  0.07 -0.16 -0.06  0.09 -0.07 -0.24 -0.12 -0.04  0.45  0.30 -0.33 -0.14  0.06  0.18 -0.06 -0.27 -0.25  0.09  0.12  0.16
+    1025-1074   -1  0.02 -0.19 -0.08 -0.08 -0.20 -0.09 -0.18 -0.18  0.19  0.70  0.36 -0.15 -0.01  0.08 -0.13 -0.34 -0.27 -0.14 -0.04  0.11  0.15
+
+    # Dataframe is truncated for visualization purposes
+    	        CAM011	    CAM021	    CAM031	    CAM032	    CAM041	    CAM042	    CAM051	    CAM061	    CAM062	    CAM071	    ...	CAM151	    CAM152  CAM161	CAM162	    CAM171	    CAM172	    CAM181	    CAM191	    CAM201	CAM211
+    700-749	    NaN	        NaN 	    NaN     	NaN     	NaN     	NaN     	NaN	        NaN     	NaN     	NaN     	...	NaN     	NaN 	NaN 	NaN     	NaN     	NaN	        NaN     	NaN     	NaN 	0.402641
+    725-774	    NaN	        NaN 	    NaN     	NaN     	NaN     	NaN     	NaN	        NaN     	NaN     	NaN     	...	NaN     	NaN 	NaN 	NaN     	NaN     	NaN	        NaN     	NaN     	NaN 	0.459880
+    750-799	    NaN	        NaN 	    NaN     	NaN     	NaN     	NaN     	NaN	        NaN     	NaN     	NaN     	...	NaN     	NaN 	NaN 	NaN     	NaN     	NaN	        NaN     	NaN     	NaN 	0.303433
+    1775-1824	0.482449	0.526435	0.294118	0.646002	0.451140	0.489364	0.455558	0.777575	0.862473	0.772677	...	0.702473	NaN	    NaN	    0.484946	0.572821	0.578103	0.208547	0.764706	NaN	    0.544202
+    1800-1849	0.522305	0.456999	0.308715	0.568499	0.581273	0.485234	0.607107	0.790732	0.810612	0.761633	...	0.782953	NaN	    NaN 	0.532389	0.523073	0.749052	0.256567	0.810900	NaN	    0.568980
+    1825-1874	0.545834	0.575606	0.546987	0.625834	0.655030	0.514622	0.572533	0.793421	0.747419	0.652533	...	0.707275	NaN	    NaN	    0.494070	0.535942	0.700264	0.411092	0.736471	NaN	    0.503770
+    1850-1899	0.538631	0.738295	0.656855	0.714382	0.652629	0.655414	0.402929	0.859112	0.801489	0.674430	...	0.692101	NaN	    NaN	    0.567827	0.538151	0.672989	0.513661	0.749436	NaN	    0.660120
+    1875-1924	0.302665	0.751164	0.533637	0.640816	0.461801	0.604994	0.425498	0.709196	0.716879	0.653493	...	0.689508	NaN	    NaN	    0.717551	0.542185	0.692869	0.554094	0.679136	NaN	    0.683361
+    1900-1949	0.153806	0.700456	0.640816	0.696230	0.465738	0.728307	0.385162	0.647155	0.718703	0.493013	...	0.730612	NaN	    NaN	    0.628523	0.575222	0.751068	0.423866	0.728307	NaN	    0.566963
+    1925-1974	0.288836	0.618439	0.560912	0.688547	0.509724	0.637935	0.354238	0.696711	0.813205	0.529220	...	NaN	        NaN	    NaN 	NaN	        NaN	        NaN	        NaN	        NaN	        NaN	    NaN
+    ```
+
+### `xdate_plot`
+
+!!! Warning "Function is under construction"
+
+Visualize crossdating function in plot form; Each segment correlation is color coded. 
+
+!!! Info "Usage"
+    ```
+    dpl.xdate_plot(<data>)
+    ```
+
+    Example:
+    ```
+    # Detrend data first
+    ca533_rwi = dpl.detrend(ca533, fit="spline", method="residual", plot=False)
+
+    # Crossdating of detrended data
+    dpl.xdate_plot(ca533_rwi)
+    ```
+
+!!! Abstract "Expected output"
+    A graph showing segment correlations.
+
+    ![py_ca533_xdate_plot](assets/py_ca533_xdate_plot.png)
 
 ---
 
 ## Development & Future plans
 
-We encourage community contributions through our [GitHub](https://github.com/opendendro/dplPy), feel free to create Issues and Pull Requests.
-
-### Help menu
-
-Echos the help menu on the CLI 
-
-```
-$ python dplpy.py help
-```
-
-```
->>> import dplpy as dpl
->>> dpl.help()
-```
-
-#### `readme`
-
-Opens this webpage
-
-CLI:
-
-```
-$ python dplpy.py readme
-```
-
-Python Console:
-
-```
->> import dplpy as dpl
->> dpl.readme()
-```
-
-#### `readers`
-
-Imports a `.rwl` or `.csv` format ring width series file and converts it to a dataframe (array). 
-
-| full flag | short flag | Description |
-|-----------|------------|-------------|
-|`--input` | `-i` | Input files come from the localhost using the `--input` parameter |
-| `--url` | `-u` | Input file from any public URL using the `--url` parameter |
-| `--name` | `-n` | name of the array created from the file |
-
-
-CLI:
-
-```
-$ python dplpy reader --input=/home/user/directory/filename.rwl --name=dataset1  
-$ python dplpy reader -i /home/user/directory/filename.rwl -n dataset1 
-$ python dplpy reader /home/user/directory/filename.rwl dataset1
-$
-$ python dplpy reader --input=/home/user/directory/filename.csv --name=dataset2 
-$ python dplpy reader csv /home/user/directory/filename.csv dataset2
-$
-$ python dplpy reader --url=https://data.cyverse.org/dav-anon/iplant/home/user/opendendro/data/filename.rwl --name=dataset3 
-$ python dplpy reader https://data.cyverse.org/dav-anon/iplant/home/user/opendendro/data/filename.rwl dataset3
-```
-
-Python Console:
-
-```
->> import dplpy as dpl
->> dataset1 = dpl.reader("/home/user/directory/filename.rwl")
-```
-
-#### `summary`
-
-Creates and prints the summary statistics for a ring width series dataframe
-
-| full flag | short flag | Description |
-|-----------|------------|-------------|
-|`--input` | `-i` | Input files come from the localhost using the `--input` parameter or from any public URL using the `--url` parameter |
-|`--stats` | `-s` | summary statistics to output `all` reports all stats |
-
-CLI:
-```
-$ python dplpy.py summary --input=/home/user/directory/filename.rwl --stats=all
-$ python dplpy.py summary /home/user/directory/filename.rwl all
-$ python dplpy.py summary /home/user/directory/filename.rwl --stats=mean
-$ python dplpy.py summary /home/user/directory/filename.rwl mean 
-```
-
-Python Console:
-```
->> import dplpy as dpl
->> dataset1 = dpl.readers("/home/user/directory/filename.rwl")
->> dpl.summary(dataset1, all)
->>
->> summary_dataset1 = dpl.summary("/home/user/directory/filename.rwl")
-```
+We encourage community contributions through our [GitHub](https://github.com/opendendro/dplPy), feel free to create Issues and Pull Requests. We are planning a PyPi release in order to streamline installation. Stay tuned!
