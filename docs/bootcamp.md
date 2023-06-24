@@ -33,12 +33,7 @@ This bootcamp is designed for researchers, scientists, and practitioners who wor
 
 Please visit the [registration website](https://docs.google.com/forms/d/e/1FAIpQLSf2ijN-X3eo9qA0ZCQYeRFDL2GVR3sHZvPp7uknwNd-05zGBg/viewform?usp=sf_link) and complete the form. Please note that spaces are limited, so early registration is encouraged.
 
-###💰 Support 
+###💰 Scholarships 
 
 We are pleased to offer limited support for student and early-career researchers by providing funds to help defray expenses associated with the bootcamp. Details on eligibility and the application process can be found on the [registration page](https://docs.google.com/forms/d/e/1FAIpQLSf2ijN-X3eo9qA0ZCQYeRFDL2GVR3sHZvPp7uknwNd-05zGBg/viewform?usp=sf_link).
 
-Please note that spaces are limited, so early registration is encouraged.
-
-###💰 Support 
-
-We are pleased to offer limited support for student and early-career researchers by providing funds to help defray expenses associated with the bootcamp. Details on eligibility and the application process can be found on the registration page.
