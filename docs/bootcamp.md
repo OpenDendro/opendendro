@@ -25,6 +25,14 @@ Over the course of two days, participants will have the opportunity to engage in
 + 📚 Best practices for implementing open-science methodologies
 + 🔄 Navigating between R and Python environments
 
+
+###📋 Format
+
+The bootcamp will primarily be focused on in-person interaction, with morning and afternoon sessions dedicated to hands-on coding activities. Rather than lengthy lecture-style presentations, the emphasis will be on practical application and collaborative problem-solving. This format allows participants to actively engage with the material, reinforce their understanding through practical exercises, and work together with instructors and peers to tackle coding challenges.
+
+While the bootcamp prioritizes in-person engagement, we also understand the need for flexibility. Thus, we will include a modest online component to enhance the learning experience. This component might offer pre-bootcamp materials, supplementary resources, post-bootcamp support, and facilitatation of ongoing discussion and knowledge sharing. However, please note that the in-person sessions are essential for the immersive experience we aim to provide, and the online component is designed to complement rather than replace direct interaction.
+
+
 ###💼 Who Should Attend? 
 
 This bootcamp is designed for researchers, scientists, and practitioners who work with tree-ring data. Whether you are a beginner or an experienced coder you will leave with a better toolbox.
