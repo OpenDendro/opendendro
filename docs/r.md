@@ -1,4 +1,4 @@
-![dplR](https://github.com/AndyBunn/dplR/raw/master/dplR_Sticker.png){align="left" width="100"}
+![dplR](https://github.com/opendendro/dplR/raw/master/dplR_Sticker.png){align="left" width="100"}
 
 The [dplR](https://github.com/opendendro/dplR) library is hosted on CRAN and can be run in RStudio and RStudio-Server (in browser).
 
@@ -8,10 +8,6 @@ The R language and programming environment is now commonly used in dendrochronol
 ## Working Online
 
 You can run dplR in the cloud on a web browser after making a free account at [posit.cloud](https://posit.cloud/content/yours?sort=name_asc) or using the [associated tools](cloud.md) specifically for openDendro.
-
-## Installation on Your Own Machine
-
-You can run dplR in the cloud after making a free account at [posit.cloud](https://posit.cloud/content/yours?sort=name_asc) or using the [associated tools](cloud.md) specifically for openDendro.
 
 ## Installation on Your Own Machine
 
@@ -33,7 +29,7 @@ The code here on GitHub is the version of `dplR` that is currently being develop
 You can install the development version using `r-universe`.
 
 ```R
-install.packages("dplR", repos = "https://andybunn.r-universe.dev/")
+install.packages("dplR", repos = "https://opendendro.r-universe.dev/")
 ```
 
 Alternatively, the development version can be installed from the source code with the `devtools` package.
