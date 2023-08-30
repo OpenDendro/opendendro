@@ -1,6 +1,6 @@
-## The dplPy User Manual (Beta)
+## dplPy (Beta)
 
-Welcome to the dplPy manual.
+Welcome to dplPy.
 
 ---
 
@@ -20,7 +20,7 @@ Suggested:
 
 ### Installation
 
-DplPy is planned to be released as a `pip` and `conda` packages for easy installation (e.g., `pip install dplpy` or `conda install -c conda-forge dplpy`). However, the current installation process for dplPy requires manual steps to be performed after cloning the GitHub repository.
+dplPy is planned to be released as a `pip` and `conda` packages for easy installation (e.g., `pip install dplpy` or `conda install -c conda-forge dplpy`). However, the current installation process for dplPy requires manual steps to be performed after cloning the GitHub repository.
 
 1. Clone the GitHub repository to your personal machine: `git clone https://github.com/OpenDendro/dplPy.git`; move into the repository `cd dplPy/`
 2. Build conda environment: `conda env create -f environment.yml` or `mamba env create -f environment.yml` if Mamba is installed; Activate environment: `conda activate dplpy`
@@ -88,7 +88,7 @@ import dplpy as dpl
 
 ### User Manual
 
-(The dplPy User Manual (Beta))[dplpy-man.rd]
+[The dplPy User Manual (Beta)](dplpy-man.rd)
 
 ## Development & Future plans
 
