@@ -88,7 +88,7 @@ import dplpy as dpl
 
 ### User Manual
 
-[The dplPy User Manual (Beta)](dplpy-man.rd)
+[The dplPy User Manual (Beta)](dplpy-man.md)
 
 ## Development & Future plans
 
