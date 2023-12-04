@@ -6,7 +6,7 @@
 [![NSF-2054515](https://img.shields.io/badge/NSF-2054515-blue.svg)](https://nsf.gov/awardsearch/showAward?AWD_ID=2054515)
 [![NSF-2054516](https://img.shields.io/badge/NSF-2054516-blue.svg)](https://nsf.gov/awardsearch/showAward?AWD_ID=2054516)
 
-Authors: [Andy Bunn](https://github.com/AndyBunn/) [![](https://orcid.org/sites/default/files/images/orcid_16x16.png)](http://orcid.org/0000-0001-9027-2162), [Ed Cook](https://scholar.google.com/citations?user=F7jhxf4AAAAJ&hl=en&oi=sra), [Kevin Anchukaitis](http://www.u.arizona.edu/~kanchukaitis/) [![](https://orcid.org/sites/default/files/images/orcid_16x16.png)](http://orcid.org/0000-0002-8509-8080),  [Tyson Lee Swetnam](https://tyson-swetnam.github.io/) [![](https://orcid.org/sites/default/files/images/orcid_16x16.png)](http://orcid.org/0000-0002-6639-7181)
+Authors: [Andy Bunn](https://github.com/AndyBunn/) [![](https://orcid.org/sites/default/files/images/orcid_16x16.png)](http://orcid.org/0000-0001-9027-2162), [Ed Cook](https://people.climate.columbia.edu/users/profile/edward-r-cook), [Kevin Anchukaitis](http://www.u.arizona.edu/~kanchukaitis/) [![](https://orcid.org/sites/default/files/images/orcid_16x16.png)](http://orcid.org/0000-0002-8509-8080),  [Tyson Lee Swetnam](https://tyson-swetnam.github.io/) [![](https://orcid.org/sites/default/files/images/orcid_16x16.png)](http://orcid.org/0000-0002-6639-7181)
 
 
 <img src="assets/openDendroSticker.png" align="left" width="250"/>
