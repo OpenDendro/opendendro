@@ -1,5 +1,4 @@
-# fortran77
+# FORTRAN Programs
 
-Lamont-Doherty Earth Observatory related software - https://www.ldeo.columbia.edu/tree-ring-laboratory/resources/software 
+Lamont-Doherty Earth Observatory related software - https://www.geog.cam.ac.uk/research/projects/dendrosoftware/
 
-[ARSTAN PDF](https://www.esf.edu/for/bevilacqua/for496/arstan_description.pdf)

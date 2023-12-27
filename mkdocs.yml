@@ -15,16 +15,24 @@ nav:
   - Introduction: index.md
   - Codebase:
     - Overview: code.md
-    - Python: python.md
-    - R: r.md
-    - Apps: apps.md
-    - Fortran77: fortran.md
+    - dplpy: 
+      - Introduction: python.md
+      - User Manual: dplpy-man.md
+      - Jupyter Notebooks:
+        - Introduction Example: notebooks/intro_dplpy.ipynb
+        - Floating Chronology Example: notebooks/floating_chronology_example.ipynb
+    - dplR: r.md
+    - Legacy:
+      - FORTRAN Programs: fortran.md
   - Bootcamp: bootcamp.md
   - Get Involved: contribute.md
   - Cyberinfrastructure:
     - Overview: cloud.md
+    - Hosted Apps: apps.md
     - CyVerse: cyverse.md
     - Docker: docker.md
+  
+
 
 # Configuration
 imgwidth: 70px;
@@ -65,6 +73,9 @@ theme:
         icon: material/weather-sunny
         name: Switch to system preference
 
+  # downloading ipynb notebooks
+  custom_dir: "docs/overrides"
+  
 # Options
 extra:
   social:

@@ -1,10 +1,10 @@
-## The dplPy User Manual (Beta)
+# `dplpy` User Manual
 
-Welcome to the dplPy manual.
+Welcome to the dplPy manual 
 
 ## Usage
 
-DplPy is currently available as a Python [module](https://docs.python.org/3/tutorial/modules.html) with a number of [functions](https://www.w3schools.com/python/python_functions.asp), which in turn have parameters one can set. Here is a list of functions for dplPy (in alphabetical order):
+Here is a list of functions for `dplpy` (in alphabetical order):
 
 | Function | Description |
 | --- | --- |

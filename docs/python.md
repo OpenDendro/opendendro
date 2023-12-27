@@ -1,95 +1,94 @@
-## dplPy (Beta)
+![dplpy](https://github.com/opendendro/opendendro/raw/main/docs/assets/android-chrome-512x512.png){align="left" width="100"}
 
-Welcome to dplPy.
+The `dplpy` library is hosted on [Pypi](https://pypi.org/project/dplpy/){target=_blank}  and can be run in any Python environment or Integrated Development Environment (IDE) including Jupyter Lab, RStudio, or VS Code.
 
----
+The Python programming langauge is the most commonly used language in earth sciences. 
 
-### Requirements, Installation and Accessibility
+Functionally, `dplpy` is a Python implimentation of the `dplR` library. The `dplpy` library is intended to reproduce identical output as the `dplR` library. 
 
-#### Requirements
+## Installation
 
-* Git 
-* Python v3.10=< (although functional on Python v3.8=<, we suggest using Python v3.10=<)
-* Pip
-* [Miniconda3](https://docs.conda.io/en/latest/miniconda.html) (suggestion: select the python 3.10 version that best fits your OS)
+Step 1: Ensure that you have Python version 3.10 or greater installed.
 
-Suggested:
+Step 2: Install `pip`
 
-* [VSCode](https://code.visualstudio.com/)
-* Mamba:[repository](https://github.com/mamba-org/mamba), [anaconda.org link](https://anaconda.org/conda-forge/mamba)
+Step 3: Install `dplpy` using `pip`:
 
-### Installation
-
-dplPy is planned to be released as a `pip` and `conda` packages for easy installation (e.g., `pip install dplpy` or `conda install -c conda-forge dplpy`). However, the current installation process for dplPy requires manual steps to be performed after cloning the GitHub repository.
-
-1. Clone the GitHub repository to your personal machine: `git clone https://github.com/OpenDendro/dplPy.git`; move into the repository `cd dplPy/`
-2. Build conda environment: `conda env create -f environment.yml` or `mamba env create -f environment.yml` if Mamba is installed; Activate environment: `conda activate dplpy`
-
-!!! Warning "Known Issues"
-    The [CSAPS](https://csaps.readthedocs.io/en/latest/) package, required for smoothing splines, may fail to install in rare occasions. If that is the case, please install CSAPS manually by doing `pip install -U csaps`.
-
-### Accessing dplPy via Jupyter Notebook
-
-Although dplPy is executable from the command line interface (CLI), e.g., BASH, ZSH, or a Cygwin terminal, the usage of Jupyter Notebooks is suggested for visualizing graphs.
-
-!!! tip "Making the dplPy kernel findable"
-    It is possible that your computer will not automatically find the dplPy [kernel](https://en.wikipedia.org/wiki/Kernel_(operating_system). If that is the case, execute the following command:
-    
-    ```
-    python -m ipykernel install --user --name dplpy --display-name "Python (dplpy)"
-    ```
-
-    This will ensure that the dplPy environment created through conda is findable by Jupyter under the name `Python (dplpy)`.
-
-#### Accessing Jupyter Notebook on Linux, MacOS
-
-1. In your VScode terminal, activate the conda environment with `conda activate dplpy`.
-2. From the terminal, execute `jupyter notebook`.
-3. If prompted to select a kernel, select `dplpy`. This will automatically load the correct environment.
-
-#### Accessing Jupyter Notebook on Windows
-
-In VScode:
-
-1. In your VSCode terminal window, activate the conda environment with `conda activate dplpy`. 
-2. In the same terminal window, start a Jupyter Notebook with `jupyter notebook`. Jupyter will then return URLs that you can copy; *Copy* one of these URLs.
-3. When propted to select a kernel (top right), select **Select Another Kernel** > **Existing Jupyter Server** and paste the URL you have copied.
-4. Jupyter Notebook will now be able to access the environment created.
-
----
-
-### Obtain Git
-
-Clone (and move into) the dplPy Git repository with:
-
-```
-$ git clone https://github.com/OpenDendro/dplPy.git
-$ cd dplPy
+``` bash
+pip install dplpy
 ```
 
-!!! Note
+!!! abstract "[:material-beta: `dplPy` User Manual](dplpy-man.md)"
+
+??? Example "Development Versions"
+
+    !!! Note
         The dplPy Git repository contains:
 
         - source code (`src/`)
-        - A jupyter notebook example (`runnable_example.ipynb`)
+        - Jupyter Notebook example (`runnable_example.ipynb`)
         - Test files in `csv` and `rwl` formats (`tests/data/<format>/`)
   
-### Import the `dplpy` library
+    We encourage community contributions on [GitHub](https://github.com/opendendro/dplPy). 
 
-dplPy currently exists as a python library; ensure you are in the correct folder prior to execution.
+    Software Requirements:
 
-```
-import os
-directory = os.getcwd().split("/")
-if directory[-1] != 'src':
-    os.chdir("./src")
-import dplpy as dpl
-```
+    * `git`
 
-### User Manual
+    * `pip`
 
-[The dplPy User Manual (Beta)](dplpy-man.md)
+    * `python` => v3.10.*
 
-## Development & Future plans
+    * (recommended) [Miniconda3](https://docs.conda.io/en/latest/miniconda.html) & [Mamba](https://github.com/mamba-org/mamba)
 
-We encourage community contributions through our [GitHub](https://github.com/opendendro/dplPy), feel free to create Issues and Pull Requests. We are planning a PyPi release in order to streamline installation. Stay tuned!
+    Clone the GitHub repository to your personal machine: 
+
+    ``` bash
+    git clone https://github.com/OpenDendro/dplPy.git
+    cd dplPy
+    ```
+
+    Build the environment using the provided `environment.yml`: 
+
+    ``` bash
+    mamba env create -f environment.yml 
+    ```
+
+    if Mamba is installed; Activate environment: `conda activate dplpy`
+
+    Import `dplpy` and begin to work:
+
+    ``` python
+    import os
+    directory = os.getcwd().split("/")
+    if directory[-1] != 'src':
+        os.chdir("./src")
+    import dplpy as dpl
+    ```
+
+## via Jupyter Notebook
+
+Jupyter Notebooks are suggested for visualizing the graphical outputs.
+
+[Example `dplpy` Jupyter Notebook](notebooks/intro_dplpy.ipynb)
+
+[Floating Chronology Notebook](notebooks/floating_chronology_example.ipynb)
+
+??? tip "Create `dplpy` Jupyter Lab kernel"
+
+    On Mac OS X or Linux, add the conda installation to the PATH:
+
+    ``` bash 
+    python -m ipykernel install --user --name dplpy --display-name "Python (dplpy)"
+    ```
+
+    ``` bash
+    echo ". /opt/conda/etc/profile.d/conda.sh" >> /home/jovyan/.bash_profile 
+    echo "conda deactivate" >> /home/jovyan/.bash_profile 
+    echo "conda activate Earthlab" >> /home/jovyan/.bash_profile
+    . /opt/conda/etc/profile.d/conda.sh 
+    mamba activate dplpy && python -m ipykernel install --user --name dplpy    
+    source /home/jovyan/.bash_profile
+    ```
+
+    This will ensure that the dplPy environment created through conda is findable by Jupyter under the name `Python (dplpy)`.
