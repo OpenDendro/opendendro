@@ -8,29 +8,31 @@ repo_name: opendendro/opendendro
 repo_url: https://github.com/opendendro/opendendro
 edit_uri: edit/main/docs/
 # Copyright
-copyright: 'Copyright &copy; 2021 - 2023 Andy Bunn'
+copyright: 'Copyright &copy; 2021 - 2024 Andy Bunn'
 
 # Page tree
 nav:
   - Introduction: index.md
+  - Bootcamp: bootcamp.md
   - Codebase:
     - Overview: code.md
-    - dplpy: 
-      - Introduction: python.md
+    - Python: 
+      - dplpy: python.md
       - User Manual: dplpy-man.md
       - Jupyter Notebooks:
         - Introduction Example: notebooks/intro_dplpy.ipynb
         - Floating Chronology Example: notebooks/floating_chronology_example.ipynb
-    - dplR: r.md
-    - Legacy:
+    - R: 
+      - dplR: r.md
+      - Shiny Apps: apps.md
+    - Legacy Code:
       - FORTRAN Programs: fortran.md
-  - Bootcamp: bootcamp.md
   - Get Involved: contribute.md
-  - Cyberinfrastructure:
+  - Hosted Apps:
     - Overview: cloud.md
-    - Hosted Apps: apps.md
+    - Shiny Apps: apps.md
     - CyVerse: cyverse.md
-    - Docker: docker.md
+##    - Docker: docker.md
   
 
 

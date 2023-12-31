@@ -1,4 +1,4 @@
-OpenDendro features the comprehensive set of tools of the [Dendrochronology Program Library (`dpl`) (Holmes 1983)](https://www.ltrr.arizona.edu/pub/dpl-mac/68k/dpl.txt){target=_blank} created by Richard Holmes, a research software engineer at the University of Arizona's [Laboratory of Tree Ring Research](https://www.ltrr.arizona.edu/pub/dpl/index.html){target=_blank} who harnessed the quantitative potential of dendrochronology in the 1980s and early-1990s. 
+OpenDendro features the comprehensive set of tools of the [Dendrochronology Program Library (`dpl`)](https://www.ltrr.arizona.edu/pub/dpl-mac/68k/dpl.txt){target=_blank} created by Richard Holmes, the late research software engineer from the University of Arizona's [Laboratory of Tree Ring Research](https://www.ltrr.arizona.edu/pub/dpl/index.html){target=_blank} who harnessed the quantitative potential of dendrochronology in the 1980s and early-1990s. 
 
 OpenDendro offers equivalent functionality of `dpl` through the [`dplpy`](python.md) library for Python and [`dplR`](r.md) library for R. 
 

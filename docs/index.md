@@ -11,9 +11,11 @@ Authors: [Andy Bunn](https://github.com/AndyBunn/) [![](https://orcid.org/sites/
 
 <img src="assets/openDendroSticker.png" align="left" width="250"/>
 ## Welcome
-Welcome to openDendro, the home of an open-source framework for the essential analytic software used in dendrochronology. Our aim is to provide researchers working with tree-ring data the necessary tools in open-source environments, promoting open science practices, and enhancing rigor and transparency in dendrochronology.
+Welcome to openDendro, the home of an open-source framework for the essential analytic software used in dendrochronology. Our aims are to provide researchers working with tree-ring data the necessary tools in open-source environments, and to promote open science practices and enhance the rigor and transparency in dendrochronological research.
 
-At openDendro, we recognize the importance of these foundational tools in advancing scientific knowledge, enabling collaboration, reproducibility, and the collective progress of the dendrochronology community. Our framework seamlessly integrates with popular programming languages R and Python, accommodating diverse researchers' preferences and workflows, while embracing open-source principles to foster innovation and facilitate the sharing of knowledge within the field.
+At openDendro, we recognize the importance of the foundational scientific software in advancing knowledge, enabling collaboration, ensuring reproducibility, and contributing to the collective progress of the dendrochronology community. 
+
+Our framework seamlessly integrates with popular programming languages R and Python with public research data. We work to accommodate diverse researchers' preferences and workflows while embracing [FAIR](https://www.go-fair.org/fair-principles/){target=_blank}, [CARE](https://www.gida-global.org/care){target=_blank}, and [TRUST](https://www.rd-alliance.org/rda-community-effort-trust-principles-digital-repositories){taget=_blank} data principles in the effort to foster innovation and facilitate the sharing of knowledge within the field of dendrochronology and its many trans-disciplinary applications.
 
 <br clear="left"/>
 
