@@ -1,4 +1,4 @@
-![dplpy](https://github.com/opendendro/opendendro/raw/main/docs/assets/android-chrome-512x512.png){align="left" width="100"}
+![dplpy](https://github.com/opendendro/opendendro/raw/main/docs/assets/dplpy.png){align="left" width="100"}
 
 ## Introduction
 

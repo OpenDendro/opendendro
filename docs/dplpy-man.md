@@ -349,7 +349,7 @@ Finds best interval of overlapping series over a long period of years and calcul
 
 ## `readers`
 
-Reads data and stores them in a dataframe.
+This function imports common ring width data files (.csv, .rwls) into Python as arrays
 
 **Required Inputs**
 
