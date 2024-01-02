@@ -23,31 +23,35 @@ Here is a list of functions (in alphabetical order) with descriptions:
 
 ## `ar_func`
 
+**Summary**
+
 Main function for autoregressive (AR) modeling. 
 
 Returns residuals and mean of best AR fit with specified lag.
 
-**Required Inputs:**
+**Parameters**
 
-* `filename["<series>"]` - requires a `.csv` or Tucson `.rwl` file with relative or absolute paths. Files must be formatted to match standard conventions for CSV and Tucson formats, see [Brewer & Murphy (2011) for explanation of common dendrochronology data format conventions](https://www.treeringsociety.org/resources/SOM/Brewer_Murphy_SupplementaryMaterial.pdf){target=_blank}.
+* `data` : `str` - a data file (`.CSV` or `.RWL`) or a pandas dataframe imported from [`dpl.readers()`](#readers).
 
-* `lag` - years, an integer, default `5`
+* `series` : `str` - an individual series within a chronology `data` file.
 
-!!! info "Usage"
-    ```
+* `lag` : `int` default `5` - nuber of years.
+
+!!! info "Examples"
+    
+    ``` python
     >>> dpl.ar_func(<data>["<series>"], <lag number>)
     ```
 
-    Example:
-    ```
+    ``` python
     >>> dpl.ar_func(ca533["CAM191"], 10) 
     ```
 
     In the above example, we use dataset look at dataset `ca533` series `CAM191`  and specified a lag of `10`.
 
-    ??? success "Expected output(s)"
+    ??? success "Returns"
 
-        Users can expect an array of residual+mean for selected series. 
+        Users can expect an array of `residuals` + `mean` for selected series. 
         
         The expected output from the example above will look similar to this:
         ```
@@ -86,30 +90,38 @@ Returns residuals and mean of best AR fit with specified lag.
 
 ## `autoreg`
 
+**Summary**
+
 Secondary function for AR modeling. Returns parameters of best fit AR model with specified lag. 
 
 Best AR model is selected based on AIC value.
 
-**Required Inputs:**
+**Parameters**
 
-* `filename["<series>"]` - requires a `.csv` or Tucson `.rwl` file with relative or absolute paths. Files must be formatted to match standard conventions for CSV and Tucson formats, see [Brewer & Murphy (2011) for explanation of common dendrochronology data format conventions](https://www.treeringsociety.org/resources/SOM/Brewer_Murphy_SupplementaryMaterial.pdf){target=_blank}.
+* `data` : `str` - a data file (`.CSV` or `.RWL`) or a pandas dataframe imported from [`dpl.readers()`](#readers).
 
-* `lag` - years, an integer, default `5`
+* `series` : `str` - an individual series within a chronology `data` file.
+
+* `lag` : `int` default `5` - nuber of years.
   
 !!! Warning "Note"
     This function and its outputs are integrated in the [`ar_func`](#ar_func) function.
 
-!!! info "Usage" 
-    ```
-    >>> dpl.autoreg(<data>["<series>"], <lag number>)
+!!! info "Examples" 
+    
+    ``` python
+    >>> import dplpy as dpl 
+    >>> data = dpl.readers("../tests/data/csv/ca533.csv")
+    >>> dpl.autoreg(data['series name']) -> returns parameters of best fit AR model
+                                            with maxlag of 5 (default) or other 
+                                            specified number
     ```
 
-    Example:
-    ```
+    ``` python
     dpl.autoreg(ca533["CAM191"], 10)
     ```
 
-    ??? success "Expected output(s)"
+    ??? success "Returns"
 
         A table listing autoregressive paramenters for the specified series;
 
@@ -131,37 +143,43 @@ Best AR model is selected based on AIC value.
     
 ## `chron`
 
+**Summary**
+
 Creates a mean value chronology for a dataset, typically the ring width indices of a detrended series. Takes three optional arguments `biweight`, `prewhiten`, and `plot`. They determine whether to find means using Tukey's bi-weight robust mean (default True), whether to prewhiten data by fitting to an AR model (default False), and whether to plot the results of the chronology (default True).
 
-**Required Inputs**
+**Parameters**
 
-* `data` - a data frame loaded using [`readers`](#readers)
+* `data` : a pandas dataframe - a pandas dataframe imported from [`dpl.readers()`](#readers)
 
-* `prewhiten` - run pre-whitening on the time series, options: `True` or `False`, default is `False`
+* `biweight` : `boolean`, default `True` - use Tukey's bi-weight robust mean   
 
-* `biweight` - use Tukey's bi-weight robust mean, default `True`
+* `prewhiten` : `boolean`, default `False` - run pre-whitening on the time series
+    
+* `plot` : `boolean`, default `True` - plot the results    
 
-* `plot` - plot the results, default `True`
-  
-!!! info "Usage" 
-    ```
+!!! info "Examples" 
+
+    ``` python
     >>> dpl.chron(<data>, prewhiten=<True/False>, biweight=<True/False>, plot=<True/False>)
     ```
 
-    Example:
-    ```
+    ``` python
+    >>> import dplpy as dpl 
+    >>> ca533 = dpl.readers("../tests/data/csv/ca533.csv")
+    
     # Detrending data first
-    >>> rwi_data = dpl.detrend(ca533)
+    >>> rwi_ca533 = dpl.detrend(ca533)
 
     # Creating chronology using detrended data 
     >>> dpl.chron(rwi_ca533, prewhiten=False, biweight=True, plot=True)
     ```
 
-    ??? success "Expected output(s)"
+    ??? success "Returns"
 
         The expected output is the mean value chronology of a specific dataframe.
 
         The expected output from the example above will look similar to this:
+        
         ```
                 Mean RWI	Sample depth
         Year		
@@ -185,44 +203,40 @@ Creates a mean value chronology for a dataset, typically the ring width indices 
 
 ## `detrend`
 
+**Summary**
+
 Detrends a given series or dataframe, first by fitting data to curve(s), with `spline` as the default, and then by calculating residuals (default = `residual`) or differences (`difference`) compared to the original data. Other supported curve fitting methods are `ModNegex` (modified negative exponential), `Hugershoff`, `linear`, `horizontal`.
 
-**Required Inputs**
+**Parameters**
 
-* `data` - a data frame loaded using [`readers`](#readers)
+* `data` : a pandas dataframe - a pandas dataframe imported from [`dpl.readers()`](#readers)
 
-* `fit` - fitting method of curves, e.g., `horizontal`, `Hugershoff`, `linear`, modified negative exponential (`ModNegex`), and `spline`, default `spline`
+* `series` : `str` - an individual series within a chronology `data` file.
+    
+* `fit` : `str`, default `spline` - fitting method of curves, e.g., `horizontal`, `Hugershoff`, `linear`, `ModNegex` (modified negative exponential), and `spline`.
+   
+* `method` : `str`, default `residual` - intercomparison method, options: `difference` or `residual`.
 
-* `method` - intercomparison method, options: `difference` or `residual`, default `residual`
+* `plot` : `boolean`, default `True` - plot the results.
 
-* `plot` - plot the results, default `True`
-
-!!! info "Usage" 
-    ```
-    # Detrend the entire dataframe
-    >>> dpl.detrend(<data>)
-
+!!! info "Examples" 
+    
+    ``` python
+    >>> import dplpy as dpl
+    >>> data = dpl.readers("../tests/data/csv/file.csv")
+    >>> dpl.detrend(data)
     # Detrending a series part of the dataframe
-    >>> dpl.detrend(<data>["<series>"])
-
+    >>> dpl.detrend(data["<series>"])
     # Detrending function and its options
-    >>> dpl.detrend(<data>["<series>"], fit="<fitting method>", method="<comparison method>", plot=<True/False>) 
-    ```
-
-    Example:
-    ```
-    # Detrending series CAM191 from dataframe ca533, using the spline fitting method and calculating residuals compared to the original data 
-    >>> rwi_data = dpl.detrend(ca533["CAM191"], fit="spline", method="residual", plot=True)
-
-    # Creating chronology using detrended data 
-    >>> dpl.chron(rwi_ca533, prewhiten=False, biweight=True, plot=True)
+    >>> dpl.detrend(data["<series>"], fit="<fitting method>", method="<comparison method>", plot=<True/False>)    
     ```
     
-    ??? success "Expected output(s)"
+    ??? success "Returns"
 
         The expected output is the a list of detrended values (for the entire dataset or for a specific series)
 
         The expected output from the example above will look similar to this:
+        
         ```
         1180    1.180835
         1181    1.511543
@@ -244,43 +258,40 @@ Detrends a given series or dataframe, first by fitting data to curve(s), with `s
 
 ## `help`
 
-**Required Inputs**
+**Summary**
 
-!!! Warning "Under Development"
+Python includes a built in `help()` functionality.
 
-!!! Info "Usage"
+Use `help()` to read the documentation for each `dplpy` function.
+
+!!! info "Examples"
     ```
-    >>> dpl.help()
+    >>> help(dpl.readers)
     ```
 
 ## `plot`
 
-Plots a given dataframe or series of a specific dataframe in either line (default), spaghetti (`spag`) or segment (`seg`) plots.
+**Summary**
 
-**Required Inputs**
+Plots a given dataframe or series of a specific dataframe in either `line` (default), spaghetti (`spag`) or segment (`seg`) plots.
 
-* `data` - a data frame loaded using [`readers`](#readers)
+**Parameters**
 
-* `<series>` - a single time series within the `data` dataframe
+* `data` : a pandas dataframe - a pandas dataframe imported from [`dpl.readers()`](#readers)
 
-* `type` - type of plot to generate, e.g., `line`, spaghetti (`spag`), or segment (`seg`). default `line`
+* `series` : `str` - an individual series within a chronology `data` file.
 
-!!! info "Usage"
-    ```
-    # Plot entire data
+* `type` : `str` - type of plot to generate, e.g., `line`, spaghetti (`spag`), or segment (`seg`). default `line`
+
+!!! info "Examples"
+    
+    ``` python
     >>> dpl.plot(<data>)
-
     # Plot series subset of dataframe with a specified plot type
     >>> dpl.plot(<data>["<series>"], type=<plot type>)
     ```
 
-    Example:
-    ```
-    # Plotting entire dataset with a spaghetti plot
-    >>> dpl.plot(ca533, type=spag)
-    ```
-
-    ??? success "Expected output"
+    ??? success "Returns"
         A graph of the specified dataframe.
 
         From the example above, the expected output would look something similar to the below plot:
@@ -289,22 +300,25 @@ Plots a given dataframe or series of a specific dataframe in either line (defaul
 
 ## `rbar`
 
+**Summary**
+
 Finds best interval of overlapping series over a long period of years and calculates rbar constant for a dataset. Supports a number of rbar methods: `osborn`, `67spline`, `frank`.
 
-**Required Inputs**
+**Parameters**
 
-* `data` - a data frame loaded using [`readers`](#readers)
+* `data` : a pandas dataframe - a pandas dataframe imported from [`dpl.readers()`](#readers)
 
-*  `start` - start date, 
+*  `start` : `int` - start date year 
 
-*  `end` - end date
+*  `end` : `int` - end date year
 
-* `method` - rbar method, e.g., `osborn`, `67spline`, `frank`. default `osborn`
+* `method` : `str` default `osborn` - rbar method, options `osborn`, `67spline`, `frank`.
 
 !!! Warning "Further development underway. Future versions to prioritize number of series, number of years or both. Current version attempts to do both."
 
-!!! info "Usage"
-    ```
+!!! info "Examples"
+
+    ``` python
     # Detrend data
     >>> rwi_data = dpl.detrend(<data>, plot=False)
 
@@ -316,7 +330,8 @@ Finds best interval of overlapping series over a long period of years and calcul
     ```
 
     Example:
-    ```
+
+    ``` python
     # Detrend data
     >>> rwi_data = dpl.detrend(ca533, plot=False)
 
@@ -327,11 +342,12 @@ Finds best interval of overlapping series over a long period of years and calcul
     >>> dpl.rbar(rwi_data, start, end, method="osborn")
     ```
 
-    ??? success "Expected output"
+    ??? success "Returns"
 
         `rbar` returns a list of constants to multiply with each mean value generated for a range of years from a mean value chronology.
 
         From the example above, the output is the following:
+        
         ```
         [0.44170725878965766,
         0.44170725878965766,
@@ -349,30 +365,29 @@ Finds best interval of overlapping series over a long period of years and calcul
 
 ## `readers`
 
-This function imports common ring width data files (.csv, .rwls) into Python as arrays
+**Summary**
 
-**Required Inputs**
+This function imports common ring width data files (`.CSV`, `.RWL`) into Python as arrays
 
-* `file` - a file name or the full path and file name of a chronology
+**Parameters**
+
+* `data` : a pandas dataframe - a pandas dataframe imported from [`dpl.readers()`](#readers)
+    
 
 !!! Warning "Supported data types"
         dplPy currently supports `csv` and `rwl` data formats.
 
-!!! info "Usage"
+!!! info "Examples"
 
-    ```
-    >>> data = dpl.readers("<path/to/data.format>")
-    ```
-
-    Example:
-    
-    ```
-    >>> data  = dpl.readers("ca533.rwl")
+    ``` python
+    >>> import dplpy as dpl
+    >>> data = dpl.readers("../tests/data/csv/file.csv")
+    >>> data = dpl.readers("../tests/data/csv/file.rwl", header=True)
     ```
 
-    ??? success "Expected output"
+    ??? success "Returns"
 
-        - A success/failure message;
+        - A success message;
         - A list of series within the data file such as the following:
 
         ```
@@ -387,20 +402,23 @@ This function imports common ring width data files (.csv, .rwls) into Python as 
 
 ## `readme`
 
-**Required Inputs**
+**Parameters**
 
 The readme function opens the [opendendro](https://opendendro.org/) webpage.
 
-!!! info "Usage"
-    ```
+!!! info "Examples"
+
+    ``` python
     >>> dpl.readme()
     ```
 
-    ??? success "Expected output"
+    ??? success "Returns"
 
         This website opens!
 
 ## `report`
+
+**Summary**
 
 Generates a report about the input dataset that includes:
 
@@ -413,21 +431,19 @@ Generates a report about the input dataset that includes:
 - Mean (Standard Deviation) AR1
 - Years with absent rings listed by series
 
-**Required Inputs**
+**Parameters**
 
-* `data` - a data frame loaded using [`readers`](#readers)
+* `data` : a pandas dataframe - a pandas dataframe imported from [`dpl.readers()`](#readers)
 
-!!! info "Usage"
-    ```
-    >>> dpl.report(<data>)
-    ```
+!!! info "Examples"
 
-    Example:
-    ```
-    >>> dpl.report(ca533)
+    ``` python
+    >>> import dplpy as dpl
+    >>> data = dpl.readers("../tests/data/csv/file.csv")
+    >>> dpl.report(data) 
     ```
 
-    ??? success "Expected output"
+    ??? success "Returns"
         From the example above, the expected output is the following:
 
         ```
@@ -464,37 +480,35 @@ Generates a report about the input dataset that includes:
 
 ## `series_corr`
 
+**Summary**
+
 Crossdating function that focuses on the comparison of one series to the master chronology.
 
-**Required Inputs**
+**Parameters**
 
-* `data` - a data frame loaded using [`readers`](#readers)
+* `data` : a pandas dataframe - a pandas dataframe imported from [`dpl.readers()`](#readers)
 
-* `series` - a series name from the `data` dataframe
+* `series` : `str` - an individual series within a chronology `data` file.
 
-* `prewhiten` - run pre-whitening on the time series, options: `True` or `False`, default is `False`
+* `prewhiten` : `boolean` default `False` - run pre-whitening on the time series, options: `True` or `False`.
 
-* `corr` - select correlation type if `prewhiten=True`, options: `Pearson` or `Spearman`, default is `Pearson`
-  
-* `seg_length` - segment length (years), default `50`
+* `corr` : `str`, default `Spearman` - select correlation type if `prewhiten=True`, options: `Pearson` or `Spearman`.
+    
+* `seg_length` :  `int` default `50` - segment length (years).
 
-* `bin_floor` - select bin size, default `100`
+* `bin_floor` : `int` default `100` - select bin size.
 
-* `p_val` - select a p-value, e.g., `0.05`,`0.01`, `0.001`, default `0.05`
+* `p_val` : `double` default `0.05` - select a p-value, e.g., `0.05`, `0.01`, `0.001`.
 
-* `plot` - plot the output, default is `True`
+* `plot` :  `boolean` default `True` - plot the output.
 
-!!! info "Usage"
-    ```
-    >>> dpl.series_corr(<data>, "<series name>", prewhiten=<True/False>, corr="<Pearson/Spearman>", seg_length=<length of segments (default=50)>, bin_floor=<bin size (default=100)>, p_val=<p value (default=0.05)>, plot=<True/False (default=True)> )
-    ```
+!!! info "Examples"
 
-    Example:
-    ```
-    >>> dpl.series_corr(ca533, "CAM191", prewhiten=False, corr="Pearson", bin_floor=10)
+    ``` python
+    >>> dpl.series_corr(ca533, "CAM191", prewhiten=False, corr="Pearson", bin_floor=10)    
     ```
 
-    ??? success "Expected output"
+    ??? success "Returns"
         Two graphs: the first graph showing the correlation of one series to against the master chronology in a line graph; the second graph supports the first, showing the correlation in segments. For the example above, the graphs are as following:
 
         ![py_ca533_CAM191_series_corr1](assets/py_ca533_CAM191_series_corr1.png)
@@ -502,23 +516,25 @@ Crossdating function that focuses on the comparison of one series to the master 
 
 ## `stats`
 
+**Summary**
+
 Generates summary statistics for `rwl`  and `csv` format files. It outputs a table with `first`, `last`, `year`, `mean`, `median`, `stdev`, `skew`, `gini`, `ar1` for each series in data file.
 
-**Required Inputs**
+**Parameters**
 
-* `data` - a data frame loaded using [`readers`](#readers)
+* `data` : a pandas dataframe - a pandas dataframe imported from [`dpl.readers()`](#readers)
 
-!!! info "Usage"
-    ```
+!!! info "Examples"
+
+    ``` python
     >>> dpl.stats(<data>)
     ```
 
-    Example:
-    ```
+    ``` python
     >>> dpl.stats(ca533)
     ```
 
-    ??? success "Expected output"
+    ??? success "Returns"
 
         Table with `first`, `last`, `year`, `mean`, `median`, `stdev`, `skew`, `gini`, `ar1` for each series in data file. For the example above, the output table is the following:
 
@@ -562,23 +578,23 @@ Generates summary statistics for `rwl`  and `csv` format files. It outputs a tab
 
 ## `summary`
 
+**Summary**
+
 The summary function generates a summary of each series recorded in `rwl`  and `csv` format files. It outputs a table with `count`, `mean`, `std`, `min`, `25%`, `50%`, `75%`, `max` for each series in data file.
 
-**Required Inputs**
+**Parameters**
 
-* `data` - a data frame loaded using [`readers`](#readers)
+* `data` : a pandas dataframe - a pandas dataframe imported from [`dpl.readers()`](#readers)
 
-!!! Info "Usage"
-    ```
-    >>> dpl.summary(<data>)
-    ```
+!!! info "Examples"
 
-    Example:
-    ```
-    dpl.summary(ca533)
+    ``` python
+    >>> import dplpy as dpl
+    >>> data = dpl.readers("../tests/data/csv/file.csv")
+    >>> dpl.summary(data)
     ```
 
-    ??? success "Expected output"
+    ??? success "Returns"
 
         Summary outputs a table with `count`, `mean`, `std`, `min`, `25%`, `50%`, `75%`, `max` for each series in data file. For the example above, the output table is the following:
         ```
@@ -595,36 +611,33 @@ The summary function generates a summary of each series recorded in `rwl`  and `
 
 ## `xdate`
 
+**Summary**
+
 Crossdating function for dplPy datasets. 
 
-**Required Inputs**
+**Parameters**
 
-* `data` - a data frame loaded using [`readers`](#readers)
+* `data` : a pandas dataframe - a pandas dataframe imported from [`dpl.readers()`](#readers)
 
-* `prewhiten` - run pre-whitening on the time series, options: `True` or `False`, default is `False`
+* `prewhiten` : `boolean` default `True` - prewhiten series using AR modeling
 
-* `corr` - select correlation type if `prewhiten=True`, options: `Pearson` or `Spearman`, default is `Pearson`
-  
-* `slide_period` - period window (years), default `50`
+* `corr` : `str` default `Spearman` - correlation type, options: 'Pearson' or 'Spearman'
 
-* `bin_floor` - select bin size, default `100`
+* `slide_period` : `int` default `50` - period window (years)
 
-* `p_val` - select a p-value, e.g., `0.05`,`0.01`, `0.001`, default `0.05`
+* `bin_floor` : `int` default `100` - bin size
 
-* `show_flags` - provide flags in the output, default is `True`
+* `p_val` : `float` default `0.05` - p-value, options: '0.05', '0.01', '0.001'
+    
+* `show_flags` : `boolean` default `True` - show flags in the output
 
-!!! info "Usage"
-    ```
-    dpl.xdate(<detrended data>, prewhiten=<True/False>, corr="<Pearson/Spearman>", slide_period=<slide period window (default=50)>, bin_floor=<bin size (default=100)>, p_val=<p value (default=0.05)>, show_flags=<True/False (default=True)>)
-    ```
 
-    Example:
-    ```
-    # Detrend data first
-    ca533_rwi = dpl.detrend(ca533, fit="spline", method="residual", plot=False)
+!!! info "Examples"
 
+    ``` python
+    >>> ca533_rwi = dpl.detrend(ca533, fit="spline", method="residual", plot=False)
     # Crossdating of detrended data
-    dpl.xdate(ca533_rwi, prewhiten=True, corr="Spearman", slide_period=50, bin_floor=100, p_val=0.05, show_flags=True)
+    >>> dpl.xdate(ca533_rwi, prewhiten=True, corr="Spearman", slide_period=50, bin_floor=100, p_val=0.05, show_flags=True)
     ```
 
     ??? success "Expected outputs"
@@ -632,6 +645,7 @@ Crossdating function for dplPy datasets.
         Outputs a dataframe of each series' segment correlations compared to the same segments in the master chronology.
 
         For the above example, the expect output dataframe is the following:
+       
         ```
         Flags for CAM011
         [B] Segment  High   -10    -9    -8    -7    -6    -5    -4    -3    -2    -1     0    +1    +2    +3    +4    +5    +6    +7    +8    +9   +10
@@ -678,25 +692,24 @@ Crossdating function for dplPy datasets.
 
 ## `xdate_plot`
 
+**Summary** 
+
 !!! Warning "Function is under construction"
 
 Visualize crossdating function in plot form; Each segment correlation is color coded. 
 
-**Required Inputs**
+**Parameters**
 
-* `data` - a data frame loaded using [`readers`](#readers)
+* `data` : a pandas dataframe - a pandas dataframe imported from [`dpl.readers()`](#readers)
 
-* `fit` - select the fit, methods available: `spline`
 
-* `method` - select the method, available options: `residual`
+!!! info "Examples"
 
-!!! Info "Usage"
-    ```
+    ``` python
     dpl.xdate_plot(<data>)
     ```
 
-    Example:
-    ```
+    ``` python
     # Detrend data first
     ca533_rwi = dpl.detrend(ca533, fit="spline", method="residual", plot=False)
 
@@ -704,7 +717,7 @@ Visualize crossdating function in plot form; Each segment correlation is color c
     dpl.xdate_plot(ca533_rwi)
     ```
 
-    ??? success "Expected output"
+    ??? success "Returns"
 
         A graph showing segment correlations.
 
