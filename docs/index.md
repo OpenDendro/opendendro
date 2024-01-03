@@ -8,6 +8,7 @@
 
 Authors: [Andy Bunn](https://github.com/AndyBunn/) [![](https://orcid.org/sites/default/files/images/orcid_16x16.png)](http://orcid.org/0000-0001-9027-2162), [Ed Cook](https://people.climate.columbia.edu/users/profile/edward-r-cook), [Kevin Anchukaitis](http://www.u.arizona.edu/~kanchukaitis/) [![](https://orcid.org/sites/default/files/images/orcid_16x16.png)](http://orcid.org/0000-0002-8509-8080),  [Tyson Lee Swetnam](https://tyson-swetnam.github.io/) [![](https://orcid.org/sites/default/files/images/orcid_16x16.png)](http://orcid.org/0000-0002-6639-7181)
 
+Developers: [Ifeoluwa Ale](https://github.com/ifeoluwaale) [![](https://orcid.org/sites/default/files/images/orcid_16x16.png)](https://orcid.org/0009-0003-8368-8575), [Michele Cosi](https://cosimichele.github.io/) [![](https://orcid.org/sites/default/files/images/orcid_16x16.png)](https://orcid.org/0000-0001-7609-1939)
 
 <img src="assets/openDendroSticker.png" align="left" width="250"/>
 ## Welcome
