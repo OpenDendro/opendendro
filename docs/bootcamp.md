@@ -10,7 +10,7 @@
 
 ### 📢 Announcement 
 
-We are pleased to announce a comprehensive two-day bootcamp focused onopenDendro. This event will provide participants with valuable hands-on training in the R and Python programming languages, using openDendro for analysis in dendrochronology.
+We are pleased to announce a comprehensive two-day bootcamp focused on openDendro. This event will provide participants with valuable hands-on training in the R and Python programming languages, using openDendro for analysis in dendrochronology.
 
 ###🌲 About openDendro 
 
@@ -24,7 +24,6 @@ Over the course of two days, participants will have the opportunity to engage in
 + 🔧 Hands-on exercises and case studies
 + 📚 Best practices for implementing open-science methodologies
 + 🔄 Navigating between R and Python environments
-
 
 ###📋 Format
 
