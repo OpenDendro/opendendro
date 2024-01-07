@@ -22,6 +22,7 @@ nav:
       - Jupyter Notebooks:
         - Introduction Example: notebooks/intro_dplpy.ipynb
         - Floating Chronology Example: notebooks/floating_chronology_example.ipynb
+        - ITRDB API: notebooks/itrdb.ipynb
     - R: 
       - dplR: r.md
       - Shiny Apps: apps.md
