@@ -13,17 +13,17 @@ copyright: 'Copyright &copy; 2021 - 2024 Andy Bunn'
 # Page tree
 nav:
   - Introduction: index.md
-  - Bootcamp: bootcamp.md
+  #- Bootcamp: bootcamp.md
   - Codebase:
     - Overview: code.md
-    - Python: 
+    - Python:
       - dplpy: python.md
       - User Manual: dplpy-man.md
       - Jupyter Notebooks:
         - Introduction Example: notebooks/intro_dplpy.ipynb
         - Floating Chronology Example: notebooks/floating_chronology_example.ipynb
         - ITRDB API: notebooks/itrdb.ipynb
-    - R: 
+    - R:
       - dplR: r.md
       - Shiny Apps: apps.md
     - Legacy Code:
@@ -34,7 +34,7 @@ nav:
     - Shiny Apps: apps.md
     - CyVerse: cyverse.md
 ##    - Docker: docker.md
-  
+
 
 
 # Configuration
@@ -78,7 +78,7 @@ theme:
 
   # downloading ipynb notebooks
   custom_dir: "docs/overrides"
-  
+
 # Options
 extra:
   social:
