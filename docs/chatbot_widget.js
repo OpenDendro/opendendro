@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // Create the chat icon button
     const chatIcon = document.createElement('div');
     chatIcon.id = 'chat-icon';
-    chatIcon.innerHTML = `<img src="./assets/verde.png" alt="Chat Icon">`;
+    chatIcon.innerHTML = `<img src="./assets/robot-face.png" alt="Chat Icon">`;
     document.body.appendChild(chatIcon);
 
     // Create the chat window container
@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function () {
     chatContainer.id = 'chat-container';
     chatContainer.innerHTML = `
         <div id="chat-header">
-            <span>CyVerse Learning</span>
+            <span>openDendro Chat</span>
             <div class="header-buttons">
                 <button id="expand-button" class="header-button">⛶</button>  <!-- Expand icon -->
                 <button id="popout-button" class="header-button">⧉</button>   <!-- Popout icon -->
@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function () {
         </div>
         <div id="chat-body">
             <iframe 
-                src="https://chat-qa.cyverse.org/learning/" 
+                src="https://chat-qa.cyverse.org/opendendro/" 
                 id="chat-frame" 
                 width="100%" 
                 height="100%"
@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Event listener for iframe messages (if the iframe sends any)
     window.addEventListener('message', function(event) {
-        if (event.origin === 'https://chat-qa.cyverse.org/learning/') {
+        if (event.origin === 'https://chat-qa.cyverse.org/opendendro/') {
             if (event.data.type === 'link') {
                 window.open(event.data.url, '_blank', 'noopener,noreferrer');
             }
@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded', function () {
             <html>
                 <head>
                     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                    <title>CyVerse Chatbot Popout</title>
+                    <title>openDendro Chatbot Popout</title>
                     <link rel="stylesheet" type="text/css" href="chatbot_widget.css">
                     <style>
                         /* Override the chat container styles for full-window display */

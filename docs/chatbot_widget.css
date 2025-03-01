@@ -2,7 +2,7 @@
 
 /* Common Color - Replace with your exact hex code */
 :root {
-    --primary-blue: #4054b4;
+    --primary-color: #d2236b;
     --text-color: #333; /* Default text color */
     --background-color: #f9f9f9; /* Default background color */
     --box-shadow-color: rgba(0, 0, 0, 0.1); /* Default box-shadow color */
@@ -46,18 +46,18 @@
     position: fixed;
     bottom: 0;
     right: 0;
-    width: 30%;
+    width: 100%;
     max-width: 500px;
     min-width: 300px;
-    height: 60%;
+    height: 100%;
     max-height: 600px;
-    background-color: var(--background-color); /* Use variable for background */
-    border-top-left-radius: 15px; /* Slightly less rounded */
+    background-color: var(--background-color);
+    border-top-left-radius: 15px;
     border-top-right-radius: 15px;
-    box-shadow: 0 4px 20px var(--box-shadow-color); /* Use variable for box-shadow */
+    box-shadow: 0 4px 20px var(--box-shadow-color);
     z-index: 1000;
     overflow: hidden;
-    transition: all 0.3s ease; /* Smooth transition for all properties */
+    transition: all 0.3s ease;
 }
 
 /* Expanded State */
@@ -70,7 +70,7 @@
 
 /* Chat Header */
 #chat-header {
-    background-color: var(--primary-blue);
+    background-color: var(--primary-color);
     color: white;
     padding: 15px 20px; /* Adjusted padding */
     border-top-left-radius: 15px; /* Matching container radius */
@@ -113,17 +113,19 @@
 
 /* Chat Body */
 #chat-body {
-    height: calc(100% - 50px); /* Adjusted height to match header padding */
-    overflow: auto; /* Changed to auto to show scrollbar only when needed */
-    background: var(--background-color); /* Use variable for background */
-    padding: 10px; /* Added padding to body */
-    font-size: 14px; /* Smaller default text size */
-    color: var(--text-color); /* Use variable for text color */
-    line-height: 1.5; /* Improved line height for readability */
+    height: calc(100% - 50px); /* Subtract header height */
+    overflow-y: auto; /* Allow scrolling if needed */
+    background: var(--background-color);
+    padding: 10px;
+    font-size: 14px;
+    color: var(--text-color);
+    line-height: 1.5;
+    display: flex;
+    flex-direction: column;
 }
 
 #chat-body a {
-    color: var(--primary-blue); /* Link color */
+    color: var(--primary-color); /* Link color */
     text-decoration: underline;
     transition: color 0.3s ease;
 }
@@ -132,19 +134,19 @@
     color: #324499; /* Darker link color on hover */
 }
 
-/* Chat Frame - Make elastic */
+/* Chat Frame */
 #chat-frame {
     border: none;
     height: 100%;
     width: 100%;
-    border-bottom-left-radius: 15px; /* Matching container radius */
+    border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
-    allow: "target '_blank'";
+    overflow: hidden; /* Prevent iframe scroll */
 }
 
 /* Submit Button (Send Button) */
 .chat-submit-button {
-    background-color: var(--primary-blue);
+    background-color: var(--primary-color);
     border: none;
     color: #ffffff;
     padding: 8px 12px; /* Adjusted padding */
@@ -181,7 +183,7 @@
     }
 
     #chat-header {
-        background-color: var(--primary-blue);
+        background-color: var(--primary-color);
         color: #ffffff;
     }
 
@@ -195,7 +197,7 @@
     }
 
     .chat-submit-button {
-        background-color: var(--primary-blue);
+        background-color: var(--primary-color);
         color: #ffffff;
     }
 
