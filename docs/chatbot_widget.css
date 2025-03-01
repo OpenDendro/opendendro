@@ -1,0 +1,272 @@
+/* chatbot_widget.css */
+
+/* Common Color - Replace with your exact hex code */
+:root {
+    --primary-blue: #4054b4;
+    --text-color: #333; /* Default text color */
+    --background-color: #f9f9f9; /* Default background color */
+    --box-shadow-color: rgba(0, 0, 0, 0.1); /* Default box-shadow color */
+}
+
+/* Chat Icon Button */
+#chat-icon {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: white;
+    cursor: pointer;
+    z-index: 1000;
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease; /* Added transition for box-shadow */
+    padding: 12px; /* Slightly smaller padding */
+    border-radius: 50%;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.25); /* More refined shadow */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#chat-icon:hover {
+    box-shadow: 0px 6px 18px rgba(0, 0, 0, 0.35); /* More pronounced shadow on hover */
+    transform: translateY(-2px); /* Slight lift on hover */
+}
+
+/* Set the image for the icon */
+#chat-icon img {
+    width: 32px; /* Slightly smaller icon */
+    height: 32px;
+    object-fit: contain;
+    background-color: transparent;
+    content: url('assets/verde.png');
+    transition: width 0.3s ease, height 0.3s ease; /* Smooth transition for icon size */
+}
+
+/* Chat Container - Responsive & Enhanced */
+#chat-container {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 30%;
+    max-width: 500px;
+    min-width: 300px;
+    height: 60%;
+    max-height: 600px;
+    background-color: var(--background-color); /* Use variable for background */
+    border-top-left-radius: 15px; /* Slightly less rounded */
+    border-top-right-radius: 15px;
+    box-shadow: 0 4px 20px var(--box-shadow-color); /* Use variable for box-shadow */
+    z-index: 1000;
+    overflow: hidden;
+    transition: all 0.3s ease; /* Smooth transition for all properties */
+}
+
+/* Expanded State */
+#chat-container.expanded {
+    width: 80%;
+    max-width: 800px;
+    height: 80%;
+    max-height: 800px;
+}
+
+/* Chat Header */
+#chat-header {
+    background-color: var(--primary-blue);
+    color: white;
+    padding: 15px 20px; /* Adjusted padding */
+    border-top-left-radius: 15px; /* Matching container radius */
+    border-top-right-radius: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 18px; /* Slightly smaller header text */
+    font-weight: 600; /* Semi-bold */
+    user-select: none; /* Prevent text selection */
+}
+
+/* Header Buttons */
+.header-button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    transition: transform 0.3s, opacity 0.3s;
+    opacity: 0.8;
+}
+
+.header-button:hover {
+    transform: scale(1.1);
+    opacity: 1;
+}
+
+.header-button:active {
+    transform: scale(0.9);
+}
+
+#chat-close {
+    transform: rotate(0deg); /* Reset rotation */
+}
+
+#chat-close:hover {
+    transform: rotate(90deg) scale(1.1); /* More pronounced rotation */
+}
+
+/* Chat Body */
+#chat-body {
+    height: calc(100% - 50px); /* Adjusted height to match header padding */
+    overflow: auto; /* Changed to auto to show scrollbar only when needed */
+    background: var(--background-color); /* Use variable for background */
+    padding: 10px; /* Added padding to body */
+    font-size: 14px; /* Smaller default text size */
+    color: var(--text-color); /* Use variable for text color */
+    line-height: 1.5; /* Improved line height for readability */
+}
+
+#chat-body a {
+    color: var(--primary-blue); /* Link color */
+    text-decoration: underline;
+    transition: color 0.3s ease;
+}
+
+#chat-body a:hover {
+    color: #324499; /* Darker link color on hover */
+}
+
+/* Chat Frame - Make elastic */
+#chat-frame {
+    border: none;
+    height: 100%;
+    width: 100%;
+    border-bottom-left-radius: 15px; /* Matching container radius */
+    border-bottom-right-radius: 15px;
+    allow: "target '_blank'";
+}
+
+/* Submit Button (Send Button) */
+.chat-submit-button {
+    background-color: var(--primary-blue);
+    border: none;
+    color: #ffffff;
+    padding: 8px 12px; /* Adjusted padding */
+    font-size: 14px; /* Smaller font size */
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; /* Added shadow transition */
+    margin-left: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15); /* Added subtle shadow */
+}
+
+.chat-submit-button:hover {
+    background-color: #324499;
+    transform: scale(1.03); /* Reduced scale */
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.25); /* Enhanced shadow on hover */
+}
+
+.chat-submit-button:active {
+    transform: scale(0.98); /* Further reduced scale on click */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Reduced shadow on click */
+}
+
+/* Dark Mode Styles - Refined */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --text-color: #eee; /* Lighter text color in dark mode */
+        --background-color: #121212; /* Darker background color */
+        --box-shadow-color: rgba(255, 255, 255, 0.05); /* Light shadow for dark mode */
+    }
+
+    #chat-container {
+        background: var(--background-color);
+        box-shadow: 0 4px 20px var(--box-shadow-color); /* Updated shadow */
+    }
+
+    #chat-header {
+        background-color: var(--primary-blue);
+        color: #ffffff;
+    }
+
+    #chat-body {
+        background: var(--background-color);
+        color: var(--text-color);
+    }
+
+    #chat-close {
+        color: #ffffff;
+    }
+
+    .chat-submit-button {
+        background-color: var(--primary-blue);
+        color: #ffffff;
+    }
+
+    .chat-submit-button:hover {
+        background-color: #324499;
+    }
+}
+
+/* Responsiveness for larger screens */
+@media (min-width: 1200px) {
+    #chat-container {
+        width: 35%;
+    }
+
+    #chat-icon img {
+        width: 36px; /* Slightly larger icon on bigger screens */
+        height: 36px;
+    }
+}
+
+/* Responsiveness for smaller screens */
+@media (max-width: 768px) {
+    #chat-container {
+        width: 90%; /* Wider on smaller screens */
+        height: 75%; /* Taller on smaller screens */
+        max-width: none; /* Remove max-width */
+    }
+
+    #chat-icon img {
+        width: 28px;
+        height: 28px;
+    }
+}
+
+/* Additional Button Styles */
+#chat-header .header-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+/* Styles for the popout button */
+#popout-button {
+    font-size: 22px;
+}
+
+/* Additional styles for mobile devices */
+@media (max-width: 480px) {
+    #chat-icon {
+         bottom: 15px;
+         right: 15px;
+         padding: 8px;
+    }
+    #chat-icon img {
+         width: 24px;
+         height: 24px;
+    }
+    #chat-container {
+         width: 100% !important;
+         height: 100% !important;
+         max-width: 100% !important;
+         max-height: 100% !important;
+         border-radius: 0 !important;
+         bottom: 0;
+         right: 0;
+    }
+    #chat-header {
+         font-size: 16px;
+         padding: 10px 15px;
+    }
+    #chat-body {
+         font-size: 12px;
+         padding: 8px;
+    }
+}
