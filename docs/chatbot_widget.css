@@ -2,7 +2,7 @@
 
 /* Common Color - Replace with your exact hex code */
 :root {
-    --primary-color: #d2236b;
+    --primary-color: #e51e52;
     --text-color: #333; /* Default text color */
     --background-color: #f9f9f9; /* Default background color */
     --box-shadow-color: rgba(0, 0, 0, 0.1); /* Default box-shadow color */
@@ -36,7 +36,7 @@
     height: 32px;
     object-fit: contain;
     background-color: transparent;
-    content: url('assets/verde.png');
+    content: url('assets/robot-face.png');
     transition: width 0.3s ease, height 0.3s ease; /* Smooth transition for icon size */
 }
 
