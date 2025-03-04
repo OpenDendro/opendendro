@@ -1,0 +1,81 @@
+body {
+    font-family: "Helvetica Neue", "Open Sans", Helvetica, Arial, sans-serif;
+}
+
+[data-md-color-primary="white"] .md-header {
+    color: #000000;
+}
+[data-md-color-primary="white"] .md-tabs  {
+    color: #000000;
+}
+
+
+.md-nav__item .md-nav__link--active {
+    color: #e4154b;
+}
+
+.md-typeset a:hover,
+.md-nav__link:hover {
+    color: #000000;
+}
+
+.md-logo {
+    padding-top: 0.3rem;
+}
+
+.md-header__button.md-logo img, .md-header__button.md-logo svg {
+    width: 110px;
+    height: 35px; 
+}
+
+.md-typeset a:hover,
+.md-nav__link:hover {
+    color: #e4154b;
+}
+.md-footer-copyright {
+    padding: 0.7rem 0;
+}
+
+.md-typeset h1[id] .headerlink:focus,
+.md-typeset h1[id]:hover .headerlink:hover,
+.md-typeset h1[id]:target .headerlink,
+.md-typeset h2[id] .headerlink:focus,
+.md-typeset h2[id]:hover .headerlink:hover,
+.md-typeset h2[id]:target .headerlink,
+.md-typeset h3[id] .headerlink:focus,
+.md-typeset h3[id]:hover .headerlink:hover,
+.md-typeset h3[id]:target .headerlink,
+.md-typeset h4[id] .headerlink:focus,
+.md-typeset h4[id]:hover .headerlink:hover,
+.md-typeset h4[id]:target .headerlink,
+.md-typeset h5[id] .headerlink:focus,
+.md-typeset h5[id]:hover .headerlink:hover,
+.md-typeset h5[id]:target .headerlink,
+.md-typeset h6[id] .headerlink:focus,
+.md-typeset h6[id]:hover .headerlink:hover,
+.md-typeset h6[id]:target .headerlink {
+    color: #e4154b;
+}
+
+.md-footer-nav {
+    background-color: #000000;
+    color: var(--md-footer-fg-color--light);
+}
+.md-footer-nav__direction {
+    color: var(--md-footer-fg-color--light);
+    opacity: 0.75;
+}
+
+.md-footer-nav__link:hover,
+.md-footer-nav__direction:hover {
+    opacity: 1;
+}
+
+.md-footer-meta {
+    background-color: #000000;
+}
+
+.spacing
+{
+    margin-right: 50px;
+}
