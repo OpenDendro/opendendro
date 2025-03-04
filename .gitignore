@@ -1,6 +1,37 @@
+# R Project Files
 opendendroWeb.Rproj
 .Rproj.user
 .Rhistory
 .RData
 .Ruserdata
+
+# macOS
 .DS_Store
+
+# Node.js
+node_modules/
+
+# Python
+venv/
+.venv/
+__pycache__/
+*.pyc
+*.egg-info/
+
+# Build Output
+build/
+dist/
+target/  # Common in Java projects
+
+# Cache Directories
+.cache/
+*.tmp
+*.log
+
+# IDE/Editor Files
+.idea/      # IntelliJ IDEA
+.vscode/    # VS Code
+*.swp       # Vim swap files
+
+# Sensitive Data
+.env
