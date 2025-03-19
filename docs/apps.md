@@ -10,27 +10,30 @@ In keeping with the rationale of openDendro, the entire workflow of these [Shiny
 
 `xDateR` produces many of the diagnostics and tables that users of [COFECHA](https://ltrr.arizona.edu/research/software) will be familiar with. 
 
-It can be launched in a browser or run from the command line in `R` via:
+It can be launched in a browser using the link above or run on your local machine in `R` via:
 
 ```
 install.packages("shiny") # if not already installed
 library(shiny)
 runGitHub("xDater", "opendendro",ref = "main")
 ```
+The source code is on [GitHub](https://github.com/OpenDendro/xDater){target=_blank}. 
 
 ## [iDetrend](https://viz.datascience.arizona.edu/iDetrend/){target=_blank}
 
 [`iDetrend`](https://viz.datascience.arizona.edu/iDetrend/){target=_blank} is a Shiny app for interactively detrending tree-ring data using `dplR`. 
 
-It can be launched in a browser or run from the command line in `R` via:
+
+It can be launched in a browser using the link above or run on your local machine in `R` via:
 
 ```
 install.packages("shiny") # if not already installed
 library(shiny)
 runGitHub("iDetrend", "opendendro",ref = "main")
 ```
+The source code is on [GitHub](https://github.com/OpenDendro/iDetrend){target=_blank}. 
 
-## treeSong
+## [treeSong](https://github.com/OpenDendro/treeSong){target=_blank}
 
 An aspect of openDendro involves understanding, interpretation, and communication of scientific information in non-traditional ways including data visualization, sonification, and using generative art.
 
@@ -38,10 +41,12 @@ Non-traditional approaches to scientific data, such as visualization, sonificati
 
 `treeSong` is a [Shiny](https://www.rstudio.com/products/shiny/) app for converting the spectral properties of tree-ring data into audio.
 
-It can be launched in a [browser](https://andybunn.shinyapps.io/treeSong/). It is fairly computationally expensive to run and users might find it easier to run from the command line in `R` via:
+Because `treeSong` plays sounds, the best way to run it is to install in locally and run it in an R session:
 
 ```
 install.packages("shiny") # if not already installed
 library(shiny)
 runGitHub("treeSong", "opendendro",ref = "main")
 ```
+
+The source code is on [GitHub](https://github.com/OpenDendro/treeSong){target=_blank}. 
