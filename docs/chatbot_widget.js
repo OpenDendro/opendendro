@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Event listener for iframe messages (if the iframe sends any)
     window.addEventListener('message', function(event) {
-        if (event.origin === 'https://chat-qa.cyverse.org/opendendro/') {
+        if (event.origin === 'http://cyversegpt.cyverse.org/opendendro/') {
             if (event.data.type === 'link') {
                 window.open(event.data.url, '_blank', 'noopener,noreferrer');
             }
