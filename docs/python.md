@@ -1,7 +1,13 @@
-  <!doctype html>
-  <meta charset="utf-8">
-  <meta http-equiv="refresh" content="0; url=https://opendendro.github.io/dplPy/">
-  <link rel="canonical" href="https://opendendro.github.io/dplPy/">
-  <title>dplPy documentation has moved</title>
-  <p>The dplPy documentation now lives at
-     <a href="https://opendendro.github.io/dplPy/">opendendro.github.io/dplPy</a>.</p>
+---
+title: dplPy documentation has moved
+---
+
+<meta http-equiv="refresh" content="0; url=https://opendendro.github.io/dplPy/">
+<script>window.location.replace("https://opendendro.github.io/dplPy/");</script>
+
+# dplPy documentation has moved
+
+The dplPy documentation now lives at
+**[opendendro.github.io/dplPy](https://opendendro.github.io/dplPy/)**.
+
+You should be redirected automatically. If not, follow the link above.
