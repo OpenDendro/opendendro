@@ -1,47 +1,63 @@
-![dplR](https://github.com/opendendro/dplR/raw/master/dplR_Sticker.png){align="left" width="100"}
+# dplR
 
-## Introduction
+![The dplR sticker](https://github.com/opendendro/dplR/raw/master/dplR_Sticker.png){align="right" width="130"}
 
-The [dplR](https://github.com/opendendro/dplR) library is hosted on CRAN and can be run in RStudio and RStudio-Server (in browser).
+dplR is the Dendrochronology Program Library in R. It reads and writes the standard tree-ring formats, checks a collection for problems, crossdates, detrends, builds chronologies and analyzes them. It is on CRAN and is the R side of openDendro.
 
-The R language and programming environment is now commonly used in dendrochronology. R is the world's  preeminent open-source statistical computing software and its power can be harnessed for tree-ring science through the contribution of add-on packages which are freely available on the internet. The R version of openDendro's codebase is contained in the package dplR.
+## Install
 
-## Working Online
+Install [R](https://cloud.r-project.org/){target=_blank}, then:
 
-You can run `dplR` in the cloud on a web browser after making a free account at [posit.cloud](https://posit.cloud/content/yours?sort=name_asc) or using the openDendro [Hosted Apps](cloud.md).
-
-## Installation 
-
-You can run dplR on your own computer. First [install R](https://cloud.r-project.org/) and then dplR which is an ad-on package to R. See [Learning to Love dplR](https://opendendro.github.io/dplR-workshop/) for more details.
-
-### Stable Version
-
-The latest, stable, release version of `dplR` can be installed from [The Comprehensive R Archive Network (CRAN)](https://cran.r-project.org/) as follows:
-
-```R
+```r
 install.packages("dplR")
+library(dplR)
 ```
 
-This is the officially released version of `dplR`.
+That gives you the released version from [CRAN](https://cran.r-project.org/package=dplR){target=_blank}.
 
-### Development Version
+## Learn
 
-The code here on GitHub is the version of `dplR` that is currently being developed. It might be unstable.
+[Learning to Love dplR](https://opendendro.github.io/dplR-workshop/){target=_blank} is a free online book on doing tree-ring analysis with dplR. It covers how to call the functions, what each method is doing, and when a method misleads. Start there.
 
-You can install the development version using `r-universe`.
+The package also has a vignette, "Getting Started with dplR", and a help page for every function.
 
-```R
+If you would sooner point and click for crossdating or detrending, the [apps](apps.md) run dplR in a web browser and hand you the R code afterwards.
+
+## New in 1.8.0
+
+1.8.0 is a large release. The highlights:
+
+- `rwl.check` looks for defects in a collection: duplicate or empty series, gaps, zeros, units errors and dating errors.
+- `xdate.report` writes a COFECHA-style crossdating report, with flags and the lag that would fix each flagged segment.
+- `corr.rwl.seg` can test each segment at shifted dates and return the best lag.
+- `read.sheet` and `write.sheet` read and write spreadsheet-shaped files.
+- Ring-width indices and basal area increments have their own classes, so a function can warn when it is handed the wrong kind of series.
+
+!!! warning "Two changes can affect old scripts"
+
+    - `read.tucson` no longer fills a gap inside a series with zeros. A gap is now `NA`, and functions that reject `NA` inside a series will stop until you fill the gap on purpose.
+    - `detrend` now defaults to `method = "Spline"`. The old default ran every method and returned a list.
+
+    Read the [NEWS file](https://cran.r-project.org/web/packages/dplR/news/news.html){target=_blank} before you update.
+
+## Development Version
+
+The code on [GitHub](https://github.com/opendendro/dplR){target=_blank} is the version being worked on. It may be unstable. Install it from r-universe:
+
+```r
 install.packages("dplR", repos = "https://opendendro.r-universe.dev/")
 ```
 
-Alternatively, the development version can be installed from the source code with the `devtools` package.
+Or build it from source. dplR includes C and Fortran code, so this route needs compilers on your system:
 
-```R
-devtools::install_github("opendendro/dplR")
+```r
+remotes::install_github("opendendro/dplR")
 ```
 
-Because `dplR` includes both C and Fortran code, you will need the appropriate compilers installed on your system to build from source.
+## Bugs and Requests
 
-## Getting Started
+Report a bug or ask for a feature on the [dplR issue tracker](https://github.com/opendendro/dplR/issues){target=_blank}.
 
-New users of dplR can begin by working with the introductory chapters in [Learning to Love dplR](https://opendendro.github.io/dplR-workshop/) which contains instructional material for using `dplR`.
+## Citing dplR
+
+If you use dplR, please cite it. In R, `citation("dplR")` prints the references.

@@ -1,81 +1,162 @@
-body {
-    font-family: "Helvetica Neue", "Open Sans", Helvetica, Arial, sans-serif;
+/* Colours come from the openDendro sticker: purple at the top, red in the
+   middle, orange at the bottom. */
+:root {
+    --od-purple: #5f3dc4;
+    --od-red: #e4154b;
+    --od-orange: #f08c3a;
+    --od-header: linear-gradient(90deg, #5f3dc4 0%, #b8245f 70%, #d81f4a 100%);
 }
 
-[data-md-color-primary="white"] .md-header {
-    color: #000000;
-}
-[data-md-color-primary="white"] .md-tabs  {
-    color: #000000;
+/* Links and buttons take the primary colour. The header gets the gradient. */
+[data-md-color-scheme="default"] {
+    --md-primary-fg-color: #b3103b;
+    --md-primary-fg-color--light: #d6456b;
+    --md-primary-fg-color--dark: #8a0c2d;
+    --md-accent-fg-color: #5f3dc4;
+    --md-typeset-a-color: #b3103b;
 }
 
+[data-md-color-scheme="slate"] {
+    --md-primary-fg-color: #ff8fa8;
+    --md-primary-fg-color--light: #ffb3c4;
+    --md-primary-fg-color--dark: #e4154b;
+    --md-accent-fg-color: #c3b1ff;
+    --md-typeset-a-color: #ff8fa8;
+}
+
+.md-header,
+.md-tabs {
+    background: var(--od-header);
+    color: #ffffff;
+}
+
+[data-md-color-scheme="slate"] .md-typeset .md-button--primary {
+    color: #1e1e24;
+}
+
+.md-header__button.md-logo img {
+    height: 2rem;
+    width: auto;
+}
 
 .md-nav__item .md-nav__link--active {
-    color: #e4154b;
+    color: var(--od-red);
 }
 
-.md-typeset a:hover,
-.md-nav__link:hover {
-    color: #000000;
+/* Home page: the banner */
+.od-hero {
+    background: linear-gradient(135deg, var(--od-purple) 0%, #b8245f 60%, #d81f4a 100%);
+    color: #ffffff;
+    border-radius: 0.6rem;
+    padding: 2rem 2rem 1.8rem;
+    margin-bottom: 1.6rem;
+    display: flex;
+    gap: 2rem;
+    align-items: center;
 }
 
-.md-logo {
-    padding-top: 0.3rem;
+.od-hero img {
+    width: 170px;
+    flex: none;
+    filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.25));
 }
 
-.md-header__button.md-logo img, .md-header__button.md-logo svg {
-    width: 110px;
-    height: 35px; 
+.md-typeset .od-hero h1 {
+    color: #ffffff;
+    font-weight: 700;
+    margin: 0 0 0.4rem;
 }
 
-.md-typeset a:hover,
-.md-nav__link:hover {
-    color: #e4154b;
-}
-.md-footer-copyright {
-    padding: 0.7rem 0;
+.md-typeset .od-hero h1 .headerlink {
+    display: none;
 }
 
-.md-typeset h1[id] .headerlink:focus,
-.md-typeset h1[id]:hover .headerlink:hover,
-.md-typeset h1[id]:target .headerlink,
-.md-typeset h2[id] .headerlink:focus,
-.md-typeset h2[id]:hover .headerlink:hover,
-.md-typeset h2[id]:target .headerlink,
-.md-typeset h3[id] .headerlink:focus,
-.md-typeset h3[id]:hover .headerlink:hover,
-.md-typeset h3[id]:target .headerlink,
-.md-typeset h4[id] .headerlink:focus,
-.md-typeset h4[id]:hover .headerlink:hover,
-.md-typeset h4[id]:target .headerlink,
-.md-typeset h5[id] .headerlink:focus,
-.md-typeset h5[id]:hover .headerlink:hover,
-.md-typeset h5[id]:target .headerlink,
-.md-typeset h6[id] .headerlink:focus,
-.md-typeset h6[id]:hover .headerlink:hover,
-.md-typeset h6[id]:target .headerlink {
-    color: #e4154b;
+.md-typeset .od-hero p {
+    font-size: 1rem;
+    margin: 0 0 1.1rem;
+    max-width: 34rem;
 }
 
-.md-footer-nav {
-    background-color: #000000;
-    color: var(--md-footer-fg-color--light);
-}
-.md-footer-nav__direction {
-    color: var(--md-footer-fg-color--light);
-    opacity: 0.75;
+.md-typeset .od-hero .md-button {
+    color: #ffffff;
+    border-color: #ffffff;
+    margin: 0 0.4rem 0.4rem 0;
 }
 
-.md-footer-nav__link:hover,
-.md-footer-nav__direction:hover {
-    opacity: 1;
+.md-typeset .od-hero .md-button--primary,
+.md-typeset .od-hero .md-button:hover,
+.md-typeset .od-hero .md-button:focus {
+    background-color: #ffffff;
+    border-color: #ffffff;
+    color: #8a1f6b;
 }
 
-.md-footer-meta {
-    background-color: #000000;
+.md-typeset .od-hero .md-button--primary:hover,
+.md-typeset .od-hero .md-button--primary:focus {
+    background-color: #f3e9f7;
 }
 
-.spacing
-{
-    margin-right: 50px;
+/* Home page: the cards */
+.od-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    gap: 0.8rem;
+    margin: 1rem 0 1.6rem;
+}
+
+.md-typeset a.od-card {
+    display: block;
+    border: 1px solid var(--md-default-fg-color--lightest);
+    border-top: 3px solid var(--od-red);
+    border-radius: 0.4rem;
+    padding: 0.9rem 1rem 1rem;
+    color: var(--md-default-fg-color);
+    background: var(--md-default-bg-color);
+    transition: border-color 125ms, box-shadow 125ms;
+}
+
+.md-typeset a.od-card:hover,
+.md-typeset a.od-card:focus {
+    border-color: var(--od-red);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.12);
+}
+
+.od-card .od-kind {
+    display: block;
+    font-size: 0.62rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--md-default-fg-color--light);
+}
+
+.od-card .od-name {
+    display: block;
+    font-size: 1rem;
+    font-weight: 700;
+    margin: 0.1rem 0 0.3rem;
+}
+
+.od-card .od-what {
+    display: block;
+    font-size: 0.72rem;
+    line-height: 1.5;
+}
+
+.md-typeset a.od-card.od-purple { border-top-color: var(--od-purple); }
+.md-typeset a.od-card.od-orange { border-top-color: var(--od-orange); }
+
+@media screen and (max-width: 44em) {
+    .od-hero {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 1.4rem 1.2rem;
+    }
+    .od-hero img {
+        width: 110px;
+    }
+}
+
+/* Terms in definition lists */
+.md-typeset dt {
+    font-weight: 700;
 }
