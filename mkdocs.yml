@@ -1,5 +1,5 @@
-site_name: opendendro
-site_description: OpenDendro Docs
+site_name: openDendro
+site_description: Open-source software for tree-ring science, in R, in Python and in the browser.
 site_author: Andy Bunn, Kevin Anchukaitis, Tyson Swetnam
 site_url: https://opendendro.org
 
@@ -8,47 +8,40 @@ repo_name: opendendro/opendendro
 repo_url: https://github.com/opendendro/opendendro
 edit_uri: edit/main/docs/
 # Copyright
-copyright: 'Copyright &copy; 2021 - 2024 Andy Bunn'
+copyright: 'Copyright &copy; 2021 - 2026 Andy Bunn'
 
 # Page tree
 nav:
-  - Introduction: index.md
-  #- Bootcamp: bootcamp.md
-  - Codebase:
-    - Overview: code.md
-    - Python:
-      - dplpy: python.md
-      - User Manual: dplpy-man.md
-      - Jupyter Notebooks:
-        - Introduction Example: notebooks/intro_dplpy.ipynb
-        - Floating Chronology Example: notebooks/floating_chronology_example.ipynb
-        - Bristlecone Pine Example: notebooks/bristlecone_example.ipynb
-        - ITRDB API: notebooks/itrdb.ipynb
-    - R:
-      - dplR: r.md
-      - Shiny Apps: apps.md
-    - Legacy Code:
-      - FORTRAN Programs: fortran.md
-  - Get Involved: contribute.md
-  - Hosted Apps:
-    - Overview: cloud.md
-    - Shiny Apps: apps.md
-    - CyVerse: cyverse.md
-##    - Docker: docker.md
+  - Home: index.md
+  - Apps: apps.md
+  - R: r.md
+  - Python:
+    - dplPy: python.md
+    - Notebooks:
+      - Introduction Example: notebooks/intro_dplpy.ipynb
+      - Floating Chronology Example: notebooks/floating_chronology_example.ipynb
+      - Bristlecone Pine Example: notebooks/bristlecone_example.ipynb
+      - ITRDB API: notebooks/itrdb.ipynb
+  - About:
+    - About openDendro: about.md
+    - Where the Methods Come From: fortran.md
+    - Run It on CyVerse: cyverse.md
+    - Get Involved: contribute.md
 
-
+# Pages kept for old links but left out of the menus
+not_in_nav: |
+  bootcamp.md
+  docker.md
+  notebooks/new.ipynb
 
 # Configuration
-imgwidth: 70px;
 theme:
-  highlightjs: true
   name: material
   font:
     text: 'Open Sans'
     code: 'Roboto Mono'
-  logo: 'assets/favicon-32x32.png'
+  logo: 'assets/openDendroSticker.png'
   favicon: 'assets/favicon.ico'
-# setting features for the navigation tab
   features:
     - navigation.instant
     - navigation.tracking
@@ -59,25 +52,27 @@ theme:
     - toc.integrate
     - toc.follow
     - content.code.copy
-  # Default values, taken from mkdocs_theme.yml
   language: en
-  # custom_dir: 'overrides'
   palette:
-    # Palette toggle for light mode
-    - media: "(prefers-color-scheme: white)"
-      primary: 'white'
+    # Light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: custom
+      accent: custom
       toggle:
         icon: material/weather-night
         name: Switch to dark mode
 
-    # Palette toggle for dark mode
+    # Dark mode
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
+      primary: custom
+      accent: custom
       toggle:
         icon: material/weather-sunny
-        name: Switch to system preference
+        name: Switch to light mode
 
-  # downloading ipynb notebooks
+  # Adds the download button to the notebook pages
   custom_dir: "docs/overrides"
 
 # Options
@@ -105,37 +100,26 @@ markdown_extensions:
   - pymdownx.critic
   - pymdownx.details
   - pymdownx.emoji:
-      emoji_index: !!python/name:materialx.emoji.twemoji
-      emoji_generator: !!python/name:materialx.emoji.to_svg
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
   - pymdownx.highlight
   - pymdownx.inlinehilite
   - pymdownx.keys
-  - pymdownx.magiclink:
-      repo_url_shorthand: true
-      user: squidfunk
-      repo: mkdocs-material
+  - pymdownx.magiclink
   - pymdownx.mark
   - pymdownx.smartsymbols
-  - pymdownx.superfences:
-      custom_fences:
-        - name: mermaid
-          class: mermaid
-          format: !!python/name:pymdownx.superfences.fence_code_format
-  - pymdownx.tabbed
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
   - pymdownx.tasklist:
       custom_checkbox: true
   - pymdownx.tilde
 
 extra_css:
   - stylesheets/extra.css
-  - chatbot_widget.css
-
-extra_javascript:
-  - chatbot_widget.js
 
 plugins:
     - search
-    - mkdocstrings
     - git-revision-date
     - mkdocs-jupyter:
           include_source: True

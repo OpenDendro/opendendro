@@ -1,26 +1,20 @@
-## About
+# Run It on CyVerse
 
-[CyVerse](https://cyverse.org){target=_blank} is the largest ever investment in research cyberinfrastructure for the Life Sciences by the US National Science Foundation. 
+You can run dplR and dplPy in a web browser without installing R or Python. [CyVerse](https://cyverse.org){target=_blank} is research cyberinfrastructure funded by the US National Science Foundation. It hosts RStudio and Jupyter environments that you start from its Discovery Environment.
 
-CyVerse supports a wide array of cloud native scientific software including popular integrated development environments (IDE) preferred by R and Python users. 
+To crossdate or detrend in a browser, the [apps](apps.md) are simpler and need no account.
 
-## Interactive Applications
+## Launch
 
-IDE applications for running `dplR` or `dplPy` are hosted on the CyVerse.org [Discovery Environment](https://de.cyverse.org)
+[Create a free CyVerse account](https://user.cyverse.org){target=_blank}, then start one of these in the [Discovery Environment](https://de.cyverse.org){target=_blank}:
 
-[Create a basic (free) CyVerse account](https://user.cyverse.org){target=_blank}
+| Launch | What you get | Built on |
+| ------ | ------------ | -------- |
+| <a href="https://de.cyverse.org/apps/de/3031d3b0-15e7-11ee-847b-008cfa5ae621/launch" target="_blank"><img alt="Launch RStudio" src="https://img.shields.io/badge/Geospatial-4.3.1-blue?style=plastic&logo=rstudio"></a> | RStudio, for dplR | [Rocker Project](https://rocker-project.org/images/){target=_blank} |
+| <a href="https://de.cyverse.org/apps/de/2e0e8a52-ab2d-11ee-9f2f-008cfa5ae621/launch" target="_blank"><img alt="Launch Jupyter" src="https://img.shields.io/badge/openDendro-4.0.1-orange?style=plastic&logo=jupyter"></a> | Jupyter, for dplPy | [Project Jupyter](https://jupyter-docker-stacks.readthedocs.io/en/latest/index.html){target=_blank} |
 
-??? Info "CyVerse Learning Materials"
+## Learning CyVerse
 
-    CyVerse has many self-paced training materials to help you understand its user portal and data science workbench interfaces
-
-    * [Homepage](https://cyverse.org){target=_blank}
-    * [User Portal](https://user.cyverse.org){target=_blank}
-    * [Discovery Environment](https://de.cyverse.org) 
-    * [User Documentation](https://learning.cyverse.org){target=_blank} 
-
-| App Launcher | Base Maintainers |
-| ------------ |------------------|
-| <a href="https://de.cyverse.org/apps/de/3031d3b0-15e7-11ee-847b-008cfa5ae621/launch" target="_blank"><img src="https://img.shields.io/badge/Geospatial-4.3.1-blue?style=plastic&logo=rstudio"></a> | [:simple-rstudio: Rocker-Project](https://rocker-project/images){target=_blank} |
-| <a href="https://de.cyverse.org/apps/de/2e0e8a52-ab2d-11ee-9f2f-008cfa5ae621/launch" target="_blank"><img src="https://img.shields.io/badge/openDendro-4.0.1-orange?style=plastic&logo=jupyter"></a> |[:simple-jupyter: Project Jupyter](https://jupyter-docker-stacks.readthedocs.io/en/latest/index.html){target=_blank} |
-
+- [User portal](https://user.cyverse.org){target=_blank}
+- [Discovery Environment](https://de.cyverse.org){target=_blank}
+- [User documentation](https://learning.cyverse.org){target=_blank}

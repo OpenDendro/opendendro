@@ -1,57 +1,29 @@
-Community support and participation are vital for open-source projects like openDendro. These projects rely on individuals who generously contribute their time and knowledge to make them successful. By getting involved as a tester or developer, you play a vital role in ensuring the growth and sustainability of openDendro. Your contributions help create a collaborative environment where researchers can benefit from innovative tools and shared expertise. Together, we can foster a vibrant community that pushes the boundaries of tree-ring analysis and promotes knowledge sharing. Join us today in supporting openDendro and making a difference in the field!
+# Get Involved
 
-### Join Our Testing Team for openDendro Python Functions!
+openDendro is built by a small group and gets better when more people use it, break it and say so. You do not need to be a programmer to help.
 
-Help us test and shape the future of openDendro's dplPy codebase. As a tester, you'll evaluate our Python functions for tree-ring analysis, ensuring their functionality and usability. Your feedback is vital in refining these cutting-edge tools, enhancing the user experience for researchers worldwide.
+## Report a Bug or Ask for a Feature
 
-*Requirements:*
+This is the most useful thing you can do. Open an issue on the repository for the tool you were using:
 
-+ Familiarity with tree-ring analysis techniques (e.g., chronology building, detrending)
-+ Basic knowledge of Python programming
-+ Eagerness to break things
+- [dplR](https://github.com/opendendro/dplR/issues){target=_blank}
+- [dplPy](https://github.com/OpenDendro/dplPy/issues){target=_blank}
+- [xDateR](https://github.com/OpenDendro/xDateR/issues){target=_blank}
+- [iDetrend](https://github.com/OpenDendro/iDetrend/issues){target=_blank}
+- [This website](https://github.com/opendendro/opendendro/issues){target=_blank}
 
-*Responsibilities:*
+A good report says what you did, what you expected and what happened. If you can attach a small file that shows the problem, we can usually fix it faster.
 
-+ Test openDendro's Python functions, providing feedback on performance, accuracy, and usability
-+ Report bugs, issues, and suggestions for improvement
-+ Collaborate with the openDendro team, sharing insights and experiences
+## Test dplPy
 
-*Benefits:*
+dplPy is heading for its 1.0 release, and this is the time to find what is wrong with it. If you work with tree-ring data and know some Python, run your own collections through it and tell us what breaks, what is confusing and what is missing. If you already do the same analysis in dplR, a comparison of the two is especially welcome.
 
-+ Active contribution to advancing tree-ring analysis software
-+ Firsthand experience in testing and providing feedback for scientific tools
-+ Recognition for your contributions to openDendro
-+ Collaboration and networking opportunities with fellow testers and researchers
+## Write Code
 
-Join us on this exciting journey as we enhance openDendro's capabilities. Shape the future of tree-ring analysis software by becoming a tester for our Python functions.
+We welcome contributions in R and Python. Fork the repository, make the change on a branch and open a pull request. For anything larger than a small fix, open an issue first so we can talk about the approach before you spend the time.
 
-To learn more, contact us at openDendro@gmail.com.
+Read [how we work](about.md#how-we-work) before you start. In short: choices belong in arguments with documented defaults, functions fail loudly, and matching a legacy program's output is not a goal.
 
-### Developers Wanted
+## Get in Touch
 
-We are actively seeking experienced developers who program in either R or Python to join our team. As a developer at openDendro, you will have the opportunity to contribute to a cutting-edge open-source project that empowers researchers worldwide. Your expertise will directly impact the quality and accessibility of the software used in dendrochronology research.
-
-*Requirements:*
-
-+ Proficiency in either R or Python, with a strong understanding of best practices and conventions in software development.
-+ Working knowledge of tree-ring analysis techniques and familiarity with relevant libraries, packages, or algorithms commonly used in the field.
-+ Experience with open-source software development, collaboration tools (such as Git), and the principles of reproducible research.
-+ Excellent communication skills and the ability to work effectively as part of a diverse and globally distributed team.
-
-*Responsibilities:*
-
-+ Collaborate with the openDendro team to develop and maintain high-quality, open-source software for dendrochronology research.
-+ Contribute to the design, implementation, and testing of new features and enhancements in the openDendro framework.
-+ Participate in code reviews, provide constructive feedback, and help maintain code quality standards.
-+ Engage in discussions and problem-solving to address user needs and improve the functionality and usability of the software.
-+ Contribute to documentation efforts, including code documentation, tutorials, and user guides.
-
-*Benefits:*
-
-+ Gain hands-on experience in developing open-source software for dendrochronology, enhancing your professional portfolio.
-+ Collaborate with a global community of researchers and developers, fostering meaningful connections and knowledge sharing.
-+ Contribute to the advancement of scientific research by enabling open science practices and promoting transparency.
-+ Expand your skills and knowledge in tree-ring analysis, software development, and open-source tools.
-Make a tangible impact on the dendrochronology community, enabling researchers worldwide to conduct rigorous and reproducible analyses.
-
-To learn more, contact us at openDendro@gmail.com. Feel free to please include any relevant code samples or links to your GitHub profile or other relevant repositories. We look forward to hearing from you!
+Write to openDendro@gmail.com.
