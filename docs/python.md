@@ -4,7 +4,7 @@
 
 dplPy is the Dendrochronology Program Library in Python. It brings the methods of [dplR](r.md) to Python and works on pandas data frames: read and write ring-width files, summarize, detrend, build chronologies, crossdate, date floating series, and do regional curve standardization.
 
-dplPy is in prerelease, at version 0.7.0 and heading for 1.0. It is ready to use, and function names and arguments can still change before 1.0.
+dplPy is in prerelease, at version 0.8.0 and heading for 1.0. It is ready to use, and function names and arguments can still change before 1.0.
 
 [dplPy documentation](https://opendendro.github.io/dplPy/){ .md-button .md-button--primary target=_blank }
 [Source on GitHub](https://github.com/OpenDendro/dplPy){ .md-button target=_blank }
