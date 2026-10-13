@@ -17,7 +17,7 @@ That gives you the released version from [CRAN](https://cran.r-project.org/packa
 
 ## Learn
 
-[Learning to Love dplR](https://opendendro.github.io/dplR-workshop/){target=_blank} is a free online book on doing tree-ring analysis with dplR. It covers how to call the functions, what each method is doing, and when a method misleads. Start there.
+[Learning to Love dplR](https://opendendro.github.io/learningToLoveDplR/){target=_blank} is a free online book on doing tree-ring analysis with dplR. It covers how to call the functions, what each method is doing, and when a method misleads. Start there.
 
 The package also has a vignette, "Getting Started with dplR", and a help page for every function.
 

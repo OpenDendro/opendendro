@@ -44,7 +44,7 @@ Open-source software for tree-ring science. Crossdate, detrend and build chronol
     <span class="od-name">dplPy</span>
     <span class="od-what">The same methods in Python, on pandas data frames, with its own documentation and worked notebooks.</span>
   </a>
-  <a class="od-card od-orange" href="https://opendendro.github.io/dplR-workshop/" target="_blank" rel="noopener">
+  <a class="od-card od-orange" href="https://opendendro.github.io/learningToLoveDplR/" target="_blank" rel="noopener">
     <span class="od-kind">Book · free online</span>
     <span class="od-name">Learning to Love dplR</span>
     <span class="od-what">How to do tree-ring analysis in R, and why each method behaves the way it does.</span>

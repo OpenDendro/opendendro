@@ -13,7 +13,7 @@ openDendro started in 2021 to move that toolkit into open languages, spread the 
 - [dplR](r.md), the R package.
 - [dplPy](python.md), the Python package.
 - [xDateR and iDetrend](apps.md), apps for crossdating and detrending in a browser.
-- [Learning to Love dplR](https://opendendro.github.io/dplR-workshop/){target=_blank}, a free book.
+- [Learning to Love dplR](https://opendendro.github.io/learningToLoveDplR/){target=_blank}, a free book.
 
 All of it is open source and on [GitHub](https://github.com/opendendro){target=_blank}.
 
