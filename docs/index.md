@@ -62,7 +62,7 @@ Open-source software for tree-ring science. Crossdate, detrend and build chronol
     - [iDetrend](apps.md#idetrend) is rewritten from scratch.
     - Both apps come with guided examples, and both write a report with the R code that reproduces your work.
     - [dplR 1.8.0](r.md#new-in-180) is on CRAN. It is a large release, and two changes can affect old scripts.
-    - [dplPy 0.7.0](python.md) is a solid prerelease on the way to 1.0.
+    - [dplPy 0.8.0](python.md) is a solid prerelease on the way to 1.0.
 
 ## What openDendro Is
 
